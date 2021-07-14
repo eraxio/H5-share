@@ -1,21 +1,7 @@
 exports.ids = [1];
 exports.modules = {
 
-/***/ 103:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/isMp4.4f07629.png";
-
-/***/ }),
-
 /***/ 104:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/reward_bg.e5126b3.png";
-
-/***/ }),
-
-/***/ 105:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/qrcode_viewcode.6c33aca.png";
@@ -23,30 +9,20 @@ module.exports = __webpack_require__.p + "img/qrcode_viewcode.6c33aca.png";
 /***/ }),
 
 /***/ 106:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ElShare_vue_vue_type_style_index_0_id_36b85883_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ElShare_vue_vue_type_style_index_0_id_36b85883_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ElShare_vue_vue_type_style_index_0_id_36b85883_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ElShare_vue_vue_type_style_index_0_id_36b85883_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ElShare_vue_vue_type_style_index_0_id_36b85883_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-
+module.exports = __webpack_require__.p + "img/reward_bg.e5126b3.png";
 
 /***/ }),
 
 /***/ 107:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(3);
-var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(17);
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(108);
-var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, "#sharePic[data-v-36b85883] {\n  position: relative;\n  height: 18.96rem;\n}\n#sharePic .o-share-bg[data-v-36b85883] {\n  width: 100%;\n  position: absolute;\n  z-index: -1;\n  left: 0;\n  right: 0;\n}\n#sharePic .o-box[data-v-36b85883] {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: 100% 100%;\n  padding: 0.666667rem 0;\n}\n#sharePic .o-box .o-offer[data-v-36b85883] {\n  width: 9.12rem;\n  height: 12.133333rem;\n  margin: 0 auto 0.133333rem;\n  background-size: 100% 100%;\n}\n#sharePic .o-box .o-offer .o-year-line[data-v-36b85883] {\n  position: relative;\n  padding: 0.426667rem 0.586667rem;\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n}\n#sharePic .o-box .o-offer .o-year-line[data-v-36b85883]:after {\n  content: \"\";\n  position: absolute;\n  height: 0.026667rem;\n  left: 0.586667rem;\n  right: 0.586667rem;\n  background: rgba(49, 49, 49, 0.1);\n}\n#sharePic .o-box .o-offer .o-year-line .o-year[data-v-36b85883] {\n  position: relative;\n  font-weight: 700;\n  border-radius: 0.133333rem;\n  font-size: 0.453333rem;\n  text-align: center;\n  font-family: Arial, Arial-Regular, serif;\n}\n#sharePic .o-box .o-offer .o-year-line .o-year.--0[data-v-36b85883] {\n  background: #ffffff;\n  border: 0.026667rem solid #e5e5e5;\n  padding: 0 0.32rem;\n  color: #1d1d1d;\n  line-height: 0.8rem;\n  position: absolute;\n  z-index: 1;\n}\n#sharePic .o-box .o-offer .o-year-line .o-year.--0 .o-clock[data-v-36b85883] {\n  position: absolute;\n  font-size: 0.24rem;\n  bottom: -0.173333rem;\n  left: 0;\n  right: 0;\n  color: #1D1D1D;\n}\n#sharePic .o-box .o-offer .o-year-line .o-year.--1[data-v-36b85883] {\n  line-height: 0.8rem;\n  color: #bfbfbf;\n  font-weight: 600;\n}\n#sharePic .o-box .o-offer .o-year-line .o-year.--2[data-v-36b85883] {\n  font-size: 0.373333rem;\n  line-height: 0.8rem;\n  color: #e9e9e9;\n  font-weight: 400;\n}\n#sharePic .o-box .o-offer .o-year-line .o-year.--3[data-v-36b85883] {\n  width: 1.706667rem;\n}\n#sharePic .o-box .o-offer .o-title[data-v-36b85883] {\n  font-size: 0.4rem;\n  font-weight: 700;\n  text-align: center;\n  color: #1d1d1d;\n  line-height: 0.48rem;\n  margin: 0 0.586667rem 0.266667rem;\n}\n#sharePic .o-box .o-offer .o-task-rewards[data-v-36b85883] {\n  padding: 0 0.586667rem;\n  font-size: 0.24rem;\n  text-align: right;\n  color: #7e7e7e;\n  margin-bottom: 0.133333rem;\n}\n#sharePic .o-box .o-offer .o-task-info[data-v-36b85883] {\n  display: flex;\n  justify-content: space-between;\n  margin: 0 0.266667rem;\n  padding: 0 0.32rem 0.266667rem;\n  border-bottom: 0.026667rem solid #d2d2d2;\n}\n#sharePic .o-box .o-offer .o-task-info .o-task-user[data-v-36b85883] {\n  display: flex;\n  align-items: center;\n}\n#sharePic .o-box .o-offer .o-task-info .o-task-user .o-avatar[data-v-36b85883] {\n  width: 0.533333rem;\n  height: 0.533333rem;\n  border-radius: 50%;\n  margin-right: 0.133333rem;\n}\n#sharePic .o-box .o-offer .o-task-info .o-task-user .o-nickname[data-v-36b85883] {\n  font-size: 0.373333rem;\n  font-weight: 400;\n  color: #1d1d1d;\n}\n#sharePic .o-box .o-offer .o-task-info .o-reward[data-v-36b85883] {\n  position: relative;\n  display: flex;\n  align-items: center;\n  padding: 0 0.106667rem 0 0.56rem;\n  height: 0.613333rem;\n  background: #eeeeee;\n  border-radius: 0.133333rem;\n}\n#sharePic .o-box .o-offer .o-task-info .o-reward.no_accept[data-v-36b85883] {\n  padding: 0 0.106667rem;\n}\n#sharePic .o-box .o-offer .o-task-info .o-reward .o-good[data-v-36b85883] {\n  position: absolute;\n  left: -0.32rem;\n  display: inline-block;\n  width: 0.56rem;\n  height: 0.56rem;\n  line-height: 0.56rem;\n  font-size: 0.346667rem;\n  text-align: center;\n  background: linear-gradient(-45deg, #1ec5bf 0%, #65da99 100%);\n  color: #ffffff;\n  border-radius: 50%;\n  border: 0.08rem solid #FFFFFF;\n  box-sizing: content-box;\n}\n#sharePic .o-box .o-offer .o-task-info .o-reward .o-good.black[data-v-36b85883] {\n  color: #2D2D2D;\n}\n#sharePic .o-box .o-offer .o-task-info .o-reward .o-nera[data-v-36b85883] {\n  width: 0.32rem;\n  height: 0.32rem;\n  margin-right: 0.066667rem;\n}\n#sharePic .o-box .o-offer .o-task-info .o-reward .o-nera-price[data-v-36b85883] {\n  font-size: 0.293333rem;\n  color: #1d1d1d;\n  margin-right: 0.106667rem;\n}\n#sharePic .o-box .o-offer .o-task-info .o-reward .o-nera-dollar[data-v-36b85883] {\n  font-size: 0.293333rem;\n  color: #8E8E8E;\n}\n#sharePic .o-box .o-offer .o-reward-info[data-v-36b85883] {\n  position: relative;\n  box-sizing: content-box;\n  width: 7.44rem;\n  height: 6.666667rem;\n  margin: 0 auto;\n  text-align: center;\n  padding: 0.453333rem 0 0.586667rem 0;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-img[data-v-36b85883] {\n  width: 7.44rem;\n  height: 6.666667rem;\n  border-radius: 0.333333rem;\n  object-fit: cover;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info[data-v-36b85883] {\n  position: absolute;\n  top: 0.453333rem;\n  left: 0;\n  right: 0;\n  bottom: 0.586667rem;\n  background: linear-gradient(0deg, rgba(2, 0, 0, 0.8) 0%, rgba(255, 255, 255, 0.3) 100%);\n  padding: 0.266667rem;\n  border-radius: 0.333333rem;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line1[data-v-36b85883] {\n  display: flex;\n  justify-content: space-between;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line1 .o-cart[data-v-36b85883] {\n  background: #f9f9f9;\n  border-radius: 0.066667rem;\n  padding: 0 0.106667rem;\n  font-size: 0.266667rem;\n  font-weight: 400;\n  text-align: center;\n  color: #1d1d1d;\n  line-height: 0.56rem;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line1 .o-cart .fa-shopping-cart[data-v-36b85883] {\n  color: #7632ff;\n  margin-right: 0.08rem;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line1 .o-nft[data-v-36b85883] {\n  background: #f9f9f9;\n  border-radius: 0.066667rem;\n  padding: 0 0.106667rem;\n  color: #1d1d1d;\n  font-weight: 700;\n  font-size: 0.266667rem;\n  line-height: 0.56rem;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line2[data-v-36b85883] {\n  position: absolute;\n  bottom: 0;\n  left: 0.266667rem;\n  right: 0.266667rem;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line2 .o-user[data-v-36b85883] {\n  display: flex;\n  align-items: center;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line2 .o-user .o-avatar[data-v-36b85883] {\n  width: 0.746667rem;\n  height: 0.746667rem;\n  border-radius: 50%;\n  margin-right: 0.2rem;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line2 .o-user .o-nickname[data-v-36b85883] {\n  font-size: 0.266667rem;\n  font-weight: 400;\n  text-align: left;\n  color: #f9f9f9;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line2 .o-user .o-time[data-v-36b85883] {\n  font-size: 0.266667rem;\n  font-weight: 400;\n  color: #727272;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line2 .o-answer-title[data-v-36b85883] {\n  padding: 0.293333rem 0;\n  text-align: left;\n  font-size: 0.373333rem;\n  font-weight: 400;\n  color: #ffffff;\n}\n#sharePic .o-box .o-blockchain[data-v-36b85883] {\n  padding: 0 1.333333rem 0;\n  margin-bottom: 0.133333rem;\n}\n#sharePic .o-box .o-blockchain .o-title[data-v-36b85883] {\n  font-size: 0.32rem;\n  font-weight: 700;\n  text-align: left;\n  color: #1d1d1d;\n  line-height: 0.4rem;\n  margin-bottom: 0.266667rem;\n}\n#sharePic .o-box .o-blockchain .o-cc-a[data-v-36b85883] {\n  display: flex;\n  justify-content: space-between;\n}\n#sharePic .o-box .o-blockchain .o-cc-a .o-cc-a2.link[data-v-36b85883] {\n  color: #00C6FF;\n  text-decoration: none;\n}\n#sharePic .o-box .o-bid-price[data-v-36b85883] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  text-align: center;\n  margin-bottom: 0.4rem;\n  font-size: 0.48rem;\n  font-weight: 700;\n  color: #1d1d1d;\n}\n#sharePic .o-box .o-bid-price .o-ppp1[data-v-36b85883] {\n  margin-right: 0.266667rem;\n}\n#sharePic .o-box .o-bid-price .o-nera[data-v-36b85883] {\n  width: 0.48rem;\n  height: 0.48rem;\n  margin-right: 0.16rem;\n}\n#sharePic .o-box .o-lin3[data-v-36b85883] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n#sharePic .o-box .o-lin3 .o-code[data-v-36b85883] {\n  width: 2.533333rem;\n  height: 2.533333rem;\n  background-color: #1D1D1D;\n  margin-right: 0.666667rem;\n}\n#sharePic .o-box .o-lin3 .o-code .o-code_img[data-v-36b85883] {\n  width: 100%;\n  height: 100%;\n}\n#sharePic .o-box .o-lin3 .o-o-erax[data-v-36b85883] {\n  text-align: left;\n}\n#sharePic .o-box .o-lin3 .o-erax[data-v-36b85883] {\n  height: 0.746667rem;\n  margin-bottom: 0.333333rem;\n}\n#sharePic .o-box .o-lin3 .o-text[data-v-36b85883] {\n  width: 4.306667rem;\n}", ""]);
-// Exports
-module.exports = ___CSS_LOADER_EXPORT___;
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_ElShare_vue_vue_type_style_index_0_id_12bd1c50_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(98);
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_ElShare_vue_vue_type_style_index_0_id_12bd1c50_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_ElShare_vue_vue_type_style_index_0_id_12bd1c50_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_ElShare_vue_vue_type_style_index_0_id_12bd1c50_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_ElShare_vue_vue_type_style_index_0_id_12bd1c50_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
@@ -54,28 +30,48 @@ module.exports = ___CSS_LOADER_EXPORT___;
 /***/ 108:
 /***/ (function(module, exports, __webpack_require__) {
 
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(3);
+var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(17);
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(109);
+var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, "#sharePic[data-v-12bd1c50] {\n  position: relative;\n  height: 18.96rem;\n}\n#sharePic .o-share-bg[data-v-12bd1c50] {\n  width: 100%;\n  position: absolute;\n  z-index: -1;\n  left: 0;\n  right: 0;\n}\n#sharePic .o-box[data-v-12bd1c50] {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: 100% 100%;\n  padding: 0.666667rem 0;\n}\n#sharePic .o-box .o-offer[data-v-12bd1c50] {\n  width: 9.12rem;\n  height: 12.133333rem;\n  margin: 0 auto 0.133333rem;\n  background-size: 100% 100%;\n}\n#sharePic .o-box .o-offer .o-year-line[data-v-12bd1c50] {\n  position: relative;\n  padding: 0.426667rem 0.586667rem;\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n}\n#sharePic .o-box .o-offer .o-year-line[data-v-12bd1c50]:after {\n  content: \"\";\n  position: absolute;\n  height: 0.026667rem;\n  left: 0.586667rem;\n  right: 0.586667rem;\n  background: rgba(49, 49, 49, 0.1);\n}\n#sharePic .o-box .o-offer .o-year-line .o-year[data-v-12bd1c50] {\n  position: relative;\n  font-weight: 700;\n  border-radius: 0.133333rem;\n  font-size: 0.453333rem;\n  text-align: center;\n  font-family: Arial, Arial-Regular, serif;\n}\n#sharePic .o-box .o-offer .o-year-line .o-year.--0[data-v-12bd1c50] {\n  background: #ffffff;\n  border: 0.026667rem solid #e5e5e5;\n  padding: 0 0.32rem;\n  color: #1d1d1d;\n  line-height: 0.8rem;\n  position: absolute;\n  z-index: 1;\n}\n#sharePic .o-box .o-offer .o-year-line .o-year.--0 .o-clock[data-v-12bd1c50] {\n  position: absolute;\n  font-size: 0.24rem;\n  bottom: -0.173333rem;\n  left: 0;\n  right: 0;\n  color: #1D1D1D;\n}\n#sharePic .o-box .o-offer .o-year-line .o-year.--1[data-v-12bd1c50] {\n  line-height: 0.8rem;\n  color: #bfbfbf;\n  font-weight: 600;\n}\n#sharePic .o-box .o-offer .o-year-line .o-year.--2[data-v-12bd1c50] {\n  font-size: 0.373333rem;\n  line-height: 0.8rem;\n  color: #e9e9e9;\n  font-weight: 400;\n}\n#sharePic .o-box .o-offer .o-year-line .o-year.--3[data-v-12bd1c50] {\n  width: 1.706667rem;\n}\n#sharePic .o-box .o-offer .o-title[data-v-12bd1c50] {\n  font-size: 0.4rem;\n  font-weight: 700;\n  text-align: center;\n  color: #1d1d1d;\n  line-height: 0.48rem;\n  margin: 0 0.586667rem 0.266667rem;\n}\n#sharePic .o-box .o-offer .o-task-rewards[data-v-12bd1c50] {\n  padding: 0 0.586667rem;\n  font-size: 0.24rem;\n  text-align: right;\n  color: #7e7e7e;\n  margin-bottom: 0.133333rem;\n}\n#sharePic .o-box .o-offer .o-task-info[data-v-12bd1c50] {\n  display: flex;\n  justify-content: space-between;\n  margin: 0 0.266667rem;\n  padding: 0 0.32rem 0.266667rem;\n  border-bottom: 0.026667rem solid #d2d2d2;\n}\n#sharePic .o-box .o-offer .o-task-info .o-task-user[data-v-12bd1c50] {\n  display: flex;\n  align-items: center;\n}\n#sharePic .o-box .o-offer .o-task-info .o-task-user .o-avatar[data-v-12bd1c50] {\n  width: 0.533333rem;\n  height: 0.533333rem;\n  border-radius: 50%;\n  margin-right: 0.133333rem;\n}\n#sharePic .o-box .o-offer .o-task-info .o-task-user .o-nickname[data-v-12bd1c50] {\n  font-size: 0.373333rem;\n  font-weight: 400;\n  color: #1d1d1d;\n}\n#sharePic .o-box .o-offer .o-task-info .o-reward[data-v-12bd1c50] {\n  position: relative;\n  display: flex;\n  align-items: center;\n  padding: 0 0.106667rem 0 0.56rem;\n  height: 0.613333rem;\n  background: #eeeeee;\n  border-radius: 0.133333rem;\n}\n#sharePic .o-box .o-offer .o-task-info .o-reward.no_accept[data-v-12bd1c50] {\n  padding: 0 0.106667rem;\n}\n#sharePic .o-box .o-offer .o-task-info .o-reward .o-good[data-v-12bd1c50] {\n  position: absolute;\n  left: -0.32rem;\n  display: inline-block;\n  width: 0.56rem;\n  height: 0.56rem;\n  line-height: 0.56rem;\n  font-size: 0.346667rem;\n  text-align: center;\n  background: linear-gradient(-45deg, #1ec5bf 0%, #65da99 100%);\n  color: #ffffff;\n  border-radius: 50%;\n  border: 0.08rem solid #FFFFFF;\n  box-sizing: content-box;\n}\n#sharePic .o-box .o-offer .o-task-info .o-reward .o-good.black[data-v-12bd1c50] {\n  color: #2D2D2D;\n}\n#sharePic .o-box .o-offer .o-task-info .o-reward .o-nera[data-v-12bd1c50] {\n  width: 0.32rem;\n  height: 0.32rem;\n  margin-right: 0.066667rem;\n}\n#sharePic .o-box .o-offer .o-task-info .o-reward .o-nera-price[data-v-12bd1c50] {\n  font-size: 0.293333rem;\n  color: #1d1d1d;\n  margin-right: 0.106667rem;\n}\n#sharePic .o-box .o-offer .o-task-info .o-reward .o-nera-dollar[data-v-12bd1c50] {\n  font-size: 0.293333rem;\n  color: #8E8E8E;\n}\n#sharePic .o-box .o-offer .o-reward-info[data-v-12bd1c50] {\n  position: relative;\n  box-sizing: content-box;\n  width: 7.44rem;\n  height: 6.666667rem;\n  margin: 0 auto;\n  text-align: center;\n  padding: 0.453333rem 0 0.586667rem 0;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-img[data-v-12bd1c50] {\n  width: 7.44rem;\n  height: 6.666667rem;\n  border-radius: 0.333333rem;\n  object-fit: cover;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info[data-v-12bd1c50] {\n  position: absolute;\n  top: 0.453333rem;\n  left: 0;\n  right: 0;\n  bottom: 0.586667rem;\n  background: linear-gradient(0deg, rgba(2, 0, 0, 0.8) 0%, rgba(255, 255, 255, 0.3) 100%);\n  padding: 0.266667rem;\n  border-radius: 0.333333rem;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line1[data-v-12bd1c50] {\n  display: flex;\n  justify-content: space-between;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line1 .o-cart[data-v-12bd1c50] {\n  background: #f9f9f9;\n  border-radius: 0.066667rem;\n  padding: 0 0.106667rem;\n  font-size: 0.266667rem;\n  font-weight: 400;\n  text-align: center;\n  color: #1d1d1d;\n  line-height: 0.56rem;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line1 .o-cart .fa-shopping-cart[data-v-12bd1c50] {\n  color: #7632ff;\n  margin-right: 0.08rem;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line1 .o-nft[data-v-12bd1c50] {\n  background: #f9f9f9;\n  border-radius: 0.066667rem;\n  padding: 0 0.106667rem;\n  color: #1d1d1d;\n  font-weight: 700;\n  font-size: 0.266667rem;\n  line-height: 0.56rem;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line2[data-v-12bd1c50] {\n  position: absolute;\n  bottom: 0;\n  left: 0.266667rem;\n  right: 0.266667rem;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line2 .o-user[data-v-12bd1c50] {\n  display: flex;\n  align-items: center;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line2 .o-user .o-avatar[data-v-12bd1c50] {\n  width: 0.746667rem;\n  height: 0.746667rem;\n  border-radius: 50%;\n  margin-right: 0.2rem;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line2 .o-user .o-nickname[data-v-12bd1c50] {\n  font-size: 0.266667rem;\n  font-weight: 400;\n  text-align: left;\n  color: #f9f9f9;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line2 .o-user .o-time[data-v-12bd1c50] {\n  font-size: 0.266667rem;\n  font-weight: 400;\n  color: #727272;\n}\n#sharePic .o-box .o-offer .o-reward-info .o-answer-info .o-line2 .o-answer-title[data-v-12bd1c50] {\n  padding: 0.293333rem 0;\n  text-align: left;\n  font-size: 0.373333rem;\n  font-weight: 400;\n  color: #ffffff;\n}\n#sharePic .o-box .o-blockchain[data-v-12bd1c50] {\n  padding: 0 1.333333rem 0;\n  margin-bottom: 0.133333rem;\n}\n#sharePic .o-box .o-blockchain .o-title[data-v-12bd1c50] {\n  font-size: 0.32rem;\n  font-weight: 700;\n  text-align: left;\n  color: #1d1d1d;\n  line-height: 0.4rem;\n  margin-bottom: 0.266667rem;\n}\n#sharePic .o-box .o-blockchain .o-cc-a[data-v-12bd1c50] {\n  display: flex;\n  justify-content: space-between;\n}\n#sharePic .o-box .o-blockchain .o-cc-a .o-cc-a2.link[data-v-12bd1c50] {\n  color: #00C6FF;\n  text-decoration: none;\n}\n#sharePic .o-box .o-bid-price[data-v-12bd1c50] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  text-align: center;\n  margin-bottom: 0.4rem;\n  font-size: 0.48rem;\n  font-weight: 700;\n  color: #1d1d1d;\n}\n#sharePic .o-box .o-bid-price .o-ppp1[data-v-12bd1c50] {\n  margin-right: 0.266667rem;\n}\n#sharePic .o-box .o-bid-price .o-nera[data-v-12bd1c50] {\n  width: 0.48rem;\n  height: 0.48rem;\n  margin-right: 0.16rem;\n}\n#sharePic .o-box .o-lin3[data-v-12bd1c50] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n#sharePic .o-box .o-lin3 .o-code[data-v-12bd1c50] {\n  width: 2.533333rem;\n  height: 2.533333rem;\n  background-color: #1D1D1D;\n  margin-right: 0.666667rem;\n}\n#sharePic .o-box .o-lin3 .o-code .o-code_img[data-v-12bd1c50] {\n  width: 100%;\n  height: 100%;\n}\n#sharePic .o-box .o-lin3 .o-o-erax[data-v-12bd1c50] {\n  text-align: left;\n}\n#sharePic .o-box .o-lin3 .o-erax[data-v-12bd1c50] {\n  height: 0.746667rem;\n  margin-bottom: 0.333333rem;\n}\n#sharePic .o-box .o-lin3 .o-text[data-v-12bd1c50] {\n  width: 4.306667rem;\n}", ""]);
+// Exports
+module.exports = ___CSS_LOADER_EXPORT___;
+
+
+/***/ }),
+
+/***/ 109:
+/***/ (function(module, exports, __webpack_require__) {
+
 module.exports = __webpack_require__.p + "img/share_bg.3fca6a9.jpg";
 
 /***/ }),
 
-/***/ 110:
+/***/ 116:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/cell/ElShare.vue?vue&type=template&id=36b85883&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isShow)?_c('div',{attrs:{"id":"sharePic"}},[_vm._ssrNode("<div class=\"o-box\" data-v-36b85883><div class=\"o-offer\""+(_vm._ssrStyle(null,{backgroundImage: ("url(" + (__webpack_require__(104)) + ")")}, null))+" data-v-36b85883><div class=\"o-year-line\" data-v-36b85883><p class=\"o-year --2\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm.ssDate - 2))+"</p> <p class=\"o-year --1\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm.ssDate - 1))+"</p> <p class=\"o-year --3\" data-v-36b85883></p> <p class=\"o-year --0\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm.ssDate))+"<i class=\"far fa-clock o-clock\" data-v-36b85883></i></p> <p class=\"o-year --1\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm.ssDate + 1))+"</p> <p class=\"o-year --2\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm.ssDate + 2))+"</p></div> <p class=\"o-title van-ellipsis\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm.sReward.sSubject))+"</p> "+((_vm.sReward.iCheckAnswerFlag)?("<p class=\"o-task-rewards\" data-v-36b85883>Task Rewards</p>"):"<!---->")+" <div class=\"o-task-info\" data-v-36b85883><div class=\"o-task-user\" data-v-36b85883><img"+(_vm._ssrAttr("src",_vm.qAvatar))+" alt class=\"o-avatar\" data-v-36b85883> <span class=\"o-nickname\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm.sReward.stUser.sName))+"</span></div> <div"+(_vm._ssrClass(null,['o-reward',{'no_accept':!_vm.vAnswer.iCheckStatus}]))+" data-v-36b85883>"+((_vm.vAnswer.iCheckStatus)?("<div class=\"o-good\" data-v-36b85883><i class=\"fas fa-check \" data-v-36b85883></i></div>"):"<!---->")+" <img"+(_vm._ssrAttr("src",__webpack_require__(16)))+" alt class=\"o-nera\" data-v-36b85883> <span class=\"o-nera-price\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm._f("formatNera")(_vm.sReward.iReward)))+"</span> <span class=\"o-nera-dollar\" data-v-36b85883>"+_vm._ssrEscape("($"+_vm._s(_vm._f("formatNera")(_vm.sReward.iReward * 0.1 || 0.001))+")")+"</span></div></div> <div class=\"o-reward-info\" data-v-36b85883>"+((/\.(mp4|webm|wav|ogg|MP4|MOV|WEBM|WAV|OGG)$/.test(_vm.oAnswerImg))?("<img"+(_vm._ssrAttr("src",__webpack_require__(103)))+" alt class=\"o-answer-img\" data-v-36b85883>"):("<img"+(_vm._ssrAttr("src",_vm.oAnswerImg))+" alt class=\"o-answer-img\" data-v-36b85883>"))+" <div class=\"o-answer-info\" data-v-36b85883><div class=\"o-line1\" data-v-36b85883>"+((_vm.vAnswer.iCheckStatus && _vm.vAnswer.iCreateNFTFlag)?("<div class=\"o-cart\" data-v-36b85883><i class=\"fas fa-shopping-cart\" data-v-36b85883></i>ERAX.IO\n            </div>"):"<!---->")+" "+((_vm.vAnswer.iCheckStatus && _vm.vAnswer.iCreateNFTFlag)?("<div class=\"o-nft\" data-v-36b85883>NFT</div>"):"<!---->")+"</div> <div class=\"o-line2\" data-v-36b85883><div class=\"o-user\" data-v-36b85883><img"+(_vm._ssrAttr("src",_vm.aAvatar))+" alt class=\"o-avatar\" data-v-36b85883> <div data-v-36b85883><p class=\"o-nickname\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm.vAnswer.stUser.sName))+"</p> <p class=\"o-time\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm.filterT(_vm.vAnswer.iCreateTime)))+"</p></div></div> <p class=\"o-answer-title van-ellipsis\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm.vAnswer.sTitleName))+"</p></div></div></div></div> "+((_vm.vAnswer.iCreateNFTFlag && _vm.vAnswer.stItem.sTokenId)?("<div class=\"o-blockchain\" data-v-36b85883><p class=\"o-title\" data-v-36b85883>Blockchain information：</p> <p class=\"o-cc-a\" data-v-36b85883><span class=\"o-cc-a1\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm.$t('Main28'))+"：")+"</span> <span class=\"o-cc-a2 link\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm._f("filterHideMid")(_vm.vAnswer.stItem.sContractAddress,16)))+"</span></p> <p class=\"o-cc-a\" data-v-36b85883><span class=\"o-cc-a1\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm.$t('Main29'))+"：")+"</span> <span class=\"o-cc-a2\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm._f("filterHideMid")(_vm.vAnswer.stItem.sTokenId,16)))+"</span></p> <p class=\"o-cc-a\" data-v-36b85883><span class=\"o-cc-a1\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm.$t('Main43'))+"：")+"</span> <span class=\"o-cc-a2\" data-v-36b85883>"+_vm._ssrEscape(_vm._s(_vm.vAnswer.stItem.sBlockchain))+"</span></p></div>"):"<!---->")+" "+((_vm.vAnswer.iPrice > 0)?("<p class=\"o-bid-price\" data-v-36b85883><span class=\"o-ppp1\" data-v-36b85883>Price Bid:</span> <img"+(_vm._ssrAttr("src",__webpack_require__(16)))+" alt class=\"o-nera\" data-v-36b85883>"+_vm._ssrEscape(" "+_vm._s(_vm._f("formatNera")(_vm.vAnswer.iPrice))+"\n    ")+"</p>"):"<!---->")+" <div class=\"o-lin3\" data-v-36b85883><div class=\"o-code\" data-v-36b85883><img"+(_vm._ssrAttr("src",__webpack_require__(105)))+" alt class=\"o-code_img\" data-v-36b85883></div> <div class=\"o-o-erax\" data-v-36b85883><img"+(_vm._ssrAttr("src",__webpack_require__(34)))+" alt class=\"o-erax\" data-v-36b85883> <p class=\"o-text\" data-v-36b85883>The start of a new era of the integration of NFT, time, space and memory.</p></div></div></div>")]):_vm._e()}
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./components/cell/ElShare.vue?vue&type=template&id=12bd1c50&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isShow)?_c('div',{attrs:{"id":"sharePic"}},[_vm._ssrNode("<div class=\"o-box\" data-v-12bd1c50><div class=\"o-offer\""+(_vm._ssrStyle(null,{backgroundImage: ("url(" + (__webpack_require__(106)) + ")")}, null))+" data-v-12bd1c50><div class=\"o-year-line\" data-v-12bd1c50><p class=\"o-year --2\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.ssDate - 2))+"</p> <p class=\"o-year --1\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.ssDate - 1))+"</p> <p class=\"o-year --3\" data-v-12bd1c50></p> <p class=\"o-year --0\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.ssDate))+"<i class=\"far fa-clock o-clock\" data-v-12bd1c50></i></p> <p class=\"o-year --1\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.ssDate + 1))+"</p> <p class=\"o-year --2\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.ssDate + 2))+"</p></div> <p class=\"o-title van-ellipsis\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.sReward.sSubject))+"</p> "+((_vm.sReward.iCheckAnswerFlag)?("<p class=\"o-task-rewards\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.$t('Nav12')))+"</p>"):"<!---->")+" <div class=\"o-task-info\" data-v-12bd1c50><div class=\"o-task-user\" data-v-12bd1c50><img"+(_vm._ssrAttr("src",_vm.qAvatar))+" alt class=\"o-avatar\" data-v-12bd1c50> <span class=\"o-nickname\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.sReward.stUser.sName))+"</span></div> <div"+(_vm._ssrClass(null,['o-reward',{'no_accept':!_vm.vAnswer.iCheckStatus}]))+" data-v-12bd1c50>"+((_vm.vAnswer.iCheckStatus)?("<div class=\"o-good\" data-v-12bd1c50><i class=\"fas fa-check \" data-v-12bd1c50></i></div>"):"<!---->")+" <img"+(_vm._ssrAttr("src",__webpack_require__(33)))+" alt class=\"o-nera\" data-v-12bd1c50> <span class=\"o-nera-price\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm._f("formatNera")(_vm.sReward.iReward)))+"</span> <span class=\"o-nera-dollar\" data-v-12bd1c50>"+_vm._ssrEscape("($"+_vm._s(_vm._f("formatNera")(_vm.sReward.iReward * _vm.nera))+")")+"</span></div></div> <div class=\"o-reward-info\" data-v-12bd1c50>"+((/\.(mp4|webm|wav|ogg|MP4|MOV|WEBM|WAV|OGG)$/.test(_vm.oAnswerImg))?("<img"+(_vm._ssrAttr("src",__webpack_require__(99)))+" alt class=\"o-answer-img\" data-v-12bd1c50>"):("<img"+(_vm._ssrAttr("src",_vm.oAnswerImg))+" alt class=\"o-answer-img\" data-v-12bd1c50>"))+" <div class=\"o-answer-info\" data-v-12bd1c50><div class=\"o-line1\" data-v-12bd1c50>"+((_vm.vAnswer.iCheckStatus && _vm.vAnswer.iCreateNFTFlag)?("<div class=\"o-cart\" data-v-12bd1c50><i class=\"fas fa-shopping-cart\" data-v-12bd1c50></i>ERAX.IO\n            </div>"):"<!---->")+" "+((_vm.vAnswer.iCheckStatus && _vm.vAnswer.iCreateNFTFlag)?("<div class=\"o-nft\" data-v-12bd1c50>NFT</div>"):"<!---->")+"</div> <div class=\"o-line2\" data-v-12bd1c50><div class=\"o-user\" data-v-12bd1c50><img"+(_vm._ssrAttr("src",_vm.aAvatar))+" alt class=\"o-avatar\" data-v-12bd1c50> <div data-v-12bd1c50><p class=\"o-nickname\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.vAnswer.stUser.sName))+"</p> <p class=\"o-time\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.filterT(_vm.vAnswer.iCreateTime)))+"</p></div></div> <p class=\"o-answer-title van-ellipsis\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.vAnswer.sTitleName))+"</p></div></div></div></div> "+((_vm.vAnswer.iCreateNFTFlag && _vm.vAnswer.stItem.sTokenId)?("<div class=\"o-blockchain\" data-v-12bd1c50><p class=\"o-title\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.$t('Main30')))+"</p> <p class=\"o-cc-a\" data-v-12bd1c50><span class=\"o-cc-a1\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.$t('Main28'))+"：")+"</span> <span class=\"o-cc-a2 link\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm._f("filterHideMid")(_vm.vAnswer.stItem.sContractAddress,16)))+"</span></p> <p class=\"o-cc-a\" data-v-12bd1c50><span class=\"o-cc-a1\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.$t('Main29'))+"：")+"</span> <span class=\"o-cc-a2\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm._f("filterHideMid")(_vm.vAnswer.stItem.sTokenId,16)))+"</span></p> <p class=\"o-cc-a\" data-v-12bd1c50><span class=\"o-cc-a1\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.$t('Main43'))+"：")+"</span> <span class=\"o-cc-a2\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.vAnswer.stItem.sBlockchain))+"</span></p></div>"):"<!---->")+" "+((_vm.vAnswer.iPrice > 0)?("<p class=\"o-bid-price\" data-v-12bd1c50><span class=\"o-ppp1\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.$t('Nav13')))+"</span> <img"+(_vm._ssrAttr("src",__webpack_require__(33)))+" alt class=\"o-nera\" data-v-12bd1c50>"+_vm._ssrEscape(" "+_vm._s(_vm._f("formatNera")(_vm.vAnswer.iPrice))+"\n    ")+"</p>"):"<!---->")+" <div class=\"o-lin3\" data-v-12bd1c50><div class=\"o-code\" data-v-12bd1c50><img"+(_vm._ssrAttr("src",__webpack_require__(104)))+" alt class=\"o-code_img\" data-v-12bd1c50></div> <div class=\"o-o-erax\" data-v-12bd1c50><img"+(_vm._ssrAttr("src",__webpack_require__(34)))+" alt class=\"o-erax\" data-v-12bd1c50> <p class=\"o-text\" data-v-12bd1c50>"+_vm._ssrEscape(_vm._s(_vm.$t('Nav14')))+"</p></div></div></div>")]):_vm._e()}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/cell/ElShare.vue?vue&type=template&id=36b85883&scoped=true&
+// CONCATENATED MODULE: ./components/cell/ElShare.vue?vue&type=template&id=12bd1c50&scoped=true&
 
 // EXTERNAL MODULE: ./static/js/html2canvas.js
 var html2canvas = __webpack_require__(97);
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/cell/ElShare.vue?vue&type=script&lang=js&
+// EXTERNAL MODULE: external "vuex"
+var external_vuex_ = __webpack_require__(5);
+
+// CONCATENATED MODULE: ./node_modules/_babel-loader@8.2.2@babel-loader/lib??ref--2-0!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./components/cell/ElShare.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -165,6 +161,7 @@ var html2canvas = __webpack_require__(97);
 //
 //
 //
+
 
 /* harmony default export */ var ElSharevue_type_script_lang_js_ = ({
   name: "ElShare",
@@ -180,7 +177,10 @@ var html2canvas = __webpack_require__(97);
     };
   },
 
-  computed: {
+  computed: { ...Object(external_vuex_["mapState"])({
+      nera: state => state.nera
+    }),
+
     ssDate() {
       return new Date(this.sReward.sDate).getFullYear();
     },
@@ -194,6 +194,10 @@ var html2canvas = __webpack_require__(97);
     sReward(v) {
       // console.log(v);
       // this.getDetail(v)
+      return v;
+    },
+
+    nera(v) {
       return v;
     }
 
@@ -283,7 +287,8 @@ var html2canvas = __webpack_require__(97);
         image.crossOrigin = ''; //获取传入的图片路径
 
         image.setAttribute('crossOrigin', 'anonymous');
-        image.src = path; //图片加载完后的回调函数,调用转码函数
+        let data = new Date();
+        image.src = path + `?t=${data.getTime()}`; //图片加载完后的回调函数,调用转码函数
 
         image.onload = function () {
           let base = getBase64Image(image); // console.log(base);
@@ -303,7 +308,7 @@ var html2canvas = __webpack_require__(97);
 });
 // CONCATENATED MODULE: ./components/cell/ElShare.vue?vue&type=script&lang=js&
  /* harmony default export */ var cell_ElSharevue_type_script_lang_js_ = (ElSharevue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+// EXTERNAL MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./components/cell/ElShare.vue
@@ -312,7 +317,7 @@ var componentNormalizer = __webpack_require__(1);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(106)
+  var style0 = __webpack_require__(107)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -325,8 +330,8 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   injectStyles,
-  "36b85883",
-  "4698053e"
+  "12bd1c50",
+  "3d04fb2f"
   
 )
 
@@ -334,28 +339,10 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 96:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(107);
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to SSR context
-var add = __webpack_require__(4).default
-module.exports.__inject__ = function (context) {
-  add("4202281c", content, true, context)
-};
-
-/***/ }),
-
 /***/ 97:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(91);
+__webpack_require__(92);
 
 /*!
  * html2canvas 1.0.0 <https://html2canvas.hertzen.com>
@@ -371,11 +358,11 @@ __webpack_require__(91);
   Licensed under the Apache License, Version 2.0 (the "License"); you may not use
   this file except in compliance with the License. You may obtain a copy of the
   License at http://www.apache.org/licenses/LICENSE-2.0
-    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
   KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
   WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
   MERCHANTABLITY OR NON-INFRINGEMENT.
-    See the Apache Version 2.0 License for specific language governing permissions
+   See the Apache Version 2.0 License for specific language governing permissions
   and limitations under the License.
   ***************************************************************************** */
 
@@ -6893,8 +6880,8 @@ __webpack_require__(91);
         const tempIframe = <HTMLIFrameElement>iframe.cloneNode(false);
         const iframeKey = generateIframeKey();
         tempIframe.setAttribute('data-html2canvas-internal-iframe-key', iframeKey);
-          const {width, height} = parseBounds(iframe);
-          this.resourceLoader.cache[iframeKey] = getIframeDocumentElement(iframe, this.options)
+         const {width, height} = parseBounds(iframe);
+         this.resourceLoader.cache[iframeKey] = getIframeDocumentElement(iframe, this.options)
             .then(documentElement => {
                 return this.renderer(
                     documentElement,
@@ -9616,6 +9603,31 @@ __webpack_require__(91);
 
   return html2canvas;
 });
+
+/***/ }),
+
+/***/ 98:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(108);
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add CSS to SSR context
+var add = __webpack_require__(4).default
+module.exports.__inject__ = function (context) {
+  add("de2e5e6a", content, true, context)
+};
+
+/***/ }),
+
+/***/ 99:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/isMp4.4f07629.png";
 
 /***/ })
 

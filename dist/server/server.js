@@ -43,7 +43,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({"1":"components/cell-el-share","2":"components/cell-erax-n-f-t","3":"components/cell-i-media2","4":"components/cell-o-answer","5":"components/cell-o-reward","6":"components/cell-o-share-pic","7":"components/logo"}[chunkId]||chunkId) + ".js");
+/******/ 			var chunk = require("./" + ({"1":"components/cell-el-share","2":"components/cell-erax-n-f-t","3":"components/cell-i-media2","4":"components/cell-make-pic-for-accept","5":"components/cell-o-answer","6":"components/cell-o-reward","7":"components/cell-o-share-pic","8":"components/cell-o-sign-in","9":"components/logo"}[chunkId]||chunkId) + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -104,7 +104,7 @@ module.exports =
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "https://cdn.jsdelivr.net/gh/eraxio/H5-share@0.0.1/dist/";
+/******/ 	__webpack_require__.p = "https://cdn.jsdelivr.net/gh/eraxio/H5-share@0.0.2/dist/";
 /******/
 /******/ 	// uncaught error handler for webpack runtime
 /******/ 	__webpack_require__.oe = function(err) {
@@ -347,7 +347,7 @@ __webpack_require__.r(__webpack_exports__);
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, "default", function() { return /* binding */ addStylesServer; });
 
-// CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/listToStyles.js
+// CONCATENATED MODULE: ./node_modules/_vue-style-loader@4.1.3@vue-style-loader/lib/listToStyles.js
 /**
  * Translates the list format produced by css-loader into something
  * easier to manipulate.
@@ -376,7 +376,7 @@ function listToStyles (parentId, list) {
   return styles
 }
 
-// CONCATENATED MODULE: ./node_modules/vue-style-loader/lib/addStylesServer.js
+// CONCATENATED MODULE: ./node_modules/_vue-style-loader@4.1.3@vue-style-loader/lib/addStylesServer.js
 
 
 function addStylesServer (parentId, list, isProduction, context) {
@@ -557,8 +557,8 @@ function websocketonopen() {
 
   sendMessage('CmdId_PortalSubscribe_CS', {
     vSubject: [UID]
-  });
-  console.log('增加监听----------------', UID); // sendMessage('CmdId_PortalSubscribe_CS', {vSubject: ['btcusdt@miniTicker', 'ethusdt@miniTicker', 'brdbtc@miniTicker', 'eratusdt@miniTicker']})
+  }); // console.log('增加监听----------------',UID);
+  // sendMessage('CmdId_PortalSubscribe_CS', {vSubject: ['btcusdt@miniTicker', 'ethusdt@miniTicker', 'brdbtc@miniTicker', 'eratusdt@miniTicker']})
   // 连接之后创建心跳
 
   setBeatHeartInterval();
@@ -715,32 +715,321 @@ module.exports = require("axios");
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports) {
+
+module.exports = require("vant");
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "d", function() { return /* binding */ formatTimeToStr; });
+__webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ changeLang; });
+__webpack_require__.d(__webpack_exports__, "c", function() { return /* binding */ formatNera; });
+__webpack_require__.d(__webpack_exports__, "e", function() { return /* binding */ hideStrMid; });
+__webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ clear_tags; });
+
+// CONCATENATED MODULE: ./node_modules/_vant@2.12.22@vant/es/locale/lang/en-US.js
+/* harmony default export */ var en_US = ({
+  name: 'Name',
+  tel: 'Phone',
+  save: 'Save',
+  confirm: 'Confirm',
+  cancel: 'Cancel',
+  delete: 'Delete',
+  complete: 'Complete',
+  loading: 'Loading...',
+  telEmpty: 'Please fill in the tel',
+  nameEmpty: 'Please fill in the name',
+  nameInvalid: 'Malformed name',
+  confirmDelete: 'Are you sure you want to delete?',
+  telInvalid: 'Malformed phone number',
+  vanCalendar: {
+    end: 'End',
+    start: 'Start',
+    title: 'Calendar',
+    startEnd: 'Start/End',
+    weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    monthTitle: function monthTitle(year, month) {
+      return year + "/" + month;
+    },
+    rangePrompt: function rangePrompt(maxRange) {
+      return "Choose no more than " + maxRange + " days";
+    }
+  },
+  vanCascader: {
+    select: 'Select'
+  },
+  vanContactCard: {
+    addText: 'Add contact info'
+  },
+  vanContactList: {
+    addText: 'Add new contact'
+  },
+  vanPagination: {
+    prev: 'Previous',
+    next: 'Next'
+  },
+  vanPullRefresh: {
+    pulling: 'Pull to refresh...',
+    loosing: 'Loose to refresh...'
+  },
+  vanSubmitBar: {
+    label: 'Total：'
+  },
+  vanCoupon: {
+    unlimited: 'Unlimited',
+    discount: function discount(_discount) {
+      return _discount * 10 + "% off";
+    },
+    condition: function condition(_condition) {
+      return "At least " + _condition;
+    }
+  },
+  vanCouponCell: {
+    title: 'Coupon',
+    tips: 'No coupons',
+    count: function count(_count) {
+      return "You have " + _count + " coupons";
+    }
+  },
+  vanCouponList: {
+    empty: 'No coupons',
+    exchange: 'Exchange',
+    close: 'Close',
+    enable: 'Available',
+    disabled: 'Unavailable',
+    placeholder: 'Coupon code'
+  },
+  vanAddressEdit: {
+    area: 'Area',
+    postal: 'Postal',
+    areaEmpty: 'Please select a receiving area',
+    addressEmpty: 'Address can not be empty',
+    postalEmpty: 'Wrong postal code',
+    defaultAddress: 'Set as the default address',
+    telPlaceholder: 'Phone',
+    namePlaceholder: 'Name',
+    areaPlaceholder: 'Area'
+  },
+  vanAddressEditDetail: {
+    label: 'Address',
+    placeholder: 'Address'
+  },
+  vanAddressList: {
+    add: 'Add new address'
+  }
+});
+// CONCATENATED MODULE: ./node_modules/_vant@2.12.22@vant/es/locale/lang/zh-CN.js
+/* harmony default export */ var zh_CN = ({
+  name: '姓名',
+  tel: '电话',
+  save: '保存',
+  confirm: '确认',
+  cancel: '取消',
+  delete: '删除',
+  complete: '完成',
+  loading: '加载中...',
+  telEmpty: '请填写电话',
+  nameEmpty: '请填写姓名',
+  nameInvalid: '请输入正确的姓名',
+  confirmDelete: '确定要删除吗',
+  telInvalid: '请输入正确的手机号',
+  vanCalendar: {
+    end: '结束',
+    start: '开始',
+    title: '日期选择',
+    confirm: '确定',
+    startEnd: '开始/结束',
+    weekdays: ['日', '一', '二', '三', '四', '五', '六'],
+    monthTitle: function monthTitle(year, month) {
+      return year + "\u5E74" + month + "\u6708";
+    },
+    rangePrompt: function rangePrompt(maxRange) {
+      return "\u9009\u62E9\u5929\u6570\u4E0D\u80FD\u8D85\u8FC7 " + maxRange + " \u5929";
+    }
+  },
+  vanCascader: {
+    select: '请选择'
+  },
+  vanContactCard: {
+    addText: '添加联系人'
+  },
+  vanContactList: {
+    addText: '新建联系人'
+  },
+  vanPagination: {
+    prev: '上一页',
+    next: '下一页'
+  },
+  vanPullRefresh: {
+    pulling: '下拉即可刷新...',
+    loosing: '释放即可刷新...'
+  },
+  vanSubmitBar: {
+    label: '合计：'
+  },
+  vanCoupon: {
+    unlimited: '无使用门槛',
+    discount: function discount(_discount) {
+      return _discount + "\u6298";
+    },
+    condition: function condition(_condition) {
+      return "\u6EE1" + _condition + "\u5143\u53EF\u7528";
+    }
+  },
+  vanCouponCell: {
+    title: '优惠券',
+    tips: '暂无可用',
+    count: function count(_count) {
+      return _count + "\u5F20\u53EF\u7528";
+    }
+  },
+  vanCouponList: {
+    empty: '暂无优惠券',
+    exchange: '兑换',
+    close: '不使用优惠券',
+    enable: '可用',
+    disabled: '不可用',
+    placeholder: '请输入优惠码'
+  },
+  vanAddressEdit: {
+    area: '地区',
+    postal: '邮政编码',
+    areaEmpty: '请选择地区',
+    addressEmpty: '请填写详细地址',
+    postalEmpty: '邮政编码格式不正确',
+    defaultAddress: '设为默认收货地址',
+    telPlaceholder: '收货人手机号',
+    namePlaceholder: '收货人姓名',
+    areaPlaceholder: '选择省 / 市 / 区'
+  },
+  vanAddressEditDetail: {
+    label: '详细地址',
+    placeholder: '街道门牌、楼层房间号等信息'
+  },
+  vanAddressList: {
+    add: '新增地址'
+  }
+});
+// EXTERNAL MODULE: external "vant"
+var external_vant_ = __webpack_require__(8);
+
+// CONCATENATED MODULE: ./plugins/utils.js
+
+
+ // Locale.use('zh-CN', zhCN);
+// Locale.use('en-US', enUS);
+
+Date.prototype.Format = function (fmt) {
+  var o = {
+    "M+": this.getMonth() + 1,
+    //月份
+    "d+": this.getDate(),
+    //日
+    "h+": this.getHours(),
+    //小时
+    "m+": this.getMinutes(),
+    //分
+    "s+": this.getSeconds(),
+    //秒
+    "q+": Math.floor((this.getMonth() + 3) / 3),
+    //季度
+    "S": this.getMilliseconds() //毫秒
+
+  };
+  if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+
+  for (var k in o) if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+
+  return fmt;
+};
+
+function formatTimeToStr(times, pattern) {
+  var d = new Date(times).Format("yyyy-MM-dd hh:mm:ss");
+
+  if (pattern) {
+    d = new Date(times).Format(pattern);
+  }
+
+  return d.toLocaleString();
+}
+function changeLang(newlang) {
+  // console.log(newlang);
+  switch (newlang) {
+    case "zh-CN":
+      external_vant_["Locale"].use('zh-CN', zh_CN);
+      break;
+
+    case "en-US":
+      external_vant_["Locale"].use('en-US', en_US);
+      break;
+
+    default:
+      external_vant_["Locale"].use('en-US', en_US);
+      break;
+  }
+}
+function formatNera(nera, pattern = 2) {
+  // let newNera = parseFloat(nera)
+  // if (newNera === 0) return newNera
+  // return newNera.toFixed(pattern)
+  if (!nera) return '';
+  nera = nera.toString();
+  let index = nera.indexOf('.');
+
+  if (index !== -1) {
+    nera = nera.substring(0, pattern + index + 1);
+  } else {
+    nera = nera.substring(0);
+  }
+
+  return parseFloat(nera).toFixed(pattern);
+}
+function hideStrMid(str, len) {
+  if (!str) return '';
+  if (str.length < len / 2) return str;
+  let temp = str.substring(0, parseInt(len / 2)) + '...' + str.substring(str.length - parseInt(len / 2));
+  return temp;
+}
+function clear_tags($str) {
+  if (!$str) return '';
+  var text1 = $str.replace(/<\/?.+?>/g, ""); // return text1.replace(/ /g, "");;
+
+  return text1;
+}
+
+/***/ }),
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/common/iHeader.vue?vue&type=template&id=6a8a4f4a&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"i-header"},[_vm._ssrNode("<div class=\"i-header-c\" data-v-6a8a4f4a>","</div>",[_vm._ssrNode(((!_vm.isSearchMode)?("<div class=\"logo\" data-v-6a8a4f4a><img"+(_vm._ssrAttr("src",__webpack_require__(34)))+" alt class=\"logo-img\" data-v-6a8a4f4a></div>"):"<!---->")+" "),_vm._ssrNode("<div class=\"header-lr\" data-v-6a8a4f4a>","</div>",[_vm._ssrNode("<div class=\"left\" data-v-6a8a4f4a>","</div>",[(_vm.$route.name !== 'Main' && _vm.$route.name !== 'message' && _vm.$route.name !== 'Nfts' && _vm.$route.name !== 'BillboardList')?_c('van-button',{staticClass:"left-back",on:{"click":_vm.handleBack}},[_c('i',{staticClass:"fas fa-arrow-left"})]):_vm._e(),_vm._ssrNode(" "+((_vm.$route.name === 'BillboardList')?("<div class=\"o-new-offer\" data-v-6a8a4f4a><img"+(_vm._ssrAttr("src",__webpack_require__(68)))+" alt class=\"o-tianjia\" data-v-6a8a4f4a>OFFER\n        </div>"):"<!---->")+" <div class=\"message-btn\""+(_vm._ssrStyle(null,null, { display: (_vm.$route.name === 'message') ? '' : 'none' }))+" data-v-6a8a4f4a>"+_vm._ssrEscape(_vm._s(_vm.$t('Message01'))+"\n        ")+"</div> "),(_vm.$route.name === 'Nfts')?[(!_vm.isSearchMode)?_c('van-icon',{staticClass:"erax-search",attrs:{"name":"search"},on:{"click":function($event){_vm.isSearchMode = true}}}):_vm._e(),_vm._ssrNode(" "),(_vm.isSearchMode)?_c('van-search',{attrs:{"placeholder":"输入搜索内容","show-action":""},on:{"search":_vm.onSearch,"cancel":_vm.onCancel},model:{value:(_vm.searchText),callback:function ($$v) {_vm.searchText=$$v},expression:"searchText"}}):_vm._e()]:_vm._e()],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"right\" data-v-6a8a4f4a>","</div>",[_c('van-badge',{attrs:{"dot":(_vm.isLogin && !!_vm.getMessageBadge) || _vm.activityRed}},[_c('van-icon',{attrs:{"name":"wap-nav"},on:{"click":function($event){_vm.showMenu = !_vm.showMenu}}})],1)],1)],2)],2),_vm._ssrNode(" "),_c('van-popup',{staticClass:"o-header-popup",attrs:{"position":"right","overlay":true,"get-container":"body"},model:{value:(_vm.showMenu),callback:function ($$v) {_vm.showMenu=$$v},expression:"showMenu"}},[_c('div',{staticClass:"o-header-p"},[_c('div',{staticClass:"tabs"},[_vm._l((_vm.tabs),function(v,i){return [((typeof v.isLogin === 'undefined' || v.isLogin === _vm.isLogin))?_c('p',{key:i,class:['tab',{border:v.border}],on:{"click":function($event){return _vm.goUrl(v)}}},[_c('i',{class:[v.icon,'icon']}),_vm._v("\n            "+_vm._s(_vm.$t(v.name))+"\n            "),(v.title == 'Message')?_c('van-badge',{staticClass:"badge",attrs:{"content":_vm.getMessageBadge}}):_vm._e(),_vm._v(" "),(v.title == 'Activity')?_c('van-badge',{staticClass:"badge",attrs:{"dot":_vm.activityRed}}):_vm._e()],1):_vm._e()]}),_vm._v(" "),_vm._l((_vm.locales),function(v){return _c('p',{key:v.key,class:['tab',{'no-set':v.key !== _vm.locale}],on:{"click":function($event){return _vm.selectLang(v.key)}}},[_c('i',{class:['fas fa-globe-europe' ,'icon',{'hide':v.key !== _vm.locale}]}),_vm._v("\n          "+_vm._s(v.title)+"\n        ")])})],2),_vm._v(" "),(_vm.isLogin)?_c('div',{staticClass:"out",on:{"click":_vm.handleLogout}},[_c('span',[_vm._v(_vm._s(_vm.$t('Nav08')))])]):_vm._e()])])],2)}
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./components/common/iHeader.vue?vue&type=template&id=246b14b3&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"i-header"},[_vm._ssrNode("<div class=\"i-header-c\" data-v-246b14b3>","</div>",[_vm._ssrNode(((!_vm.isSearchMode)?("<div class=\"logo\" data-v-246b14b3><img"+(_vm._ssrAttr("src",__webpack_require__(34)))+" alt class=\"logo-img\" data-v-246b14b3></div>"):"<!---->")+" "),_vm._ssrNode("<div class=\"header-lr\" data-v-246b14b3>","</div>",[_vm._ssrNode("<div class=\"left\" data-v-246b14b3>","</div>",[(_vm.$route.name !== 'Main' && _vm.$route.name !== 'message' && _vm.$route.name !== 'Nfts' && _vm.$route.name !== 'BillboardList')?_c('van-button',{staticClass:"left-back",on:{"click":_vm.handleBack}},[_c('i',{staticClass:"fas fa-arrow-left"})]):_vm._e(),_vm._ssrNode(" "+((_vm.$route.name === 'BillboardList')?("<div class=\"o-new-offer\" data-v-246b14b3><img"+(_vm._ssrAttr("src",__webpack_require__(69)))+" alt class=\"o-tianjia\" data-v-246b14b3>OFFER\n        </div>"):"<!---->")+" <div class=\"message-btn\""+(_vm._ssrStyle(null,null, { display: (_vm.$route.name === 'message') ? '' : 'none' }))+" data-v-246b14b3>"+_vm._ssrEscape(_vm._s(_vm.$t('Message01'))+"\n        ")+"</div> "),(_vm.$route.name === 'Nfts')?[(!_vm.isSearchMode)?_c('van-icon',{staticClass:"erax-search",attrs:{"name":"search"},on:{"click":function($event){_vm.isSearchMode = true}}}):_vm._e(),_vm._ssrNode(" "),(_vm.isSearchMode)?_c('van-search',{attrs:{"show-action":""},on:{"search":_vm.onSearch,"cancel":_vm.onCancel},model:{value:(_vm.searchText),callback:function ($$v) {_vm.searchText=$$v},expression:"searchText"}}):_vm._e()]:_vm._e()],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"right\" data-v-246b14b3>","</div>",[_c('van-badge',{attrs:{"dot":(_vm.isLogin && !!_vm.getMessageBadge) || _vm.activityRed}},[_c('van-icon',{attrs:{"name":"wap-nav"},on:{"click":function($event){_vm.showMenu = !_vm.showMenu}}})],1)],1)],2)],2),_vm._ssrNode(" "),_c('van-popup',{staticClass:"o-header-popup",attrs:{"position":"right","overlay":true,"get-container":"body"},model:{value:(_vm.showMenu),callback:function ($$v) {_vm.showMenu=$$v},expression:"showMenu"}},[_c('div',{staticClass:"o-header-p"},[_c('div',{staticClass:"tabs"},[_vm._l((_vm.tabs),function(v,i){return [((typeof v.isLogin === 'undefined' || v.isLogin === _vm.isLogin))?_c('p',{key:i,class:['tab',{border:v.border}],on:{"click":function($event){return _vm.goUrl(v)}}},[_c('i',{class:[v.icon,'icon']}),_vm._v("\n            "+_vm._s(_vm.$t(v.name))+"\n            "),(v.title == 'Message')?_c('van-badge',{staticClass:"badge",attrs:{"content":_vm.getMessageBadge}}):_vm._e(),_vm._v(" "),(v.title == 'Activity')?_c('van-badge',{staticClass:"badge",attrs:{"dot":_vm.activityRed}}):_vm._e()],1):_vm._e()]}),_vm._v(" "),_vm._l((_vm.locales),function(v){return _c('p',{key:v.key,class:['tab',{'no-set':v.key !== _vm.selectLang}],on:{"click":function($event){return _vm.handleSetLang(v.key)}}},[_c('i',{class:['fas fa-globe-europe' ,'icon',{'hide':v.key !== _vm.selectLang}]}),_vm._v("\n          "+_vm._s(v.title)+"\n        ")])})],2),_vm._v(" "),(_vm.isLogin)?_c('div',{staticClass:"out",on:{"click":_vm.handleLogout}},[_c('span',[_vm._v(_vm._s(_vm.$t('Nav08')))])]):_vm._e()])])],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/common/iHeader.vue?vue&type=template&id=6a8a4f4a&scoped=true&
+// CONCATENATED MODULE: ./components/common/iHeader.vue?vue&type=template&id=246b14b3&scoped=true&
 
 // EXTERNAL MODULE: external "vuex"
 var external_vuex_ = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./plugins/auth.js
-var auth = __webpack_require__(12);
+var auth = __webpack_require__(13);
 
 // EXTERNAL MODULE: ./plugins/websocket.js
 var websocket = __webpack_require__(6);
 
 // EXTERNAL MODULE: ./plugins/initWebsocket.js
-var initWebsocket = __webpack_require__(19);
+var initWebsocket = __webpack_require__(18);
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/common/iHeader.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/_babel-loader@8.2.2@babel-loader/lib??ref--2-0!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./components/common/iHeader.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -885,7 +1174,8 @@ var initWebsocket = __webpack_require__(19);
       }, {
         key: 'zh-CN',
         title: '简体中文'
-      }]
+      }],
+      selectLang: this.$cookies.get('Reward_locale') || this.locale
     };
   },
 
@@ -928,6 +1218,7 @@ var initWebsocket = __webpack_require__(19);
     },
 
     locale(v) {
+      this.selectLang = v;
       return v;
     }
 
@@ -953,25 +1244,28 @@ var initWebsocket = __webpack_require__(19);
         iPageNum: 100
       });
       let ary = [];
-      let temp = localStorage.getItem('ActivityList');
+      let temp = this.$cookies.get('ActivityList');
 
       if (temp) {
-        ary = JSON.parse(temp);
+        ary = temp;
 
         for (const iterator of vActivity) {
           if (ary.indexOf(iterator.iListId) > -1) {
             this.activityRed = true;
-            break;
+            return;
           }
         }
       } else {
         if (vActivity.length) {
           this.activityRed = true;
+          return;
         }
       }
+
+      this.activityRed = false;
     },
 
-    selectLang(key) {
+    handleSetLang(key) {
       console.log(key);
       this.$i18n.locale = key;
       this.$store.commit('SET_LANG', key); // localStorage.setItem("Reward_locale", key);
@@ -1050,7 +1344,7 @@ var initWebsocket = __webpack_require__(19);
 });
 // CONCATENATED MODULE: ./components/common/iHeader.vue?vue&type=script&lang=js&
  /* harmony default export */ var common_iHeadervue_type_script_lang_js_ = (iHeadervue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+// EXTERNAL MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./components/common/iHeader.vue
@@ -1059,7 +1353,7 @@ var componentNormalizer = __webpack_require__(1);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(69)
+  var style0 = __webpack_require__(70)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -1072,105 +1366,34 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   injectStyles,
-  "6a8a4f4a",
-  "97737f76"
+  "246b14b3",
+  "79650414"
   
 )
 
 /* harmony default export */ var iHeader = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = require("vue-no-ssr");
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports = require("js-cookie");
 
 /***/ }),
-/* 11 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return formatTimeToStr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return formatNera; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return hideStrMid; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return clear_tags; });
-Date.prototype.Format = function (fmt) {
-  var o = {
-    "M+": this.getMonth() + 1,
-    //月份
-    "d+": this.getDate(),
-    //日
-    "h+": this.getHours(),
-    //小时
-    "m+": this.getMinutes(),
-    //分
-    "s+": this.getSeconds(),
-    //秒
-    "q+": Math.floor((this.getMonth() + 3) / 3),
-    //季度
-    "S": this.getMilliseconds() //毫秒
-
-  };
-  if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-
-  for (var k in o) if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
-
-  return fmt;
-};
-
-function formatTimeToStr(times, pattern) {
-  var d = new Date(times).Format("yyyy-MM-dd hh:mm:ss");
-
-  if (pattern) {
-    d = new Date(times).Format(pattern);
-  }
-
-  return d.toLocaleString();
-}
-function formatNera(nera, pattern = 2) {
-  // let newNera = parseFloat(nera)
-  // if (newNera === 0) return newNera
-  // return newNera.toFixed(pattern)
-  if (!nera) return '';
-  nera = nera.toString();
-  let index = nera.indexOf('.');
-
-  if (index !== -1) {
-    nera = nera.substring(0, pattern + index + 1);
-  } else {
-    nera = nera.substring(0);
-  }
-
-  return parseFloat(nera).toFixed(pattern);
-}
-function hideStrMid(str, len) {
-  if (!str) return '';
-  if (str.length < len / 2) return str;
-  let temp = str.substring(0, parseInt(len / 2)) + '...' + str.substring(str.length - parseInt(len / 2));
-  return temp;
-}
-function clear_tags($str) {
-  if (!$str) return '';
-  var text1 = $str.replace(/<\/?.+?>/g, ""); // return text1.replace(/ /g, "");;
-
-  return text1;
-}
-
-/***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export getToken */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return setToken; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return removeToken; });
-/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_0__);
 
 const TokenKey = 'Authorization';
@@ -1185,28 +1408,22 @@ function removeToken() {
 }
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports = require("vue-client-only");
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports) {
 
 module.exports = require("vue-router");
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 module.exports = require("vue-i18n");
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/nera.21ea076.png";
 
 /***/ }),
 /* 17 */
@@ -1250,12 +1467,6 @@ module.exports = function (url, options) {
 
 /***/ }),
 /* 18 */
-/***/ (function(module, exports) {
-
-module.exports = require("vant");
-
-/***/ }),
-/* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1276,13 +1487,12 @@ async function initWebSocket(uid) {
   if (!_plugins_websocket_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].state.websock) {
     _plugins_websocket_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].mutations.INIT_WEBSOCKET(_plugins_websocket_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].state, res.sListenKey);
   } else if (_plugins_websocket_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].state.websock && _plugins_websocket_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].state.websock.readyState === 1) {
-    _plugins_websocket_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].mutations.PORTALSUBSCRIBE(res.sListenKey);
-    console.log('添加订阅主题----------------' + res.sListenKey);
+    _plugins_websocket_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"].mutations.PORTALSUBSCRIBE(res.sListenKey); // console.log('添加订阅主题----------------' + res.sListenKey);
   }
 }
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -1295,11 +1505,11 @@ if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(4).default
 module.exports.__inject__ = function (context) {
-  add("6ac3c623", content, true, context)
+  add("19f3c2eb", content, true, context)
 };
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -1312,7 +1522,24 @@ if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(4).default
 module.exports.__inject__ = function (context) {
-  add("7e56e4e3", content, true, context)
+  add("2fa984aa", content, true, context)
+};
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(71);
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add CSS to SSR context
+var add = __webpack_require__(4).default
+module.exports.__inject__ = function (context) {
+  add("29a46bfe", content, true, context)
 };
 
 /***/ }),
@@ -1322,14 +1549,14 @@ module.exports.__inject__ = function (context) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(70);
+var content = __webpack_require__(75);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(4).default
 module.exports.__inject__ = function (context) {
-  add("12c92d1b", content, true, context)
+  add("c0d1b130", content, true, context)
 };
 
 /***/ }),
@@ -1339,14 +1566,14 @@ module.exports.__inject__ = function (context) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(74);
+var content = __webpack_require__(77);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(4).default
 module.exports.__inject__ = function (context) {
-  add("205ddb94", content, true, context)
+  add("08c369f7", content, true, context)
 };
 
 /***/ }),
@@ -1356,14 +1583,14 @@ module.exports.__inject__ = function (context) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(76);
+var content = __webpack_require__(79);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(4).default
 module.exports.__inject__ = function (context) {
-  add("56b15182", content, true, context)
+  add("9f750242", content, true, context)
 };
 
 /***/ }),
@@ -1373,49 +1600,32 @@ module.exports.__inject__ = function (context) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(78);
+var content = __webpack_require__(81);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(4).default
 module.exports.__inject__ = function (context) {
-  add("0458abb2", content, true, context)
+  add("f050cb12", content, true, context)
 };
 
 /***/ }),
 /* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(80);
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to SSR context
-var add = __webpack_require__(4).default
-module.exports.__inject__ = function (context) {
-  add("8c18b882", content, true, context)
-};
-
-/***/ }),
-/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/cell/OHead.vue?vue&type=template&id=547f9846&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.avatarUrl)?_c('img',{attrs:{"src":_vm.avatarUrl,"alt":""}}):_c('img',{attrs:{"src":__webpack_require__(83)("./" + _vm.num + ".png"),"alt":""}},[])}
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./components/cell/OHead.vue?vue&type=template&id=547f9846&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.avatarUrl)?_c('img',{attrs:{"src":_vm.avatarUrl,"alt":""}}):_c('img',{attrs:{"src":__webpack_require__(84)("./" + _vm.num + ".png"),"alt":""}},[])}
 var staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./components/cell/OHead.vue?vue&type=template&id=547f9846&scoped=true&
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/cell/OHead.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/_babel-loader@8.2.2@babel-loader/lib??ref--2-0!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./components/cell/OHead.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -1443,7 +1653,7 @@ var staticRenderFns = []
 });
 // CONCATENATED MODULE: ./components/cell/OHead.vue?vue&type=script&lang=js&
  /* harmony default export */ var cell_OHeadvue_type_script_lang_js_ = (OHeadvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+// EXTERNAL MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./components/cell/OHead.vue
@@ -1464,11 +1674,116 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "547f9846",
-  "d9a49696"
+  "139172e6"
   
 )
 
 /* harmony default export */ var OHead = __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+/* 27 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./components/cell/ONeraKeyboard.vue?vue&type=template&id=72fae1da&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('van-number-keyboard',{attrs:{"theme":"custom","extra-key":['00', '.'],"show":_vm.isShow,"close-button-text":_vm.$t('Main44')},on:{"blur":function($event){_vm.isShow = false},"close":_vm.onClose,"input":_vm.onInput,"delete":_vm.onDelete},scopedSlots:_vm._u([{key:"title-left",fn:function(){return [(_vm.iReward)?_c('span',[_vm._v("\n       "+_vm._s(_vm._f("formatNera")(_vm.iReward))+"Nera ($"+_vm._s(_vm._f("formatNera")(_vm.iReward * 0.1))+")\n     ")]):_vm._e()]},proxy:true}]),model:{value:(_vm.iReward),callback:function ($$v) {_vm.iReward=$$v},expression:"iReward"}})}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./components/cell/ONeraKeyboard.vue?vue&type=template&id=72fae1da&scoped=true&
+
+// CONCATENATED MODULE: ./node_modules/_babel-loader@8.2.2@babel-loader/lib??ref--2-0!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./components/cell/ONeraKeyboard.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ var ONeraKeyboardvue_type_script_lang_js_ = ({
+  name: "ONeraKeyboard",
+  props: ['isShow', 'iPrice'],
+
+  data() {
+    return {
+      iReward: this.iPrice // NeraList: [50, 100, 200, 500, 1000]
+
+    };
+  },
+
+  watch: {
+    iPrice(v) {
+      this.iReward = v;
+    },
+
+    isShow(v) {
+      return v;
+    }
+
+  },
+  methods: {
+    handleSetNera() {// this.$set(this.oReward, 'iReward', v.toString())
+    },
+
+    onClose(vv) {
+      // if (!this.oReward.iReward) {
+      //   this.getAmountCount(0)
+      // }
+      // this.$refs.oForm.validate('iReward')
+      this.$emit('iPrice', this.iReward);
+    },
+
+    onInput(v) {
+      console.log(this.iReward);
+    },
+
+    onDelete() {}
+
+  }
+});
+// CONCATENATED MODULE: ./components/cell/ONeraKeyboard.vue?vue&type=script&lang=js&
+ /* harmony default export */ var cell_ONeraKeyboardvue_type_script_lang_js_ = (ONeraKeyboardvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__(1);
+
+// CONCATENATED MODULE: ./components/cell/ONeraKeyboard.vue
+
+
+
+function injectStyles (context) {
+  
+  
+}
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  cell_ONeraKeyboardvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  injectStyles,
+  "72fae1da",
+  "0d5f44b3"
+  
+)
+
+/* harmony default export */ var ONeraKeyboard = __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 /* 28 */
@@ -1502,8 +1817,8 @@ module.exports = require("defu");
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/common/iFooter.vue?vue&type=template&id=07d8a747&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.showFooter),expression:"showFooter"}],staticClass:"o-footer"},[_vm._ssrNode("<div class=\"o-footer-content\" data-v-07d8a747>","</div>",[_vm._ssrNode("<div class=\"o-btn\" data-v-07d8a747><div class=\"o-btn-\" data-v-07d8a747><i class=\"fas fa-plus o-btn-2\" data-v-07d8a747></i></div></div> "),_vm._ssrNode("<div class=\"o-balance-box\" data-v-07d8a747>","</div>",[_vm._ssrNode("<div class=\"o-currency\" data-v-07d8a747>","</div>",[_vm._ssrNode("<div class=\"o-item\" data-v-07d8a747>","</div>",[_c('o-head',{staticClass:"o-avatar",attrs:{"avatar-url":_vm.userInfo.sAvatar}}),_vm._ssrNode(" "+((_vm.isLogin)?("<p class=\"o-currency-balance\" data-v-07d8a747>"+_vm._ssrEscape(_vm._s(_vm.userInfo.sNickName))+"</p>"):"<!---->"))],2),_vm._ssrNode(" <div class=\"o-item\" data-v-07d8a747><img"+(_vm._ssrAttr("src",__webpack_require__(16)))+" alt class=\"o-avatar\" data-v-07d8a747> "+((_vm.isLogin)?("<p class=\"o-currency-balance\" data-v-07d8a747>"+_vm._ssrEscape(_vm._s(_vm._f("formatNera")(_vm.userInfo.iAvailableAmount)))+"</p>"):"<!---->")+"</div>")],2),_vm._ssrNode(" <div class=\"o-currency pp\" data-v-07d8a747><div class=\"o-item\" data-v-07d8a747><img"+(_vm._ssrAttr("src",__webpack_require__(71)))+" alt class=\"o-avatar\" data-v-07d8a747> "+((_vm.isLogin)?("<p class=\"o-currency-balance\" data-v-07d8a747>"+_vm._ssrEscape(_vm._s(_vm.userInfo.iRewardCount))+"</p>"):"<!---->")+"</div> <div class=\"o-item\" data-v-07d8a747><img"+(_vm._ssrAttr("src",__webpack_require__(72)))+" alt class=\"o-avatar\" data-v-07d8a747> "+((_vm.isLogin)?("<p class=\"o-currency-balance\" data-v-07d8a747>"+_vm._ssrEscape(_vm._s(_vm.userInfo.iAnswerCount))+"</p>"):"<!---->")+"</div></div>")],2),_vm._ssrNode(" "),_c('van-popup',{staticClass:"o-footer-popup",attrs:{"closeable":"","position":"bottom","overlay":false},model:{value:(_vm.showNera),callback:function ($$v) {_vm.showNera=$$v},expression:"showNera"}},[_c('p',{staticClass:"o-popup-content"},[_vm._v("NERA coins are tokens issued by the trading platform, with a total issuance of\n        300,000,000 pieces. Of which\n        40%/120,000,000 NERA coins will be produced in proportion to the equity of ERAC asset holders in 18\n        months.")])])],2)])}
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./components/common/iFooter.vue?vue&type=template&id=07d8a747&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.showFooter),expression:"showFooter"}],staticClass:"o-footer"},[_vm._ssrNode("<div class=\"o-footer-content\" data-v-07d8a747>","</div>",[_vm._ssrNode("<div class=\"o-btn\" data-v-07d8a747><div class=\"o-btn-\" data-v-07d8a747><i class=\"fas fa-plus o-btn-2\" data-v-07d8a747></i></div></div> "),_vm._ssrNode("<div class=\"o-balance-box\" data-v-07d8a747>","</div>",[_vm._ssrNode("<div class=\"o-currency\" data-v-07d8a747>","</div>",[_vm._ssrNode("<div class=\"o-item\" data-v-07d8a747>","</div>",[_c('o-head',{staticClass:"o-avatar",attrs:{"avatar-url":_vm.userInfo.sAvatar}}),_vm._ssrNode(" "+((_vm.isLogin)?("<p class=\"o-currency-balance\" data-v-07d8a747>"+_vm._ssrEscape(_vm._s(_vm.userInfo.sNickName))+"</p>"):"<!---->"))],2),_vm._ssrNode(" <div class=\"o-item\" data-v-07d8a747><img"+(_vm._ssrAttr("src",__webpack_require__(33)))+" alt class=\"o-avatar\" data-v-07d8a747> "+((_vm.isLogin)?("<p class=\"o-currency-balance\" data-v-07d8a747>"+_vm._ssrEscape(_vm._s(_vm._f("formatNera")(_vm.userInfo.iAvailableAmount)))+"</p>"):"<!---->")+"</div>")],2),_vm._ssrNode(" <div class=\"o-currency pp\" data-v-07d8a747><div class=\"o-item\" data-v-07d8a747><img"+(_vm._ssrAttr("src",__webpack_require__(72)))+" alt class=\"o-avatar\" data-v-07d8a747> "+((_vm.isLogin)?("<p class=\"o-currency-balance\" data-v-07d8a747>"+_vm._ssrEscape(_vm._s(_vm.userInfo.iRewardCount))+"</p>"):"<!---->")+"</div> <div class=\"o-item\" data-v-07d8a747><img"+(_vm._ssrAttr("src",__webpack_require__(73)))+" alt class=\"o-avatar\" data-v-07d8a747> "+((_vm.isLogin)?("<p class=\"o-currency-balance\" data-v-07d8a747>"+_vm._ssrEscape(_vm._s(_vm.userInfo.iAnswerCount))+"</p>"):"<!---->")+"</div></div>")],2),_vm._ssrNode(" "),_c('van-popup',{staticClass:"o-footer-popup",attrs:{"closeable":"","position":"bottom","overlay":false},model:{value:(_vm.showNera),callback:function ($$v) {_vm.showNera=$$v},expression:"showNera"}},[_c('p',{staticClass:"o-popup-content"},[_vm._v("NERA coins are tokens issued by the trading platform, with a total issuance of\n        300,000,000 pieces. Of which\n        40%/120,000,000 NERA coins will be produced in proportion to the equity of ERAC asset holders in 18\n        months.")])])],2)])}
 var staticRenderFns = []
 
 
@@ -1512,7 +1827,7 @@ var staticRenderFns = []
 // EXTERNAL MODULE: external "vuex"
 var external_vuex_ = __webpack_require__(5);
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/common/iFooter.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/_babel-loader@8.2.2@babel-loader/lib??ref--2-0!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./components/common/iFooter.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -1618,7 +1933,7 @@ var external_vuex_ = __webpack_require__(5);
 });
 // CONCATENATED MODULE: ./components/common/iFooter.vue?vue&type=script&lang=js&
  /* harmony default export */ var common_iFootervue_type_script_lang_js_ = (iFootervue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+// EXTERNAL MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./components/common/iFooter.vue
@@ -1627,7 +1942,7 @@ var componentNormalizer = __webpack_require__(1);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(73)
+  var style0 = __webpack_require__(74)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -1641,7 +1956,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "07d8a747",
-  "d9d8475a"
+  "bbc9cbf8"
   
 )
 
@@ -1649,108 +1964,9 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 /* 33 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/cell/ONeraKeyboard.vue?vue&type=template&id=7cdfe5c8&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('van-number-keyboard',{attrs:{"theme":"custom","extra-key":['00', '.'],"show":_vm.iRewardShow,"close-button-text":"完成"},on:{"blur":function($event){_vm.iRewardShow = false},"close":_vm.onClose,"input":_vm.onInput,"delete":_vm.onDelete},scopedSlots:_vm._u([{key:"title-left",fn:function(){return [_c('div',[_vm._v("\n      "+_vm._s(_vm.oReward.iReward)+"\n    ")]),_vm._v(" "),_c('div',{staticClass:"o-nera-box"},_vm._l((_vm.neraList),function(v){return _c('div',{staticClass:"o-nera-diy",on:{"click":function($event){return _vm.handleSetNera(v)}}},[_c('img',{staticClass:"o-nera",attrs:{"src":__webpack_require__(16),"alt":""}}),_vm._v("\n        "+_vm._s(v)+"\n      ")])}),0)]},proxy:true}]),model:{value:(_vm.oReward.iReward),callback:function ($$v) {_vm.$set(_vm.oReward, "iReward", $$v)},expression:"oReward.iReward"}})}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./components/cell/ONeraKeyboard.vue?vue&type=template&id=7cdfe5c8&scoped=true&
-
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/cell/ONeraKeyboard.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ var ONeraKeyboardvue_type_script_lang_js_ = ({
-  name: "ONeraKeyboard",
-  props: {
-    neraList: {
-      type: Array,
-      default: () => {
-        return [50, 100, 200, 500, 1000];
-      }
-    }
-  },
-
-  data() {
-    return {// NeraList: [50, 100, 200, 500, 1000]
-    };
-  },
-
-  methods: {
-    handleSetNera() {// this.$set(this.oReward, 'iReward', v.toString())
-    },
-
-    onClose(vv) {// if (!this.oReward.iReward) {
-      //   this.getAmountCount(0)
-      // }
-      // this.$refs.oForm.validate('iReward')
-    },
-
-    onInput() {},
-
-    onDelete() {}
-
-  }
-});
-// CONCATENATED MODULE: ./components/cell/ONeraKeyboard.vue?vue&type=script&lang=js&
- /* harmony default export */ var cell_ONeraKeyboardvue_type_script_lang_js_ = (ONeraKeyboardvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(1);
-
-// CONCATENATED MODULE: ./components/cell/ONeraKeyboard.vue
-
-
-
-function injectStyles (context) {
-  
-  
-}
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  cell_ONeraKeyboardvue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  injectStyles,
-  "7cdfe5c8",
-  "74804782"
-  
-)
-
-/* harmony default export */ var ONeraKeyboard = __webpack_exports__["default"] = (component.exports);
+module.exports = __webpack_require__.p + "img/nera.21ea076.png";
 
 /***/ }),
 /* 34 */
@@ -1769,7 +1985,7 @@ module.exports = __webpack_require__.p + "img/index_bg.b50ca33.png";
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(37);
-module.exports = __webpack_require__(90);
+module.exports = __webpack_require__(91);
 
 
 /***/ }),
@@ -1856,8 +2072,7 @@ __webpack_require__.r(__webpack_exports__);
   }
 
   if (token && isNeedLoad && !route.path.includes('/account')) {
-    // let res = await $axios.post('/v1/emall/GetRewardUserInfor', {})
-    // store.commit('SET_USERINFO', res)
+    await store.dispatch('UPDATE_NERA', false);
     await store.dispatch('UPDATE_USERINFO', false);
     store.commit('SET_ISNEEDLOAD', false);
     store.commit('SET_ISLOGIN', true);
@@ -1870,9 +2085,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_error_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_error_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_error_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_error_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_error_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_nuxt_error_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_nuxt_error_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_nuxt_error_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_nuxt_error_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_nuxt_error_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
@@ -1894,9 +2109,9 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_nuxt_loading_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
@@ -1923,7 +2138,7 @@ var content = __webpack_require__(44);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
-__webpack_require__(4).default("521f9ff1", content, true)
+__webpack_require__(4).default("0a5fa168", content, true)
 
 /***/ }),
 /* 44 */
@@ -1949,7 +2164,7 @@ var content = __webpack_require__(46);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
-__webpack_require__(4).default("1f1e5bec", content, true)
+__webpack_require__(4).default("031d2264", content, true)
 
 /***/ }),
 /* 46 */
@@ -1959,10 +2174,12 @@ __webpack_require__(4).default("1f1e5bec", content, true)
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(3);
 var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(17);
 var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(35);
+var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(47);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".van-button--disabled {\n  background: #bfbfbf !important;\n  opacity: 1 !important;\n}\n\n.van-image-preview__overlay,\n.van-image-preview {\n  z-index: 10000 !important;\n}\n\n.van-number-keyboard {\n  border-radius: 0;\n  z-index: 9999;\n}\n\n.van-number-keyboard .van-number-keyboard__header {\n  padding: 0;\n  background-color: #FFFFFF;\n}\n\n.van-number-keyboard .van-number-keyboard__header .van-number-keyboard__title-left {\n  display: flex;\n  justify-content: center;\n  width: 100%;\n}\n\n.van-number-keyboard .van-number-keyboard__header .van-number-keyboard__title-left .o-nera-diy {\n  padding: 0 0.16rem;\n  border: 0.013333rem solid #dcdcdc;\n  border-radius: 0.146667rem;\n  display: flex;\n  align-items: center;\n  font-size: 0.4rem;\n  font-weight: 400;\n  color: #1d1d1d;\n  margin: 0 0.2rem;\n}\n\n.van-number-keyboard .van-number-keyboard__header .van-number-keyboard__title-left .o-nera-diy .o-nera {\n  width: 0.4rem;\n  height: 0.4rem;\n  margin-right: 0.133333rem;\n}\n\n.o-navbar .van-nav-bar {\n  height: 1.6rem;\n  line-height: 1.6rem;\n}\n\n.o-navbar .van-nav-bar .van-nav-bar__content {\n  height: 100%;\n}\n\n.o-navbar .van-nav-bar .van-nav-bar__content .van-nav-bar__left .van-nav-bar__arrow {\n  font-size: 0.64rem;\n  color: #1d1d1d;\n}\n\n.o-navbar .van-nav-bar .van-nav-bar__content .van-nav-bar__title {\n  font-size: 0.453333rem;\n  font-weight: 700;\n  color: #1b1b1b;\n}\n\n.o-navbar .van-nav-bar .van-nav-bar__content .van-nav-bar__title.van-ellipsis {\n  overflow: initial !important;\n}\n\n.van-nav-bar__title {\n  font-size: 0.453333rem;\n  font-weight: 700;\n  color: #1b1b1b;\n}\n\n.van-nav-bar__title.van-ellipsis {\n  overflow: initial !important;\n}\n\n.page-list-box {\n  position: relative;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: 100% 100%;\n  height: 100%;\n}\n\n.o-form .o-form-item {\n  margin-bottom: 0.6rem;\n}\n\n.o-form .o-form-item.center {\n  text-align: center;\n}\n\n.o-form .o-form-item.flex {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n\n.o-form .o-form-item .o-form-item-label {\n  font-size: 0.32rem;\n  font-weight: 400;\n  color: #1d1d1d;\n  line-height: 0.64rem;\n  margin-bottom: 0.133333rem;\n}\n\n.o-form .o-form-item .o-form-item-label.clear {\n  margin: 0;\n}\n\n.o-form .o-form-item .o-form-item-label.nft {\n  width: 62%;\n  line-height: 1;\n}\n\n.o-form .o-form-item .o-form-item-label.uploader {\n  margin-bottom: 0.266667rem;\n  font-size: 0.4rem;\n  line-height: 0.64rem;\n}\n\n.o-form .o-form-item .o-form-des {\n  padding-top: 0.266667rem;\n  font-size: 0.266667rem;\n  color: #000000;\n  line-height: 0.4rem;\n}\n\n.o-form .o-form-item .o-form-item-icon {\n  font-size: 0.48rem;\n  color: #bfbfbf;\n}\n\n.o-form .o-form-item .o-form-item-des {\n  font-size: 0.32rem;\n  font-weight: 400;\n  color: #bfbfbf;\n  line-height: 0.4rem;\n}\n\n.o-form .o-form-item .o-form-field {\n  width: 6rem;\n  background: #ffffff;\n  padding: 0.24rem;\n  box-shadow: 0 0 0.066667rem 0 rgba(5, 0, 0, 0.35) inset;\n}\n\n.o-form .o-form-item .o-form-field .van-field__word-limit {\n  font-size: 0.32rem;\n  color: #bfbfbf;\n  margin-top: 0.066667rem;\n}\n\n.o-form .o-form-item .o-form-choice {\n  padding: 0.186667rem 0;\n}\n\n.o-form .o-form-item .o-form-choice.clear {\n  padding: 0;\n}\n\n.o-form .o-form-item .o-form-choice.border {\n  border-bottom: 0.026667rem solid #bfbfbf;\n}\n\n.o-form .o-form-item .o-form-choice.through .van-cell__value {\n  text-decoration: line-through;\n  color: #EE0A24 !important;\n}\n\n.o-form .o-form-item .o-form-choice.van-field {\n  font-size: 0.32rem;\n}\n\n.o-form .o-form-item .o-form-choice.van-field.van-cell--clickable:active {\n  background-color: transparent;\n}\n\n.o-form .o-form-item .o-form-choice.van-field.van-cell--clickable:active .van-cell__right-icon {\n  color: #1D1D1D;\n}\n\n.o-form .o-form-item .o-form-choice.van-field .van-cell__right-icon {\n  font-size: 0.32rem;\n}\n\n.o-form .o-form-item .o-form-choice.van-cell {\n  font-size: 0.32rem;\n}\n\n.o-form .o-form-item .o-form-choice.van-cell .van-cell__title {\n  color: #BFBFBF;\n}\n\n.o-form .o-form-item .o-form-choice.van-cell .van-cell__value {\n  color: #1D1D1D;\n}\n\n.o-form .o-form-item .o-form-switch {\n  width: 0.96rem;\n}\n\n.o-form .o-form-item .o-form-switch .van-switch__node {\n  background-color: #bfbfbf;\n}\n\n.o-form .o-form-item .o-form-switch.van-switch--on {\n  background-color: initial;\n}\n\n.o-form .o-form-item .o-form-switch.van-switch--on .van-switch__node {\n  transform: translateX(calc(1rem - 1em));\n  background-color: #772EFF;\n}\n\n#r-offer {\n  position: relative;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: 100% 100%;\n}\n\n.o-offer-bbox {\n  min-height: calc(100vh - 1.6rem);\n  padding: 2.4rem 0 4.4rem 0;\n}\n\n.o-offer-box {\n  position: relative;\n  width: 7.333333rem;\n  margin: 0 auto;\n  background: #ffffff;\n  border-radius: 1rem;\n  box-shadow: 0 0.2rem 0.2rem 0 rgba(5, 0, 0, 0.15);\n}\n\n.o-offer-box .o-offer-title {\n  font-size: 0.48rem;\n  font-weight: 700;\n  text-align: center;\n  color: #050014;\n  line-height: 1.4rem;\n  border-bottom: 0.026667rem solid #e5e5e5;\n}\n\n.o-offer-box .o-offer-content {\n  padding: 0.933333rem 0.666667rem 1.066667rem;\n}\n\n.o-offer-box .o-offer-submit {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: -0.426667rem;\n  text-align: center;\n}\n\n.o-offer-box .o-offer-submit .o-btn-submit {\n  width: 2.586667rem;\n  height: 0.853333rem;\n  background: #7632ff;\n  border-radius: 0.426667rem;\n  box-shadow: 0 0.2rem 0.2rem 0 rgba(5, 0, 0, 0.15);\n  border: 0;\n  color: #FFF;\n  font-size: 0.373333rem;\n}\n\n.o-popup-f {\n  height: 8.133333rem;\n  overflow: hidden;\n  left: 0.533333rem;\n  right: 0.533333rem;\n  bottom: 0.4rem;\n  width: auto;\n  box-shadow: 0 0 0.2rem 0 rgba(5, 0, 0, 0.35);\n  border-radius: 0.333333rem;\n}\n\n.o-popup-f .van-picker__toolbar {\n  padding: 0 0.266667rem;\n  height: 1.253333rem;\n}\n\n.o-popup-f .van-picker__toolbar .van-picker__cancel,\n.o-popup-f .van-picker__toolbar .van-picker__title,\n.o-popup-f .van-picker__toolbar .van-picker__confirm {\n  line-height: 1.253333rem;\n  font-size: 0.4rem;\n}\n\n.o-popup-f .van-picker__toolbar .van-picker__title {\n  font-weight: 700;\n  color: #1d1d1d;\n}\n\n.o-popup-sign {\n  border-radius: 1rem;\n  background-color: transparent;\n}\n\n.o-popup-sign .o-sign-box {\n  width: 7.333333rem;\n  height: 8.666667rem;\n  background: #ffffff;\n  border-radius: 1rem;\n  box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.16);\n  border: 0.013333rem solid #707070;\n  text-align: center;\n}\n\n.o-popup-sign .o-sign-box .o-sign-txt {\n  padding-top: 1.333333rem;\n  font-size: 0.506667rem;\n  color: #6a47fe;\n  font-weight: 700;\n  margin-bottom: 0.773333rem;\n}\n\n.o-popup-sign .o-sign-box .o-sign-nera {\n  width: 1.066667rem;\n  height: 1.066667rem;\n  margin-bottom: 0.333333rem;\n}\n\n.o-popup-sign .o-sign-box .o-nera-get {\n  color: #979797;\n  font-size: 0.373333rem;\n  font-weight: 500;\n  margin-bottom: 0.4rem;\n}\n\n.o-popup-sign .o-sign-box .o-nera-get .o-nera {\n  color: #6A47FE;\n}\n\n.o-popup-sign .o-sign-box .o-oo-txt {\n  font-size: 0.373333rem;\n  font-weight: 400;\n  color: #979797;\n  margin-bottom: 1.093333rem;\n}\n\n.o-popup-sign .o-sign-box .o-sign-btn {\n  min-width: 5.6rem;\n  height: 1.146667rem;\n  opacity: 1;\n  background: #7632ff;\n  border-radius: 0.573333rem;\n  font-size: 0.4rem;\n  font-weight: 400;\n  color: #ffffff;\n}\n\n.o-popup-sign .o-sign-box .o-right-box {\n  width: 1.893333rem;\n  height: 1.893333rem;\n  background: linear-gradient(157deg, #EFECFF 20%, #E9E5FE 82%, #E9E5FE 81%);\n  border-radius: 50%;\n  text-align: center;\n  margin: 0 auto 0.613333rem;\n}\n\n.o-popup-sign .o-sign-box .o-right-box .check {\n  line-height: 1.893333rem;\n  font-size: 0.746667rem;\n  color: #6a47fe;\n}\n\n.o-popup-sign .o-icon-close {\n  position: relative;\n  width: 0.773333rem;\n  height: 0.773333rem;\n  border-radius: 50%;\n  background-color: #FFFFFF;\n  margin: 0.933333rem auto 0;\n  text-align: center;\n  color: #606060;\n  font-size: 0.426667rem;\n  line-height: 0.773333rem;\n}\n\n.o-popup-sign .o-icon-close:before {\n  content: \"\";\n  height: 0.933333rem;\n  width: 0.04rem;\n  position: absolute;\n  top: -0.933333rem;\n  left: 0;\n  right: 0;\n  margin: 0 auto;\n  background-color: #fff;\n}\n\n.o-footer-popup {\n  width: auto;\n  left: 0.666667rem;\n  right: 0.666667rem;\n  bottom: 1.626667rem;\n  border-radius: 0.4rem;\n  box-shadow: 0 0.253333rem 0.386667rem 0 rgba(5, 0, 0, 0.45);\n  background: #313131;\n}\n\n.o-footer-popup .o-popup-content {\n  padding: 0.8rem 0.666667rem 0.533333rem;\n  color: #FFFFFF;\n}\n\n.o-footer-popup .van-popup__close-icon--top-right {\n  font-size: 0.266667rem;\n  right: 0.266667rem;\n  top: 0.266667rem;\n  color: #E7E7E7;\n}\n\n.o-issue-box {\n  position: relative;\n  box-shadow: 0 0.2rem 0.2rem 0 rgba(5, 0, 0, 0.15);\n  text-align: center;\n  background: #ffffff;\n}\n\n.o-issue-box.main {\n  width: 7.333333rem;\n  min-height: 7.466667rem;\n  border-radius: 1rem;\n  margin: 0 auto;\n}\n\n.o-issue-box.main .o-issue {\n  padding: 0 1.133333rem;\n  font-size: 0.4rem;\n  font-weight: 700;\n  text-align: center;\n  line-height: 0.64rem;\n}\n\n.o-issue-box.billboard {\n  margin: 0.4rem 0 0.8rem 0;\n  border-radius: 0.4rem;\n}\n\n.o-issue-box.billboard .o-reward-q {\n  padding: 0.186667rem 0.4rem;\n  text-align: left;\n}\n\n.o-issue-box.billboard .o-issue {\n  margin: 0.186667rem 0;\n  font-size: 0.32rem;\n  font-weight: 400;\n  color: #1d1d1d;\n  line-height: 0.48rem;\n}\n\n.o-issue-box.billboard .o-reward-answer-box {\n  right: 1.066667rem;\n  bottom: -0.32rem;\n  text-align: right;\n}\n\n.o-issue-box.billboard .o-reward-answer-box .o-reward-btn {\n  width: 1.92rem;\n  height: 0.64rem;\n  font-size: 0.32rem;\n}\n\n.o-issue-box .o-reward-box {\n  position: absolute;\n  top: -0.08rem;\n  right: 0.773333rem;\n  background: #7632ff;\n  border-radius: 0 0 0.266667rem 0.266667rem;\n  box-shadow: 0.04rem 0.053333rem 0.066667rem 0 rgba(5, 0, 0, 0.3);\n  height: 1.733333rem;\n  padding: 0.2rem 0.293333rem 0;\n}\n\n.o-issue-box .o-reward-box .o-for-reward {\n  font-size: 0.293333rem;\n  line-height: 1;\n  color: #ffffff;\n  margin-bottom: 0.133333rem;\n}\n\n.o-issue-box .o-reward-box .o-for-dollar {\n  font-size: 0.32rem;\n  color: #AAAAAA;\n  line-height: 1;\n}\n\n.o-issue-box .o-reward-box .o-nera {\n  display: flex;\n  align-items: center;\n  margin-bottom: 0.133333rem;\n}\n\n.o-issue-box .o-reward-box .o-nera .o-icon-nera {\n  width: 0.533333rem;\n  height: 0.533333rem;\n  margin-right: 0.093333rem;\n}\n\n.o-issue-box .o-reward-box .o-nera .o-nera-prise {\n  font-size: 0.48rem;\n  font-family: Avenir Next, Avenir Next-Bold;\n  font-weight: 700;\n  text-align: center;\n  color: #ffffff;\n  line-height: 0.533333rem;\n}\n\n.o-issue-box .o-reward-user {\n  padding: 0.4rem 0 0.306667rem 0.573333rem;\n  border-bottom: 0.026667rem solid #e5e5e5;\n  display: flex;\n  align-items: center;\n}\n\n.o-issue-box .o-reward-user .o-reward-user-avatar {\n  width: 0.733333rem;\n  height: 0.733333rem;\n  margin-right: 0.266667rem;\n  border-radius: 50%;\n}\n\n.o-issue-box .o-reward-user .o-reward-user-nickname {\n  font-size: 0.32rem;\n  font-weight: 500;\n  color: #1d1d1d;\n  width: 35%;\n  text-align: left;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  overflow: hidden;\n}\n\n.o-issue-box .o-answer-q {\n  padding: 0.4rem 0.466667rem 0.266667rem;\n}\n\n.o-issue-box .o-reward-q {\n  padding-top: 0.8rem;\n}\n\n.o-issue-box .o-answer-q .o-title,\n.o-issue-box .o-reward-q .o-title {\n  font-size: 0.32rem;\n  text-align: left;\n  color: #1d1d1d;\n  line-height: 0.64rem;\n}\n\n.o-issue-box .o-answer-q .o-left-year,\n.o-issue-box .o-reward-q .o-left-year {\n  display: inline-block;\n  height: 0.453333rem;\n  line-height: 0.453333rem;\n  padding: 0 0.093333rem;\n  background: #7632ff;\n  border-radius: 0.133333rem;\n  font-size: 0.32rem;\n  font-weight: 400;\n  color: #FEFEFE;\n}\n\n.o-issue-box .o-answer-q .o-year,\n.o-issue-box .o-reward-q .o-year {\n  display: inline-block;\n  height: 0.826667rem;\n  line-height: 0.826667rem;\n  padding: 0 0.266667rem;\n  margin: 0 auto 0.733333rem auto;\n  background: #ffffff;\n  border: 0.026667rem solid #e5e5e5;\n  border-radius: 0.16rem;\n  font-size: 0.48rem;\n  text-align: center;\n  color: #1d1d1d;\n}\n\n.o-issue-box .o-answer-q .o-img,\n.o-issue-box .o-reward-q .o-img {\n  width: 100%;\n  height: 4.4rem;\n  object-fit: cover;\n  margin-bottom: 0.266667rem;\n}\n\n.o-issue-box .o-answer-q .o-issue,\n.o-issue-box .o-reward-q .o-issue {\n  display: -webkit-box;\n  color: #1d1d1d;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  word-break: break-word;\n}\n\n.o-issue-box .o-answer-q .o-answer,\n.o-issue-box .o-reward-q .o-answer {\n  margin: 0.266667rem 0;\n  display: flex;\n  justify-content: space-between;\n}\n\n.o-issue-box .o-answer-q .o-answer.__1 .o-answer-img,\n.o-issue-box .o-reward-q .o-answer.__1 .o-answer-img {\n  width: 8.533333rem;\n  height: 4.8rem;\n}\n\n.o-issue-box .o-answer-q .o-answer.__2 .o-answer-img,\n.o-issue-box .o-reward-q .o-answer.__2 .o-answer-img {\n  width: 4.133333rem;\n  height: 4.133333rem;\n}\n\n.o-issue-box .o-answer-q .o-answer.__3 .o-answer-img,\n.o-issue-box .o-reward-q .o-answer.__3 .o-answer-img {\n  width: 2.666667rem;\n  height: 2.666667rem;\n}\n\n.o-issue-box .o-answer-q .o-answer.__4 .o-answer-img,\n.o-issue-box .o-reward-q .o-answer.__4 .o-answer-img {\n  width: 1.893333rem;\n  height: 1.893333rem;\n}\n\n.o-issue-box .o-answer-q .o-end-time,\n.o-issue-box .o-reward-q .o-end-time {\n  font-size: 0.32rem;\n  font-weight: 400;\n  color: #bfbfbf;\n}\n\n.o-issue-box .o-tip {\n  position: absolute;\n  bottom: 0.693333rem;\n  left: 0;\n  right: 0;\n  font-size: 0.293333rem;\n  color: #d3d3d3;\n}\n\n.o-issue-box .o-reward-answer-box {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: -0.426667rem;\n  text-align: center;\n}\n\n.o-issue-box .o-reward-answer-box .o-reward-btn {\n  width: 2.586667rem;\n  height: 0.853333rem;\n  border: 0.04rem solid #ffffff;\n  border-radius: 0.48rem;\n  box-shadow: 0 0 0.4rem 0 rgba(5, 0, 0, 0.3);\n  font-size: 0.373333rem;\n  font-weight: 400;\n  text-align: center;\n  color: #ffffff;\n  line-height: 0.64rem;\n}\n\n.o-issue-box .o-reward-answer-box .o-reward-btn.answer {\n  background: linear-gradient(-45deg, #f9a538 0%, #ff4f94 100%);\n}\n\n.o-issue-box .o-reward-answer-box .o-reward-btn.share {\n  background: linear-gradient(-45deg, #336ae5 0%, #40e4e6 100%);\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".van-button--disabled {\n  background: #bfbfbf !important;\n  opacity: 1 !important;\n}\n\n.van-image-preview__overlay,\n.van-image-preview {\n  z-index: 10000 !important;\n}\n\n.van-number-keyboard {\n  border-radius: 0;\n  z-index: 9999;\n}\n\n.van-number-keyboard .van-number-keyboard__header {\n  padding: 0;\n  background-color: #FFFFFF;\n}\n\n.van-number-keyboard .van-number-keyboard__header .van-number-keyboard__title-left {\n  display: flex;\n  justify-content: center;\n  width: 100%;\n}\n\n.van-number-keyboard .van-number-keyboard__header .van-number-keyboard__title-left .o-nera-diy {\n  padding: 0 0.16rem;\n  border: 0.013333rem solid #dcdcdc;\n  border-radius: 0.146667rem;\n  display: flex;\n  align-items: center;\n  font-size: 0.4rem;\n  font-weight: 400;\n  color: #1d1d1d;\n  margin: 0 0.2rem;\n}\n\n.van-number-keyboard .van-number-keyboard__header .van-number-keyboard__title-left .o-nera-diy .o-nera {\n  width: 0.4rem;\n  height: 0.4rem;\n  margin-right: 0.133333rem;\n}\n\n.o-navbar .van-nav-bar {\n  height: 1.6rem;\n  line-height: 1.6rem;\n}\n\n.o-navbar .van-nav-bar .van-nav-bar__content {\n  height: 100%;\n}\n\n.o-navbar .van-nav-bar .van-nav-bar__content .van-nav-bar__left .van-nav-bar__arrow {\n  font-size: 0.64rem;\n  color: #1d1d1d;\n}\n\n.o-navbar .van-nav-bar .van-nav-bar__content .van-nav-bar__title {\n  font-size: 0.453333rem;\n  font-weight: 700;\n  color: #1b1b1b;\n}\n\n.o-navbar .van-nav-bar .van-nav-bar__content .van-nav-bar__title.van-ellipsis {\n  overflow: initial !important;\n}\n\n.van-nav-bar__title {\n  font-size: 0.453333rem;\n  font-weight: 700;\n  color: #1b1b1b;\n}\n\n.van-nav-bar__title.van-ellipsis {\n  overflow: initial !important;\n}\n\n.page-list-box {\n  position: relative;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: 100% 100%;\n  height: 100%;\n}\n\n.o-form .o-form-item {\n  margin-bottom: 0.6rem;\n}\n\n.o-form .o-form-item.center {\n  text-align: center;\n}\n\n.o-form .o-form-item.flex {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n\n.o-form .o-form-item .o-form-item-label {\n  font-size: 0.32rem;\n  font-weight: 400;\n  color: #1d1d1d;\n  line-height: 0.64rem;\n  margin-bottom: 0.133333rem;\n}\n\n.o-form .o-form-item .o-form-item-label.clear {\n  margin: 0;\n}\n\n.o-form .o-form-item .o-form-item-label.nft {\n  width: 62%;\n  line-height: 1;\n}\n\n.o-form .o-form-item .o-form-item-label.uploader {\n  margin-bottom: 0.266667rem;\n  font-size: 0.4rem;\n  line-height: 0.64rem;\n}\n\n.o-form .o-form-item .o-form-des {\n  padding-top: 0.266667rem;\n  font-size: 0.266667rem;\n  color: #000000;\n  line-height: 0.4rem;\n}\n\n.o-form .o-form-item .o-form-item-icon {\n  font-size: 0.48rem;\n  color: #bfbfbf;\n}\n\n.o-form .o-form-item .o-form-item-des {\n  font-size: 0.32rem;\n  font-weight: 400;\n  color: #bfbfbf;\n  line-height: 0.4rem;\n  margin-bottom: 0.133333rem;\n}\n\n.o-form .o-form-item .o-form-field {\n  width: 6rem;\n  background: #ffffff;\n  padding: 0.24rem;\n  box-shadow: 0 0 0.066667rem 0 rgba(5, 0, 0, 0.35) inset;\n}\n\n.o-form .o-form-item .o-form-field .van-field__word-limit {\n  font-size: 0.32rem;\n  color: #bfbfbf;\n  margin-top: 0.066667rem;\n}\n\n.o-form .o-form-item .o-form-choice {\n  padding: 0.186667rem 0;\n}\n\n.o-form .o-form-item .o-form-choice.clear {\n  padding: 0;\n}\n\n.o-form .o-form-item .o-form-choice.border {\n  border-bottom: 0.026667rem solid #bfbfbf;\n}\n\n.o-form .o-form-item .o-form-choice.through .van-cell__value {\n  text-decoration: line-through;\n  color: #EE0A24 !important;\n}\n\n.o-form .o-form-item .o-form-choice.van-field {\n  font-size: 0.32rem;\n}\n\n.o-form .o-form-item .o-form-choice.van-field.van-cell--clickable:active {\n  background-color: transparent;\n}\n\n.o-form .o-form-item .o-form-choice.van-field.van-cell--clickable:active .van-cell__right-icon {\n  color: #1D1D1D;\n}\n\n.o-form .o-form-item .o-form-choice.van-field .van-cell__right-icon {\n  font-size: 0.32rem;\n}\n\n.o-form .o-form-item .o-form-choice.van-cell {\n  font-size: 0.32rem;\n}\n\n.o-form .o-form-item .o-form-choice.van-cell .van-cell__title {\n  color: #BFBFBF;\n}\n\n.o-form .o-form-item .o-form-choice.van-cell .van-cell__value {\n  color: #1D1D1D;\n}\n\n.o-form .o-form-item .o-form-switch {\n  width: 0.96rem;\n}\n\n.o-form .o-form-item .o-form-switch .van-switch__node {\n  background-color: #bfbfbf;\n}\n\n.o-form .o-form-item .o-form-switch.van-switch--on {\n  background-color: initial;\n}\n\n.o-form .o-form-item .o-form-switch.van-switch--on .van-switch__node {\n  transform: translateX(calc(1rem - 1em));\n  background-color: #772EFF;\n}\n\n#r-offer {\n  position: relative;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: 100% 100%;\n}\n\n.o-offer-bbox {\n  min-height: calc(100vh - 1.6rem);\n  padding: 2.4rem 0 4.4rem 0;\n}\n\n.o-offer-box {\n  position: relative;\n  width: 7.333333rem;\n  margin: 0 auto;\n  background: #ffffff;\n  border-radius: 1rem;\n  box-shadow: 0 0.2rem 0.2rem 0 rgba(5, 0, 0, 0.15);\n}\n\n.o-offer-box .o-offer-title {\n  font-size: 0.48rem;\n  font-weight: 700;\n  text-align: center;\n  color: #050014;\n  line-height: 1.4rem;\n  border-bottom: 0.026667rem solid #e5e5e5;\n}\n\n.o-offer-box .o-offer-content {\n  padding: 0.933333rem 0.666667rem 1.066667rem;\n}\n\n.o-offer-box .o-offer-submit {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: -0.426667rem;\n  text-align: center;\n}\n\n.o-offer-box .o-offer-submit .o-btn-submit {\n  width: 2.586667rem;\n  height: 0.853333rem;\n  background: #7632ff;\n  border-radius: 0.426667rem;\n  box-shadow: 0 0.2rem 0.2rem 0 rgba(5, 0, 0, 0.15);\n  border: 0;\n  color: #FFF;\n  font-size: 0.373333rem;\n}\n\n.o-popup-f {\n  height: 8.133333rem;\n  overflow: hidden;\n  left: 0.533333rem;\n  right: 0.533333rem;\n  bottom: 0.4rem;\n  width: auto;\n  box-shadow: 0 0 0.2rem 0 rgba(5, 0, 0, 0.35);\n  border-radius: 0.333333rem;\n}\n\n.o-popup-f .van-picker__toolbar {\n  padding: 0 0.266667rem;\n  height: 1.253333rem;\n}\n\n.o-popup-f .van-picker__toolbar .van-picker__cancel,\n.o-popup-f .van-picker__toolbar .van-picker__title,\n.o-popup-f .van-picker__toolbar .van-picker__confirm {\n  line-height: 1.253333rem;\n  font-size: 0.4rem;\n}\n\n.o-popup-f .van-picker__toolbar .van-picker__title {\n  font-weight: 700;\n  color: #1d1d1d;\n}\n\n.o-popup-sign {\n  border-radius: 1rem;\n  background-color: transparent;\n}\n\n.o-popup-sign .o-sign-box {\n  width: 7.333333rem;\n  height: 8.666667rem;\n  background: #ffffff;\n  border-radius: 1rem;\n  box-shadow: 0 0.04rem 0.08rem 0 rgba(0, 0, 0, 0.16);\n  border: 0.013333rem solid #707070;\n  text-align: center;\n}\n\n.o-popup-sign .o-sign-box .o-sign-txt {\n  padding-top: 1.333333rem;\n  font-size: 0.506667rem;\n  color: #6a47fe;\n  font-weight: 700;\n  margin-bottom: 0.773333rem;\n}\n\n.o-popup-sign .o-sign-box .o-sign-nera {\n  width: 1.066667rem;\n  height: 1.066667rem;\n  margin-bottom: 0.333333rem;\n}\n\n.o-popup-sign .o-sign-box .o-nera-get {\n  color: #979797;\n  font-size: 0.373333rem;\n  font-weight: 500;\n  margin-bottom: 0.4rem;\n}\n\n.o-popup-sign .o-sign-box .o-nera-get .o-nera {\n  color: #6A47FE;\n}\n\n.o-popup-sign .o-sign-box .o-oo-txt {\n  font-size: 0.373333rem;\n  font-weight: 400;\n  color: #979797;\n  margin-bottom: 1.093333rem;\n}\n\n.o-popup-sign .o-sign-box .o-sign-btn {\n  min-width: 5.6rem;\n  height: 1.146667rem;\n  opacity: 1;\n  background: #7632ff;\n  border-radius: 0.573333rem;\n  font-size: 0.4rem;\n  font-weight: 400;\n  color: #ffffff;\n}\n\n.o-popup-sign .o-sign-box .o-right-box {\n  width: 1.893333rem;\n  height: 1.893333rem;\n  background: linear-gradient(157deg, #EFECFF 20%, #E9E5FE 82%, #E9E5FE 81%);\n  border-radius: 50%;\n  text-align: center;\n  margin: 0 auto 0.613333rem;\n}\n\n.o-popup-sign .o-sign-box .o-right-box .check {\n  line-height: 1.893333rem;\n  font-size: 0.746667rem;\n  color: #6a47fe;\n}\n\n.o-popup-sign .o-icon-close {\n  position: relative;\n  width: 0.773333rem;\n  height: 0.773333rem;\n  border-radius: 50%;\n  background-color: #FFFFFF;\n  margin: 0.933333rem auto 0;\n  text-align: center;\n  color: #606060;\n  font-size: 0.426667rem;\n  line-height: 0.773333rem;\n}\n\n.o-popup-sign .o-icon-close:before {\n  content: \"\";\n  height: 0.933333rem;\n  width: 0.04rem;\n  position: absolute;\n  top: -0.933333rem;\n  left: 0;\n  right: 0;\n  margin: 0 auto;\n  background-color: #fff;\n}\n\n.o-footer-popup {\n  width: auto;\n  left: 0.666667rem;\n  right: 0.666667rem;\n  bottom: 1.626667rem;\n  border-radius: 0.4rem;\n  box-shadow: 0 0.253333rem 0.386667rem 0 rgba(5, 0, 0, 0.45);\n  background: #313131;\n}\n\n.o-footer-popup .o-popup-content {\n  padding: 0.8rem 0.666667rem 0.533333rem;\n  color: #FFFFFF;\n}\n\n.o-footer-popup .van-popup__close-icon--top-right {\n  font-size: 0.266667rem;\n  right: 0.266667rem;\n  top: 0.266667rem;\n  color: #E7E7E7;\n}\n\n.o-create-nft-pop {\n  background-color: transparent;\n  height: 100vh;\n  width: 100vw;\n  padding-top: 1.6rem;\n}\n\n.o-create-nft-pop .o-pop-box {\n  position: relative;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.o-create-nft-pop .o-nft-box {\n  width: 5.6rem;\n  margin: 0 auto 0.533333rem;\n}\n\n.o-create-nft-pop .o-nft-box .o-show-title {\n  text-align: center;\n  font-size: 0.346667rem;\n  font-weight: 700;\n  color: #FFFFFF;\n  margin-bottom: 0.133333rem;\n}\n\n.o-create-nft-pop .o-nft-box .o-nft {\n  background-color: #FFFFFF;\n  border-radius: 0.133333rem;\n}\n\n.o-create-nft-pop .o-nft-box .o-nft .o-image {\n  height: 5.466667rem;\n  background-color: #e5e5e5;\n  border-radius: 0.133333rem 0.133333rem 0 0;\n  color: #BEBEBE;\n  text-align: center;\n  display: flex;\n  justify-content: flex-end;\n  flex-direction: column;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n  background-repeat: no-repeat;\n  background-origin: content-box;\n  background-position: center;\n  background-size: cover;\n}\n\n.o-create-nft-pop .o-nft-box .o-nft .o-image .fa-image {\n  font-size: 1.76rem;\n  margin-bottom: 0.56rem;\n}\n\n.o-create-nft-pop .o-nft-box .o-nft .o-image .o-image-title {\n  font-size: 0.32rem;\n  padding: 0.266667rem 0;\n  color: #FFFFFF;\n}\n\n.o-create-nft-pop .o-nft-box .o-nft .o-ul .o-li {\n  padding: 0.186667rem;\n  display: flex;\n  justify-content: space-between;\n  font-size: 0.32rem;\n  align-items: center;\n}\n\n.o-create-nft-pop .o-nft-box .o-nft .o-ul .o-li .o-li-r {\n  display: flex;\n  align-items: center;\n}\n\n.o-create-nft-pop .o-nft-box .o-nft .o-ul .o-li .o-li-prise {\n  display: inline;\n  background: #ededed;\n  border-radius: 0.066667rem;\n  color: #b9b9b9;\n  padding: 0.053333rem 0.16rem;\n  margin-right: 0.026667rem;\n  transform: scale(0.8);\n}\n\n.o-create-nft-pop .o-nft-box .o-nft .o-ul .o-li .o-li-nera,\n.o-create-nft-pop .o-nft-box .o-nft .o-ul .o-li .o-erax {\n  width: 0.346667rem;\n  height: 0.346667rem;\n  margin-right: 0.053333rem;\n  border-radius: 50%;\n}\n\n.o-create-nft-pop .o-nft-box .o-nft .o-ul .o-li .o-title {\n  color: #b9b9b9;\n}\n\n.o-create-nft-pop .o-popup-content {\n  position: relative;\n  padding: 0.533333rem 0.666667rem 0.8rem;\n  color: #FFFFFF;\n  border-radius: 0.4rem;\n  box-shadow: 0 0.253333rem 0.386667rem 0 rgba(5, 0, 0, 0.45);\n  background: #313131;\n}\n\n.o-create-nft-pop .o-popup-content .o-btn {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: -0.44rem;\n  text-align: center;\n}\n\n.o-create-nft-pop .o-popup-content .o-btn .o-btn-yes {\n  min-width: 1.6rem;\n  height: 0.88rem;\n  background: linear-gradient(-45deg, #33e598 0%, #40e648 100%);\n  border: 0.053333rem solid #ffffff;\n  border-radius: 0.48rem;\n  box-shadow: 0 0 0.2rem 0 rgba(5, 0, 0, 0.3);\n  font-size: 0.4rem;\n  color: #ffffff;\n}\n\n.o-issue-box {\n  position: relative;\n  box-shadow: 0 0.2rem 0.2rem 0 rgba(5, 0, 0, 0.15);\n  text-align: center;\n  background: #ffffff;\n}\n\n.o-issue-box.main {\n  width: 7.333333rem;\n  min-height: 12.533333rem;\n  border-radius: 1rem;\n  margin: 0 auto;\n}\n\n.o-issue-box.main.reward {\n  min-height: 8rem;\n}\n\n.o-issue-box.main .o-issue {\n  padding: 0 1.133333rem;\n  font-size: 0.4rem;\n  font-weight: 700;\n  text-align: center;\n  line-height: 0.64rem;\n}\n\n.o-issue-box.billboard {\n  margin: 0.4rem 0 0.8rem 0;\n  border-radius: 0.4rem;\n}\n\n.o-issue-box.billboard .o-reward-q {\n  padding: 0.186667rem 0.4rem;\n  text-align: left;\n}\n\n.o-issue-box.billboard .o-issue {\n  margin: 0.186667rem 0;\n  font-size: 0.32rem;\n  font-weight: 400;\n  color: #1d1d1d;\n  line-height: 0.48rem;\n}\n\n.o-issue-box.billboard .o-reward-answer-box {\n  right: 1.066667rem;\n  bottom: -0.32rem;\n  text-align: right;\n}\n\n.o-issue-box.billboard .o-reward-answer-box .o-reward-btn {\n  width: 1.92rem;\n  height: 0.64rem;\n  font-size: 0.32rem;\n}\n\n.o-issue-box .o-reward-box {\n  position: absolute;\n  top: -0.08rem;\n  right: 0.773333rem;\n  background: #7632ff;\n  border-radius: 0 0 0.266667rem 0.266667rem;\n  box-shadow: 0.04rem 0.053333rem 0.066667rem 0 rgba(5, 0, 0, 0.3);\n  height: 1.733333rem;\n  padding: 0.2rem 0.293333rem 0;\n}\n\n.o-issue-box .o-reward-box .o-for-reward {\n  font-size: 0.293333rem;\n  line-height: 1;\n  color: #ffffff;\n  margin-bottom: 0.133333rem;\n}\n\n.o-issue-box .o-reward-box .o-for-dollar {\n  font-size: 0.32rem;\n  color: #AAAAAA;\n  line-height: 1;\n}\n\n.o-issue-box .o-reward-box .o-nera {\n  display: flex;\n  align-items: center;\n  margin-bottom: 0.133333rem;\n}\n\n.o-issue-box .o-reward-box .o-nera .o-icon-nera {\n  width: 0.533333rem;\n  height: 0.533333rem;\n  margin-right: 0.093333rem;\n}\n\n.o-issue-box .o-reward-box .o-nera .o-nera-prise {\n  font-size: 0.48rem;\n  font-family: Avenir Next, Avenir Next-Bold;\n  font-weight: 700;\n  text-align: center;\n  color: #ffffff;\n  line-height: 0.533333rem;\n}\n\n.o-issue-box .o-reward-user {\n  padding: 0.4rem 0 0.306667rem 0.573333rem;\n  border-bottom: 0.026667rem solid #e5e5e5;\n  display: flex;\n  align-items: center;\n}\n\n.o-issue-box .o-reward-user .o-reward-user-avatar {\n  width: 0.733333rem;\n  height: 0.733333rem;\n  margin-right: 0.266667rem;\n  border-radius: 50%;\n}\n\n.o-issue-box .o-reward-user .o-reward-user-nickname {\n  font-size: 0.32rem;\n  font-weight: 500;\n  color: #1d1d1d;\n  width: 35%;\n  text-align: left;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  overflow: hidden;\n}\n\n.o-issue-box .o-answer-q {\n  padding: 0.4rem 0.466667rem 0.266667rem;\n}\n\n.o-issue-box .o-reward-q {\n  padding-top: 0.8rem;\n}\n\n.o-issue-box .o-answer-q .o-title,\n.o-issue-box .o-reward-q .o-title {\n  font-size: 0.32rem;\n  text-align: left;\n  color: #1d1d1d;\n  line-height: 0.64rem;\n}\n\n.o-issue-box .o-answer-q .o-left-year,\n.o-issue-box .o-reward-q .o-left-year {\n  display: inline-block;\n  height: 0.453333rem;\n  line-height: 0.453333rem;\n  padding: 0 0.093333rem;\n  background: #7632ff;\n  border-radius: 0.133333rem;\n  font-size: 0.32rem;\n  font-weight: 400;\n  color: #FEFEFE;\n}\n\n.o-issue-box .o-answer-q .o-year,\n.o-issue-box .o-reward-q .o-year {\n  display: inline-block;\n  height: 0.826667rem;\n  line-height: 0.826667rem;\n  padding: 0 0.266667rem;\n  margin: 0 auto 0.733333rem auto;\n  background: #ffffff;\n  border: 0.026667rem solid #e5e5e5;\n  border-radius: 0.16rem;\n  font-size: 0.48rem;\n  text-align: center;\n  color: #1d1d1d;\n}\n\n.o-issue-box .o-answer-q .o-img,\n.o-issue-box .o-reward-q .o-img {\n  width: 100%;\n  height: 4.4rem;\n  object-fit: cover;\n  margin-bottom: 0.266667rem;\n}\n\n.o-issue-box .o-answer-q .o-issue,\n.o-issue-box .o-reward-q .o-issue {\n  display: -webkit-box;\n  color: #1d1d1d;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  word-break: break-word;\n}\n\n.o-issue-box .o-answer-q .o-answer,\n.o-issue-box .o-reward-q .o-answer {\n  margin-bottom: 0.266667rem;\n  display: flex;\n  justify-content: space-between;\n}\n\n.o-issue-box .o-answer-q .o-answer.__1 .o-answer-img,\n.o-issue-box .o-reward-q .o-answer.__1 .o-answer-img {\n  width: 8.533333rem;\n  height: 4.8rem;\n}\n\n.o-issue-box .o-answer-q .o-answer.__1 .o-answer-user-box,\n.o-issue-box .o-reward-q .o-answer.__1 .o-answer-user-box {\n  width: 8.533333rem;\n}\n\n.o-issue-box .o-answer-q .o-answer.__2 .o-answer-img,\n.o-issue-box .o-reward-q .o-answer.__2 .o-answer-img {\n  width: 4.133333rem;\n  height: 4.133333rem;\n}\n\n.o-issue-box .o-answer-q .o-answer.__2 .o-answer-user-box,\n.o-issue-box .o-reward-q .o-answer.__2 .o-answer-user-box {\n  width: 4.133333rem;\n}\n\n.o-issue-box .o-answer-q .o-answer.__3 .o-answer-img,\n.o-issue-box .o-reward-q .o-answer.__3 .o-answer-img {\n  width: 2.666667rem;\n  height: 2.666667rem;\n}\n\n.o-issue-box .o-answer-q .o-answer.__3 .o-answer-user-box,\n.o-issue-box .o-reward-q .o-answer.__3 .o-answer-user-box {\n  width: 2.666667rem;\n}\n\n.o-issue-box .o-answer-q .o-answer.__4 .o-answer-img,\n.o-issue-box .o-reward-q .o-answer.__4 .o-answer-img {\n  width: 1.893333rem;\n  height: 1.893333rem;\n}\n\n.o-issue-box .o-answer-q .o-end-time,\n.o-issue-box .o-reward-q .o-end-time {\n  font-size: 0.32rem;\n  font-weight: 400;\n  color: #bfbfbf;\n}\n\n.o-issue-box .o-reward-answer-box {\n  position: absolute;\n  left: 0;\n  right: 0;\n  bottom: -0.426667rem;\n  text-align: center;\n}\n\n.o-issue-box .o-reward-answer-box .o-reward-btn {\n  width: 2.586667rem;\n  height: 0.853333rem;\n  border: 0.04rem solid #ffffff;\n  border-radius: 0.48rem;\n  box-shadow: 0 0 0.4rem 0 rgba(5, 0, 0, 0.3);\n  font-size: 0.373333rem;\n  font-weight: 400;\n  text-align: center;\n  color: #ffffff;\n  line-height: 0.64rem;\n}\n\n.o-issue-box .o-reward-answer-box .o-reward-btn.answer {\n  background: linear-gradient(-45deg, #f9a538 0%, #ff4f94 100%);\n}\n\n.o-issue-box .o-reward-answer-box .o-reward-btn.share {\n  background: linear-gradient(-45deg, #336ae5 0%, #40e4e6 100%);\n}\n\n.o-dropdown-menu.van-dropdown-menu {\n  height: 100%;\n}\n\n.o-dropdown-menu.van-dropdown-menu .van-dropdown-menu__bar {\n  box-shadow: none;\n  text-align: right;\n  height: 100%;\n  background-color: transparent;\n}\n\n.o-dropdown-menu.van-dropdown-menu .van-dropdown-menu__bar .van-dropdown-menu__item .van-dropdown-menu__title {\n  color: #1d1d1d;\n  font-size: 0.32rem;\n  display: flex;\n  height: 100%;\n  align-items: center;\n}\n\n.o-dropdown-menu.van-dropdown-menu .van-dropdown-menu__bar .van-dropdown-menu__item .van-dropdown-menu__title:after {\n  border-color: transparent transparent #1d1d1d #1d1d1d;\n}\n\n.o-dropdown-menu.van-dropdown-menu .van-dropdown-menu__bar .van-dropdown-menu__item .van-dropdown-menu__title .van-ellipsis {\n  margin-right: 0.2rem;\n}\n\n.o-dropdown-menu.van-dropdown-menu .van-dropdown-menu__bar .van-dropdown-menu__title--active {\n  font-weight: 400;\n}\n\n.o-dropdown-menu.van-dropdown-menu .van-dropdown-item {\n  left: initial;\n  right: 0.613333rem;\n  width: 2.933333rem;\n  overflow: initial;\n}\n\n.o-dropdown-menu.van-dropdown-menu .van-dropdown-item .van-dropdown-item__content {\n  border-radius: 0.066667rem 0.133333rem 0.133333rem 0.133333rem;\n  box-shadow: 0 0 0.2rem 0 rgba(5, 0, 0, 0.15);\n}\n\n.o-dropdown-menu.van-dropdown-menu .van-dropdown-item .van-dropdown-item__option {\n  color: #bfbfbf;\n  padding: 0.2rem 0.16rem;\n}\n\n.o-dropdown-menu.van-dropdown-menu .van-dropdown-item .van-dropdown-item__option:after {\n  display: none;\n}\n\n.o-dropdown-menu.van-dropdown-menu .van-dropdown-item .van-dropdown-item__option .van-cell__title {\n  font-size: 0.32rem;\n  font-weight: 400;\n  color: #bfbfbf;\n  line-height: 0.533333rem;\n}\n\n.o-dropdown-menu.van-dropdown-menu .van-dropdown-item .van-dropdown-item__option .van-cell__value {\n  display: none;\n}\n\n.o-dropdown-menu.van-dropdown-menu .van-dropdown-item .van-dropdown-item__option.van-dropdown-item__option--active .van-cell__title {\n  text-decoration: underline;\n  color: #1d1d1d;\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -1971,17 +2188,23 @@ module.exports = ___CSS_LOADER_EXPORT___;
 /* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(48);
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-__webpack_require__(4).default("1a9c40a8", content, true)
+module.exports = __webpack_require__.p + "img/example.b348c14.png";
 
 /***/ }),
 /* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(49);
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+__webpack_require__(4).default("0ac69ce4", content, true)
+
+/***/ }),
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1994,40 +2217,40 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(50);
+var content = __webpack_require__(51);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
-__webpack_require__(4).default("282207c6", content, true)
+__webpack_require__(4).default("75522f51", content, true)
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(3);
 var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(17);
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(51);
-var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(52);
-var ___CSS_LOADER_URL_IMPORT_2___ = __webpack_require__(53);
-var ___CSS_LOADER_URL_IMPORT_3___ = __webpack_require__(54);
-var ___CSS_LOADER_URL_IMPORT_4___ = __webpack_require__(55);
-var ___CSS_LOADER_URL_IMPORT_5___ = __webpack_require__(56);
-var ___CSS_LOADER_URL_IMPORT_6___ = __webpack_require__(57);
-var ___CSS_LOADER_URL_IMPORT_7___ = __webpack_require__(58);
-var ___CSS_LOADER_URL_IMPORT_8___ = __webpack_require__(59);
-var ___CSS_LOADER_URL_IMPORT_9___ = __webpack_require__(60);
-var ___CSS_LOADER_URL_IMPORT_10___ = __webpack_require__(61);
-var ___CSS_LOADER_URL_IMPORT_11___ = __webpack_require__(62);
-var ___CSS_LOADER_URL_IMPORT_12___ = __webpack_require__(63);
-var ___CSS_LOADER_URL_IMPORT_13___ = __webpack_require__(64);
-var ___CSS_LOADER_URL_IMPORT_14___ = __webpack_require__(65);
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(52);
+var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(53);
+var ___CSS_LOADER_URL_IMPORT_2___ = __webpack_require__(54);
+var ___CSS_LOADER_URL_IMPORT_3___ = __webpack_require__(55);
+var ___CSS_LOADER_URL_IMPORT_4___ = __webpack_require__(56);
+var ___CSS_LOADER_URL_IMPORT_5___ = __webpack_require__(57);
+var ___CSS_LOADER_URL_IMPORT_6___ = __webpack_require__(58);
+var ___CSS_LOADER_URL_IMPORT_7___ = __webpack_require__(59);
+var ___CSS_LOADER_URL_IMPORT_8___ = __webpack_require__(60);
+var ___CSS_LOADER_URL_IMPORT_9___ = __webpack_require__(61);
+var ___CSS_LOADER_URL_IMPORT_10___ = __webpack_require__(62);
+var ___CSS_LOADER_URL_IMPORT_11___ = __webpack_require__(63);
+var ___CSS_LOADER_URL_IMPORT_12___ = __webpack_require__(64);
+var ___CSS_LOADER_URL_IMPORT_13___ = __webpack_require__(65);
+var ___CSS_LOADER_URL_IMPORT_14___ = __webpack_require__(66);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___, { hash: "?#iefix" });
@@ -2054,176 +2277,176 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/fa-brands-400.89a52ae.eot";
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/fa-brands-400.c1210e5.woff2";
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/fa-brands-400.329a95a.woff";
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/fa-brands-400.9e13849.ttf";
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/fa-brands-400.216edb9.svg";
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/fa-regular-400.4079ae2.eot";
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/fa-regular-400.68c5af1.woff2";
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/fa-regular-400.3672264.woff";
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/fa-regular-400.1017bce.ttf";
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/fa-regular-400.19e27d3.svg";
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/fa-solid-900.efbd5d2.eot";
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/fa-solid-900.ada6e6d.woff2";
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/fa-solid-900.c6ec080.woff";
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/fa-solid-900.07c3313.ttf";
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/fa-solid-900.13de59f.svg";
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(67);
+var content = __webpack_require__(68);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
-__webpack_require__(4).default("7631f024", content, true)
+__webpack_require__(4).default("ff59d7b8", content, true)
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(3);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, "@font-face {\n  font-family: \"iconfont\";\n  /* Project id 2617050 */\n  src: url('//at.alicdn.com/t/font_2617050_893yu28xhpw.woff2?t=1625907653380') format('woff2'),\r\n  url('//at.alicdn.com/t/font_2617050_893yu28xhpw.woff?t=1625907653380') format('woff'),\r\n  url('//at.alicdn.com/t/font_2617050_893yu28xhpw.ttf?t=1625907653380') format('truetype');\n}\n\n.iconfont {\n  font-family: \"iconfont\" !important;\n  font-size: 0.213333rem;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.icon-qianbao:before {\n  content: \"\\e780\";\n}\n\n.icon-alarm:before {\n  content: \"\\e60f\";\n}\n\n.icon-q:before {\n  content: \"\\e60d\";\n}\n\n.icon-shiliangzhinengduixiang:before {\n  content: \"\\e60e\";\n}\n\n.icon-a-mengbanzu12:before {\n  content: \"\\e60c\";\n}\n\n.icon-sign:before {\n  content: \"\\e60b\";\n}\n\n.icon-image:before {\n  content: \"\\e60a\";\n}\n\n.icon-index-star:before {\n  content: \"\\e605\";\n}\n\n.icon-anniu:before {\n  content: \"\\e600\";\n}\n\n.icon-erac:before {\n  content: \"\\e601\";\n}\n\n.icon-nft:before {\n  content: \"\\e602\";\n}\n\n.icon-activity:before {\n  content: \"\\e603\";\n}\n\n.icon-billboard:before {\n  content: \"\\e604\";\n}\n\n.icon-planet:before {\n  content: \"\\e606\";\n}\n\n.icon-message:before {\n  content: \"\\e607\";\n}\n\n.icon-user:before {\n  content: \"\\e608\";\n}\n\n.icon-lang:before {\n  content: \"\\e609\";\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, "@font-face {\n  font-family: \"iconfont\";\n  /* Project id 2617050 */\n  src: url('//at.alicdn.com/t/font_2617050_k5uaoqnl2j.woff2?t=1626086842529') format('woff2'),\n  url('//at.alicdn.com/t/font_2617050_k5uaoqnl2j.woff?t=1626086842529') format('woff'),\n  url('//at.alicdn.com/t/font_2617050_k5uaoqnl2j.ttf?t=1626086842529') format('truetype');\n}\n\n.iconfont {\n  font-family: \"iconfont\" !important;\n  font-size: 0.213333rem;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.icon-edit:before {\n  content: \"\\e611\";\n}\n\n.icon-copy:before {\n  content: \"\\e610\";\n}\n\n.icon-qianbao:before {\n  content: \"\\e780\";\n}\n\n.icon-alarm:before {\n  content: \"\\e60f\";\n}\n\n.icon-q:before {\n  content: \"\\e60d\";\n}\n\n.icon-shiliangzhinengduixiang:before {\n  content: \"\\e60e\";\n}\n\n.icon-a-mengbanzu12:before {\n  content: \"\\e60c\";\n}\n\n.icon-sign:before {\n  content: \"\\e60b\";\n}\n\n.icon-image:before {\n  content: \"\\e60a\";\n}\n\n.icon-index-star:before {\n  content: \"\\e605\";\n}\n\n.icon-anniu:before {\n  content: \"\\e600\";\n}\n\n.icon-erac:before {\n  content: \"\\e601\";\n}\n\n.icon-nft:before {\n  content: \"\\e602\";\n}\n\n.icon-activity:before {\n  content: \"\\e603\";\n}\n\n.icon-billboard:before {\n  content: \"\\e604\";\n}\n\n.icon-planet:before {\n  content: \"\\e606\";\n}\n\n.icon-message:before {\n  content: \"\\e607\";\n}\n\n.icon-user:before {\n  content: \"\\e608\";\n}\n\n.icon-lang:before {\n  content: \"\\e609\";\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsSAAALEgHS3X78AAACBElEQVRYw9WZzW2DMBTH/6CqZ249lg3CBmGDMgIjZARGoBOUY49ce6MbkA049pioA7weYuiLZSN/JTh/yRI4iv2Ln+33kYSIEEglgE8AL6zvCGAEMIg2WY9KRDatJKKeLuqIKGefzf1r6sUYxnPagA2KCflkORH9kpkGU1ATuFYzyWTwo2qx0ifNGK0PYEZEo+bX15ZbA0RUaawwirmsAXvFilUOYCrQSTF2YQs4SJs7CwDHraNagMwG8CAgm4BgcusU5nY6xbgjZBsboGq/L1dQEtCT+CgTHudVvH8Lz4RUdOQAWuGOttAJwIG972dA1RKXG5pavjkwuyiuakPASmLJ02UpLzoD6D1MVYvmql4wLBGSDOgDVwH4EK3yhLwCLFiHzyEpNM+24gxFCmDHOqYIrhzOsEvo+iJMHMxasIh6z+6xeSVGh61DPKLmsjlxNZnLNjxblCJyPZyJfbxIw8bxCdFK2cRHRp5HYFXOcEyFCXhu66pR8+ySX/+PI53GydOX1o4JFW88A6znYGEKsHduESxkPIlpAidGwcKtWFqlulEeJuTfWh2DA4BmfnjSfKFhuUJ7B7g39v5+FXIZbNYuxsR9UNT1oip9FJoCT1TFo7XyWx5D+W2tgNkaRiU3LWCulYAnzbb42aIELIPqXOJNiughPUkJ4AvAs+ZviF7cq1b6A0/HXQYuE/zFAAAAAElFTkSuQmCC"
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_iHeader_vue_vue_type_style_index_0_id_6a8a4f4a_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_iHeader_vue_vue_type_style_index_0_id_6a8a4f4a_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_iHeader_vue_vue_type_style_index_0_id_6a8a4f4a_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_iHeader_vue_vue_type_style_index_0_id_6a8a4f4a_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_iHeader_vue_vue_type_style_index_0_id_6a8a4f4a_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-
-
-/***/ }),
-/* 70 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(3);
-var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".i-header[data-v-6a8a4f4a] {\n  height: 1.6rem;\n  padding: 0 0.613333rem;\n}\n.i-header .i-header-c[data-v-6a8a4f4a] {\n  position: relative;\n  height: 1.6rem;\n}\n.i-header .logo[data-v-6a8a4f4a] {\n  line-height: 1.6rem;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  right: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  pointer-events: none;\n}\n.i-header .logo .logo-img[data-v-6a8a4f4a] {\n  width: 1.92rem;\n  height: 0.613333rem;\n}\n.i-header .header-lr[data-v-6a8a4f4a] {\n  height: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.i-header .header-lr .left .left-back[data-v-6a8a4f4a] {\n  width: 0.8rem;\n  height: 0.8rem;\n  padding: 0;\n  background: rgba(255, 255, 255, 0.4);\n  border-radius: 0.133333rem;\n  box-shadow: 0 0 0.2rem 0 rgba(5, 0, 0, 0.15);\n}\n.i-header .header-lr .left .message-btn[data-v-6a8a4f4a] {\n  font-size: 0.4rem;\n  font-weight: 400;\n  color: #6a47fe;\n}\n.i-header .header-lr .right[data-v-6a8a4f4a] {\n  display: flex;\n  color: #1B1B1B;\n  font-size: 0.693333rem;\n}\n.badge[data-v-6a8a4f4a] {\n  font-size: 0.32rem;\n}\n.o-header-popup[data-v-6a8a4f4a] {\n  height: calc(100% - 1.6rem);\n  top: 0;\n  bottom: 0;\n  transition: transform 0.3s;\n  transform: translate3d(0, 1.6rem, 0);\n  overflow-y: initial;\n}\n.o-header-popup[data-v-6a8a4f4a] .van-popup-slide-right-enter,\n.o-header-popup[data-v-6a8a4f4a] .van-popup-slide-right-leave-active {\n  transform: translate3d(100%, 1.6rem, 0);\n  transition: transform 0.3s;\n}\n.o-header-popup .o-header-p[data-v-6a8a4f4a] {\n  width: 4.666667rem;\n  min-height: 100%;\n  background: #ffffff;\n  box-shadow: 0 0.253333rem 0.386667rem 0 rgba(5, 0, 0, 0.45);\n  display: flex;\n  flex-direction: column;\n}\n.o-header-popup .o-header-p .tabs[data-v-6a8a4f4a] {\n  flex: 1;\n}\n.o-header-popup .o-header-p .tabs .tab[data-v-6a8a4f4a] {\n  padding: 0.466667rem 0 0.4rem 0.533333rem;\n  font-size: 0.373333rem;\n  color: #1d1d1d;\n}\n.o-header-popup .o-header-p .tabs .tab.border[data-v-6a8a4f4a] {\n  border-bottom: 0.026667rem solid #e5e5e5;\n}\n.o-header-popup .o-header-p .tabs .tab.no-set[data-v-6a8a4f4a] {\n  color: #979797;\n}\n.o-header-popup .o-header-p .tabs .tab .hide[data-v-6a8a4f4a] {\n  visibility: hidden;\n}\n.o-header-popup .o-header-p .tabs .tab .icon[data-v-6a8a4f4a] {\n  font-size: 0.4rem;\n  margin-right: 0.266667rem;\n}\n.o-header-popup .o-header-p .out[data-v-6a8a4f4a] {\n  height: 1.066667rem;\n  line-height: 1.066667rem;\n  font-size: 0.373333rem;\n  text-align: center;\n  border-top: 0.013333rem solid #e5e5e5;\n}\n[data-v-6a8a4f4a] .van-search {\n  width: 100%;\n  border-radius: 0.24rem;\n  padding-top: 0;\n}\n[data-v-6a8a4f4a] .van-search .van-search__content {\n  border-radius: 0.24rem;\n}\n.erax-search[data-v-6a8a4f4a] {\n  font-size: 0.586667rem;\n}\n.o-new-offer[data-v-6a8a4f4a] {\n  padding: 0 0.266667rem 0 0.133333rem;\n  height: 0.8rem;\n  background: linear-gradient(122deg, #c75bff 0%, #7632ff 100%);\n  border: 0.066667rem solid #ffffff;\n  border-radius: 0.466667rem;\n  box-shadow: 0 0 0.2rem 0 rgba(5, 0, 0, 0.3);\n  color: #FFFFFF;\n  font-size: 0.32rem;\n  text-align: left;\n  display: flex;\n  align-items: center;\n  line-height: 0.8rem;\n  box-sizing: content-box;\n}\n.o-new-offer .o-tianjia[data-v-6a8a4f4a] {\n  margin-right: 0.133333rem;\n  width: 0.533333rem;\n  height: 0.533333rem;\n}", ""]);
-// Exports
-module.exports = ___CSS_LOADER_EXPORT___;
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_iHeader_vue_vue_type_style_index_0_id_246b14b3_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_iHeader_vue_vue_type_style_index_0_id_246b14b3_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_iHeader_vue_vue_type_style_index_0_id_246b14b3_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_iHeader_vue_vue_type_style_index_0_id_246b14b3_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_iHeader_vue_vue_type_style_index_0_id_246b14b3_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 /* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/q.25b95cd.svg";
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(3);
+var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".i-header[data-v-246b14b3] {\n  height: 1.6rem;\n  padding: 0 0.613333rem;\n}\n.i-header .i-header-c[data-v-246b14b3] {\n  position: relative;\n  height: 1.6rem;\n}\n.i-header .logo[data-v-246b14b3] {\n  line-height: 1.6rem;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  right: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  pointer-events: none;\n}\n.i-header .logo .logo-img[data-v-246b14b3] {\n  width: 1.92rem;\n  height: 0.613333rem;\n}\n.i-header .header-lr[data-v-246b14b3] {\n  height: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.i-header .header-lr .left .left-back[data-v-246b14b3] {\n  width: 0.8rem;\n  height: 0.8rem;\n  padding: 0;\n  background: rgba(255, 255, 255, 0.4);\n  border-radius: 0.133333rem;\n  box-shadow: 0 0 0.2rem 0 rgba(5, 0, 0, 0.15);\n}\n.i-header .header-lr .left .message-btn[data-v-246b14b3] {\n  font-size: 0.4rem;\n  font-weight: 400;\n  color: #6a47fe;\n}\n.i-header .header-lr .right[data-v-246b14b3] {\n  display: flex;\n  color: #1B1B1B;\n  font-size: 0.693333rem;\n}\n.badge[data-v-246b14b3] {\n  font-size: 0.32rem;\n}\n.o-header-popup[data-v-246b14b3] {\n  height: calc(100% - 1.6rem);\n  top: 0;\n  bottom: 0;\n  transition: transform 0.3s;\n  transform: translate3d(0, 1.6rem, 0);\n  overflow-y: initial;\n}\n.o-header-popup[data-v-246b14b3] .van-popup-slide-right-enter,\n.o-header-popup[data-v-246b14b3] .van-popup-slide-right-leave-active {\n  transform: translate3d(100%, 1.6rem, 0);\n  transition: transform 0.3s;\n}\n.o-header-popup .o-header-p[data-v-246b14b3] {\n  width: 4.666667rem;\n  min-height: 100%;\n  background: #ffffff;\n  box-shadow: 0 0.253333rem 0.386667rem 0 rgba(5, 0, 0, 0.45);\n  display: flex;\n  flex-direction: column;\n}\n.o-header-popup .o-header-p .tabs[data-v-246b14b3] {\n  flex: 1;\n}\n.o-header-popup .o-header-p .tabs .tab[data-v-246b14b3] {\n  padding: 0.466667rem 0 0.4rem 0.533333rem;\n  font-size: 0.373333rem;\n  color: #1d1d1d;\n}\n.o-header-popup .o-header-p .tabs .tab.border[data-v-246b14b3] {\n  border-bottom: 0.026667rem solid #e5e5e5;\n}\n.o-header-popup .o-header-p .tabs .tab.no-set[data-v-246b14b3] {\n  color: #979797;\n}\n.o-header-popup .o-header-p .tabs .tab .hide[data-v-246b14b3] {\n  visibility: hidden;\n}\n.o-header-popup .o-header-p .tabs .tab .icon[data-v-246b14b3] {\n  font-size: 0.4rem;\n  margin-right: 0.266667rem;\n}\n.o-header-popup .o-header-p .out[data-v-246b14b3] {\n  height: 1.066667rem;\n  line-height: 1.066667rem;\n  font-size: 0.373333rem;\n  text-align: center;\n  border-top: 0.013333rem solid #e5e5e5;\n}\n[data-v-246b14b3] .van-search {\n  width: 100%;\n  border-radius: 0.24rem;\n  padding-top: 0;\n}\n[data-v-246b14b3] .van-search .van-search__content {\n  border-radius: 0.24rem;\n}\n.erax-search[data-v-246b14b3] {\n  font-size: 0.586667rem;\n}\n.o-new-offer[data-v-246b14b3] {\n  padding: 0 0.266667rem 0 0.133333rem;\n  height: 0.8rem;\n  background: linear-gradient(122deg, #c75bff 0%, #7632ff 100%);\n  border: 0.066667rem solid #ffffff;\n  border-radius: 0.466667rem;\n  box-shadow: 0 0 0.2rem 0 rgba(5, 0, 0, 0.3);\n  color: #FFFFFF;\n  font-size: 0.32rem;\n  text-align: left;\n  display: flex;\n  align-items: center;\n  line-height: 0.8rem;\n  box-sizing: content-box;\n}\n.o-new-offer .o-tianjia[data-v-246b14b3] {\n  margin-right: 0.133333rem;\n  width: 0.533333rem;\n  height: 0.533333rem;\n}", ""]);
+// Exports
+module.exports = ___CSS_LOADER_EXPORT___;
+
 
 /***/ }),
 /* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/a.b23b49a.svg";
+module.exports = __webpack_require__.p + "img/q.796d938.svg";
 
 /***/ }),
 /* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/a.7a229f3.svg";
+
+/***/ }),
+/* 74 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_iFooter_vue_vue_type_style_index_0_id_07d8a747_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(23);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_iFooter_vue_vue_type_style_index_0_id_07d8a747_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_iFooter_vue_vue_type_style_index_0_id_07d8a747_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_iFooter_vue_vue_type_style_index_0_id_07d8a747_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_iFooter_vue_vue_type_style_index_0_id_07d8a747_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_iFooter_vue_vue_type_style_index_0_id_07d8a747_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_iFooter_vue_vue_type_style_index_0_id_07d8a747_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_iFooter_vue_vue_type_style_index_0_id_07d8a747_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_iFooter_vue_vue_type_style_index_0_id_07d8a747_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_5_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_5_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_5_oneOf_1_2_node_modules_less_loader_6_2_0_less_loader_dist_cjs_js_ref_5_oneOf_1_3_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_iFooter_vue_vue_type_style_index_0_id_07d8a747_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -2236,42 +2459,42 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_default_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_default_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_default_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_default_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_default_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_default_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(23);
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_default_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_default_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_default_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_default_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(3);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, "#__nuxt,\n#__layout,\n#app {\n  height: 100vh;\n  /*overflow-y: hidden;*/\n}\n\n/*#r-offer::-webkit-scrollbar, #__layout::-webkit-scrollbar, #app::-webkit-scrollbar {*/\n\n/*  display: none;*/\n\n/*}*/\nhtml {\n  font-family: 'Source Sans Pro',\r\n  -apple-system,\r\n  BlinkMacSystemFont,\r\n  'Segoe UI',\r\n  Roboto,\r\n  'Helvetica Neue',\r\n  Arial,\r\n  sans-serif;\n  font-size: 0.213333rem;\n  word-spacing: 0.013333rem;\n  -ms-text-size-adjust: 100%;\n  -webkit-text-size-adjust: 100%;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  box-sizing: border-box;\n}\n*,\n*::before,\n*::after {\n  box-sizing: border-box;\n  margin: 0;\n}\n#i-header {\n  position: fixed;\n  background-color: #fff;\n  left: 0;\n  right: 0;\n  z-index: 9999;\n}\n#i-container {\n  /*height: calc(100vh);*/\n  min-height: calc(100vh - 1.6rem);\n  height: 100%;\n  /*overflow-y: scroll;*/\n}\n#i-container::-webkit-scrollbar {\n  display: none;\n}\n.padding {\n  padding-top: 1.6rem !important;\n  /*padding-bottom: 140px;*/\n}\n.button--green {\n  display: inline-block;\n  border-radius: 0.053333rem;\n  border: 0.013333rem solid #3b8070;\n  color: #3b8070;\n  text-decoration: none;\n  padding: 0.133333rem 0.4rem;\n}\n.button--green:hover {\n  color: #fff;\n  background-color: #3b8070;\n}\n.button--grey {\n  display: inline-block;\n  border-radius: 0.053333rem;\n  border: 0.013333rem solid #35495e;\n  color: #35495e;\n  text-decoration: none;\n  padding: 0.133333rem 0.4rem;\n  margin-left: 0.2rem;\n}\n.button--grey:hover {\n  color: #fff;\n  background-color: #35495e;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, "#__nuxt,\n#__layout,\n#app {\n  height: 100vh;\n  /*overflow-y: hidden;*/\n}\n\n/*#r-offer::-webkit-scrollbar, #__layout::-webkit-scrollbar, #app::-webkit-scrollbar {*/\n\n/*  display: none;*/\n\n/*}*/\nhtml {\n  font-family: 'Source Sans Pro',\n  -apple-system,\n  BlinkMacSystemFont,\n  'Segoe UI',\n  Roboto,\n  'Helvetica Neue',\n  Arial,\n  sans-serif;\n  font-size: 0.213333rem;\n  word-spacing: 0.013333rem;\n  -ms-text-size-adjust: 100%;\n  -webkit-text-size-adjust: 100%;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n  box-sizing: border-box;\n}\n*,\n*::before,\n*::after {\n  box-sizing: border-box;\n  margin: 0;\n}\n#i-header {\n  position: fixed;\n  background-color: #fff;\n  left: 0;\n  right: 0;\n  z-index: 9999;\n}\n#i-container {\n  /*height: calc(100vh);*/\n  min-height: calc(100vh - 1.6rem);\n  height: 100%;\n  /*overflow-y: scroll;*/\n}\n#i-container::-webkit-scrollbar {\n  display: none;\n}\n.padding {\n  padding-top: 1.6rem !important;\n  /*padding-bottom: 140px;*/\n}\n.button--green {\n  display: inline-block;\n  border-radius: 0.053333rem;\n  border: 0.013333rem solid #3b8070;\n  color: #3b8070;\n  text-decoration: none;\n  padding: 0.133333rem 0.4rem;\n}\n.button--green:hover {\n  color: #fff;\n  background-color: #3b8070;\n}\n.button--grey {\n  display: inline-block;\n  border-radius: 0.053333rem;\n  border: 0.013333rem solid #35495e;\n  color: #35495e;\n  text-decoration: none;\n  padding: 0.133333rem 0.4rem;\n  margin-left: 0.2rem;\n}\n.button--grey:hover {\n  color: #fff;\n  background-color: #35495e;\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_single_container_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_single_container_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_single_container_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_single_container_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_single_container_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_single_container_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24);
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_single_container_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_single_container_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_single_container_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_single_container_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -2284,18 +2507,18 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_with_head_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(26);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_with_head_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_with_head_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_with_head_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_with_head_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_with_head_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25);
+/* harmony import */ var _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_with_head_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_with_head_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_with_head_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_4_1_3_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_15_9_7_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_2_1_8_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_7_vue_loader_lib_index_js_vue_loader_options_with_head_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -2308,7 +2531,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2317,7 +2540,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mutations", function() { return mutations; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actions", function() { return actions; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getters", function() { return getters; });
-/* harmony import */ var _plugins_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
+/* harmony import */ var _plugins_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
 
 const state = () => ({
   // token: getToken(),
@@ -2325,6 +2548,7 @@ const state = () => ({
   locale: 'en-US',
   isLogin: false,
   isNeedLoad: true,
+  nera: 0.1,
   userInfo: {},
   iRewardCount: '',
   iTrendCount: '',
@@ -2352,6 +2576,10 @@ const mutations = {
     }
   },
 
+  SET_NERA(state, data) {
+    state.neraPrice = data;
+  },
+
   CHANGE_DATA(state, data) {
     if ((data.key === 'iRewardCount' || data.key === 'iTrendCount') && !data.val) {
       data.val = '';
@@ -2369,6 +2597,16 @@ const actions = {
   }) {
     let res = await this.$axios.post('/v1/emall/GetRewardUserInfor', {});
     commit('SET_USERINFO', res);
+  },
+
+  async UPDATE_NERA({
+    commit
+  }) {
+    let res = await this.$axios.post('/v1/market/GetSymbolTick', {
+      vSymbol: ["nerausdt@miniTicker"]
+    });
+    let nera = res.vSymbolTick[0].c || 0.1;
+    commit('SET_NERA', nera);
   }
 
 };
@@ -2377,7 +2615,7 @@ const getters = {
 };
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2399,14 +2637,14 @@ const actions = {};
 const getters = {};
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./1.png": 84,
-	"./2.png": 85,
-	"./3.png": 86,
-	"./4.png": 87
+	"./1.png": 85,
+	"./2.png": 86,
+	"./3.png": 87,
+	"./4.png": 88
 };
 
 
@@ -2427,46 +2665,46 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 83;
-
-/***/ }),
-/* 84 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/1.0e13e90.png";
+webpackContext.id = 84;
 
 /***/ }),
 /* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/2.8340ece.png";
+module.exports = __webpack_require__.p + "img/1.0e13e90.png";
 
 /***/ }),
 /* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/3.497f4a5.png";
+module.exports = __webpack_require__.p + "img/2.8340ece.png";
 
 /***/ }),
 /* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/4.2613e5a.png";
+module.exports = __webpack_require__.p + "img/3.497f4a5.png";
 
 /***/ }),
 /* 88 */
-/***/ (function(module) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = JSON.parse("{\"Main01\":\"Question\",\"Main02\":\"Answer\",\"Main03\":\"Upload Answer\",\"Main04\":\"Answers are limited up to: 100mb, JPG, PNG, GIF, MP4, & WEBM.\",\"Main05\":\"Please enter a title\",\"Main06\":\"Create NFT work\",\"Main07\":\"Submit\",\"Main08\":\"Selling Price(1-1000 NERA)\",\"Main09\":\"Offer a reward\",\"Main10\":\"What are you looking for? \",\"Main11\":\"Enter date\",\"Main12\":\"Selling Price(1-1000 NERA)\",\"Main13\":\"Further notes. (optional)\",\"Main14\":\"Enter location (optional)\",\"Main15\":\"Question expires on\",\"Main16\":\"Remaining\",\"Main17\":\"NEXT\",\"Main18\":\"Cast the answer into an NFT and sell on ERAX.\",\"Main19\":\"The ownership of this NFT belongs to ERAX while transaction proceeds belong to the user. You can log-in to the web terminal to check the status of your NFT's. Transaction amounts will be automatically transfered to your account.\",\"Main20\":\"Log-in website to view status.\",\"Main21\":\"Answer for reward\",\"Main22\":\"Welcome to ERAX Time Exchange.You can rewind to the past, or fast-foward to the future.Offering rewards, casting, and transferring digital assets.All proceeds will circulate to the world.\",\"Main23\":\"Share\",\"Main24\":\"Loading\",\"Main25\":\"No more\",\"Main26\":\"Log-in website to view status.\",\"Main27\":\"Contract Address\",\"Main28\":\"Token ID\",\"Main29\":\"Blockchain\",\"Main30\":\"Blockchain information：\",\"Main31\":\"Verifying\",\"Main32\":\"Insufficient balance\",\"Main33\":\"PUBLISH\",\"Main34\":\"For reward\",\"Main35\":\" year ago\",\"Main36\":\" months ago\",\"Main37\":\" weeks ago\",\"Main38\":\" days ago\",\"Main39\":\" hours ago\",\"Main40\":\" minutes ago\",\"Main41\":\" just now\",\"Main42\":\"Selling Price(1-1000 NERA)\",\"Main43\":\"Price\",\"Main44\":\"Done\",\"Main45\":\"Ex. A picture of Elon Musk's at Paypal, 2004.\",\"Billboard01\":\"Recommend\",\"Billboard02\":\"Unconfirmed\",\"Billboard03\":\"Confirmed\",\"Billboard04\":\"Unanswered\",\"Billboard05\":\"ACCEPT\",\"Billboard06\":\"ANSWER\",\"Billboard07\":\"End time:\",\"Billboard08\":\"View more\",\"Billboard09\":\"Blockchain information：\",\"Billboard10\":\"Confirm\",\"Billboard11\":\"Reward will be paid\",\"Billboard12\":\"Create NFT work\",\"Billboard13\":\"Selling Price(1-1000 NERA)\",\"Billboard14\":\"YES\",\"Billboard15\":\"Expired\",\"Billboard16\":\"Cast the answer into an NFT and sell on ERAX.\",\"Billboard17\":\"The ownership of this NFT belongs to ERAX while transaction proceeds belong to the user. You can log-in to the web terminal to check the status of your NFT's. Transaction amounts will be automatically transfered to your account.\",\"Billboard18\":\"Log-in website to view status.\",\"Billboard19\":\"No answers currently\",\"Billboard20\":\"Description\",\"Billboard21\":\"You have successfully accepted the answer and your reward has been completed.\",\"Billboard22\":\"Answer\",\"Message01\":\"Mark all as read\",\"Message02\":\"Notice\",\"Message03\":\"Balance\",\"Message04\":\"Someone replied to your space-time capsule\",\"Message05\":\"Your answer has been accepted\",\"Message06\":\"No further news, \",\"Message07\":\"Post a reward\",\"Message08\":\"Reward expired\",\"Message09\":\"Reward Success\",\"Message10\":\"Rewarded\",\"Message11\":\"Registration rewards\",\"Message12\":\"Invitation rewards\",\"Message13\":\"Invitation reward\",\"Message14\":\"Sign-in reward\",\"Message15\":\"Top up successfully\",\"Message16\":\"Withdraw successfully\",\"Message17\":\"Question reward\",\"Message18\":\"NFT sold successfully\",\"Message19\":\"Your NFT has been uploaded, you can view the status on-site.\",\"Message20\":\"go reply posts.\",\"Message21\":\"No news\",\"Message22\":\"Un-freeze\",\"Message23\":\"Freeze\",\"Account01\":\"Email Address\",\"Account02\":\"Password\",\"Account03\":\"Login\",\"Account04\":\"Forgot password\",\"Account05\":\"Sign up\",\"Account06\":\"Verification code\",\"Account07\":\"Enter 6-16 password\",\"Account08\":\"Invitation Code\",\"Account09\":\"Already have an account\",\"Account10\":\"By signing up, you have read and agree to the\",\"Account11\":\"ERAX User Agreement\",\"Account12\":\"Request code\",\"Account13\":\"Reset password \",\"Account14\":\"Confirmed\",\"Account15\":\"SUCCEED\",\"Account16\":\"Get {nera} NERA\",\"Account17\":\"Invite users to get more rewards\",\"Account18\":\"Invitation Code\",\"Account19\":\"Login successful\",\"Account21\":\"Sign up\",\"Account22\":\"Complete\",\"Account23\":\"Edit profile\",\"Account24\":\"Username (2-16 characters)\",\"Account25\":\"Introduce yourself (100 characters)\",\"Account26\":\"Username can not be empty\",\"Account27\":\"User name limit 2-16 characters\",\"Account28\":\"Successfully modified\",\"Account29\":\"Please enter password\",\"Account30\":\"password error\",\"Account31\":\"Confirm password\",\"Mine01\":\"Invitation Code\",\"Mine02\":\"Frozen NERA\",\"Mine03\":\"Reward\",\"Mine04\":\"Answer\",\"Mine05\":\"More\",\"Mine06\":\"Withdraw\",\"Mine07\":\"Recharge\",\"Mine08\":\"Income statement\",\"Mine09\":\"Balance\",\"Mine10\":\"Address\",\"Mine11\":\"Amount\",\"Mine12\":\"Wallet address\",\"Mine13\":\"Minimum withdrawal {nera}NERA\",\"Mine14\":\"Available\",\"Mine15\":\"Fee\",\"Mine16\":\"Tips\",\"Mine17\":\"Please confirm the information carefully. Funds will not be recovered if information is incorrect.\",\"Mine18\":\"After the withdrawal is successful, there may be congestion in the Ethernet network, please be patient and wait for the account to arrive\",\"Mine19\":\"Copy\",\"Mine20\":\"The NERA required to recharge can be obtained on the Web side, URL:\",\"Mine20-1\":\"It is prohibited to deposit assets other than NERA to this address, non-NERA assets deposited into this address will not be recovered.\",\"Mine21\":\"Recharge requires 30 networks to arrive, please wait patiently\",\"Mine22\":\"Safety verification\",\"Mine23\":\"Request code\",\"Mine24\":\"Verification code\",\"Mine25\":\"Login\",\"Mine26\":\"Daily check-in, rewards 1-10NERA\",\"Mine27\":\"Login now\",\"Mine28\":\"Login successfully\",\"Mine29\":\"Congratulations on getting\",\"Mine30\":\"Come back tommorow\",\"Mine31\":\"You've already checked in\",\"Mine32\":\"Copy Success\",\"Mine33\":\"None\",\"Mine34\":\"Action Under Review\",\"Mine35\":\"Confirming request\",\"Mine36\":\"Withdraw successfully\",\"Mine37\":\"Refuse to withdraw\",\"Mine38\":\"System-action denied\",\"Mine39\":\"User-action denied\",\"Mine40\":\"Abnormal withdrawal\",\"Mine41\":\"Recharging\",\"Mine42\":\"Recharge cancel\",\"Mine43\":\"Welcome to the planet ERAX\",\"Nav01\":\"ERAX Planet\",\"Nav02\":\"Billboard\",\"Nav03\":\"Activity\",\"Nav04\":\"Messages\",\"Nav05\":\"My Profile\",\"Nav06\":\"Log in\",\"Nav07\":\"Help Center\",\"Nav08\":\"Log out\",\"Nav09\":\"Marketplace\",\"Nav10\":\"My Wallet\",\"Nav11\":\"Click here to share\",\"Tip01\":\"Listing Success\",\"Tip02\":\"Reply Success\",\"Tip03\":\"You have successfully accepted the answer and your reward has been sent.\",\"Tip04\":\"Works up to 100M-Answer\",\"Tip05\":\"Format does not match-answer\",\"Tip06\":\"Incorrect password or email-login page\",\"Tip07\":\"Wrong invitation code-registration page\",\"Tip08\":\"Email does not exist-registration page\",\"Tip09\":\"Verification code error-registration page\",\"Tip10\":\"Password limit 6-16 digits-registration page\",\"Tip11\":\"Verification code error-registration page\",\"Tip12\":\"Verification code error-registration page\",\"Tip13\":\"Email account already exists-registration page\",\"Tip14\":\"Mixture of letters and numbers.\",\"Tip15\":\"Avatar format is not supported-mine\",\"Tip16\":\"Avatar limit 8M-mine\",\"Tip17\":\"Username limit (2-16 characters)\",\"Tip18\":\"One-sentence introduction (limit 100 characters)\",\"Tip19\":\"Email address is invalid\",\"Tip20\":\"The user does not exist\",\"Tip21\":\"User registration failed\",\"Tip22\":\"Email Registered\",\"Tip23\":\"Email not registered\",\"Tip24\":\"Google is not validated\",\"Tip25\":\"Email not verified\",\"Tip26\":\"Email format error\",\"Help01\":\"Help Center\",\"Help02\":\"ERAX\",\"Help03\":\"ERAX is an industry-leading trading platform for encrypted collections and non-homogeneous tokens (NFT). It is positioned to bring a unique blockchain digital experience to everyone while supporting NFT assets including ERC721 and ERC1155. Creation, distribution and transaction circulation are all supported. ERAX provides good liquidity for every creator while promoting the free circulation of NFT's global value. An ecosystem where all participants benefit from.\",\"Help04\":\"ERAX-The mobile terminal is a timeline-based reward questionnaire event. Users can find information that is meaningful to them by posting rewards. Respondents can also get rewards by providing high-quality content. These NFT’s will be sold on the ERAX platform.\",\"Help05\":\"How to get NERA？\",\"Help06\":\"（1）Perform the following actions\",\"Help07\":\"First 10,000 users who sign up for an account with e-mail will be rewarded with 100 NERA.\",\"Help08\":\"Invitation code: 50 NERA will be rewarded to both parties when users sign-up for an account through invitation codes. (A maximum of 10 times, event will end after the first 10,000 invites are registered)\",\"Help09\":\"Sign-in reward: Sign in each day for 1NERA. (Limited to 180 days)\",\"Help10\":\"ERAX community selects 1~10 reward orders as \\\"high-quality questions\\\" every day and rewards a certain number of NERA to publishers.\",\"Help11\":\"Participate in activities or tasks on the ERAX platform for additional NERA. \",\"Help12\":\"(2) Obtain ERAC\",\"Help13\":\"ERAC users have privileges of currency mining and platform profit dividends. As long as you hold ERAC, you can enjoy these two rights. Coin holders can withdraw this part of the proceeds from the NERA mining contract and the ERAC dividend contract at any time.\",\"Help14\":\"The platform will reward ERAC of different levels according to the contribution of the release of the reward or the reply to the question.\",\"Help15\":\"For detailed introduction of ERAC, please refer to the official website: \",\"Help16\":\"(3) Sell your own NFT on the WEB website (erax.io)\",\"Help17\":\"When your issued reward order or reply is cast as an NFT, ERAC will sell the NFT on its behalf and transfer the sales deducted from the platform service fee to your personal account.\",\"Help18\":\"You can also create NFT directly on ERAX.IO to sell and get NERA.\",\"Help19\":\"What’s an NFT?\",\"Help20\":\"NFT is called Non-Fungible Token, non-fungible token. It is the only encrypted currency token used to represent digital assets. It has characteristics of indivisible, irreplaceable, and unique properties.\",\"Help21\":\"How to generate an NFT?  \",\"Help22\":\"Users can question & answer on the ERAX platform. The entire process will generate an NFT.\",\"Help23\":\"When the user answers a question, the NFT creation function will auto generate an NFT\",\"Help24\":\"NFT copyright and revenue\",\"Help25\":\"The copyright of the NFT generated through the question and answer platform belongs to ERAX official. Income generated belongs to the user. (NFT income of the entire question & answer belongs to questioner; income of the answered NFT belongs to the replier). ERAX will help users sell on shelf. Once a sale is successful, the platform will charge a 2.5% handling fee. Rest of the proceeds will be credited to the user's platform account.\",\"Help26\":\"Advisory Service\",\"Help27\":\"If you have any questions, please dont hesitate to contact us:\",\"Deal01\":\"ERAX User Agreement\",\"Deal02\":\"Welcome to ERAX.\",\"Deal03\":\"Please read the following terms carefully. If you disagree with any of the terms in this agreement, you can choose to not enter ERAX. When your registration is complete, whether you enter ERAC or publish any content on ERAC, it means that you fully accept all the terms under this agreement.\",\"Deal04\":\"Rules of Use\",\"Deal05\":\"1. After the user has successfully registered, ERAC will give each user a user account and corresponding password. The user account and password shall be kept by the user; the user shall be legally responsible for all activities and events conducted with his user account.\",\"Deal06\":\"2. The ERAX mobile terminal is a timeline-based reward question and answer platform. The information published by users through ERAC is public information. Other third parties can obtain the information published by users through EAX. The publication of any information by the user recognizes that the information is Public information, and solely bear legal responsibility for this behavior; any information that users do not want to be known to other third parties should not be published on ERAC.\",\"Deal07\":\"3. The user promises not to use ERAC in any way to directly or indirectly engage in acts that violate the laws of various countries and social ethics, and ERAC reserves the right to delete the content that violates the above commitments.\",\"Deal08\":\"4. Users are not allowed to use the EAX service to produce, upload, copy, publish, disseminate or reprint the following content:\",\"Deal09\":\"Endanger national security, leak state secrets, and subvert state power;\",\"Deal10\":\"Inciting ethnic hatred, ethnic discrimination, and undermining ethnic unity;\",\"Deal11\":\"Spread rumors, disrupt social order, and undermine social stability;\",\"Deal12\":\"Spreading obscenity, pornography, gambling, violence, murder, terror or instigating crime;\",\"Deal13\":\"Insult or slander others, infringe on the legal rights of others;\",\"Deal14\":\"Information that contains other content prohibited by laws and administrative regulations.\",\"Deal15\":\"5.ERAX has the right to review and supervise the user’s use of ERAC. If the user violates any of the above regulations when using ERAC, ERAC or its authorized person has the right to require the user to correct or directly take all necessary measures (including but not limited to changing or deleting content posted by the user, suspend or terminate the user's right to use ERAX) to reduce the impact of the user's improper behavior.\",\"Deal16\":\"Intellectual Property\",\"Deal17\":\"ERAX mobile terminal is a timeline-based reward question and answer platform. We respect and encourage the content created by ERAX users, recognize the importance of protecting intellectual property rights for the survival and development of EAX, and promise to protect intellectual property rights as one of the basic principles of EAX operation.\",\"Deal18\":\"1.All original content (including but not limited to answers, articles and comments) published by users on ERAX belongs to the users themselves. The user can authorize a third party to use it in any way without the consent of ERAX.\",\"Deal19\":\"2.Once the NFT is minted, the ownership of the NFT belongs to the ERAX platform and transaction proceeds belong to the individual. You can log in to the WEB terminal to check whether the NFT has been traded, the transaction amount will be automatically transferred to your platform account, and the transaction amount can be withdrawn to your ETH wallet.\",\"Deal20\":\"3.Texts, pictures, videos, etc. contained in the network services provided by EAX are protected by copyright, trademark rights and other laws. Without the consent of the relevant right holders (including EAX and other original right holders), the above content shall not be displayed on any platform. Is directly or indirectly released, used, adapted or redistributed for release or use purposes, or used for any other commercial purposes.\",\"Deal21\":\"4.In order to promote sharing and dissemination, users grant all the content published on ERAX free, irrevocable, and non-exclusive use license, and ERAX has the right to use the content on ERAX related products and services in various forms , Including but not limited to websites and published applications or other Internet products.\",\"Deal22\":\"5.For content uploaded or published on ERAC, users should ensure that it is the copyright owner or has obtained legal authorization, and that the content will not infringe the legal rights of any third party. If a third party raises an objection to copyright, ERAX has the right to delete the relevant content according to the actual situation, and has the right to pursue the legal responsibility of the user. If losses are caused to ERAX or any third party, the user shall be responsible for full compensation.\",\"Deal23\":\"6.If any third party infringes on the rights of ERAC users, the user agrees to authorize ERAC or its designated agent to raise warnings, complaints, initiate administrative enforcement, litigation, appeal, or negotiate a settlement on behalf of ERAC itself or the user against the third party. The user agrees to participate in joint rights protection if ERAC deems it necessary.\",\"Deal24\":\"7.ERAX has the right but no obligation to review the content posted by users, and has the right to deal with infringing information based on relevant evidence in combination with laws and regulations from the ERAX community guidelines.\",\"Deal25\":\"Personal Privacy\",\"Deal26\":\"Respecting the privacy of users’ personal privacy information is the consistent principle of ERAC. ERAC will fully protect users’ personal privacy information through technical means and strengthening internal management. Except for the requirements of laws or legal authority with explicit authorization. ERAX guarantees that it will not disclose the user's personal privacy information or the non-public content stored by the user when using the service. At the same time, in order to operate and improve ERAC’s technology and services, ERAC may collect and use or provide users’ non-personal privacy information to third parties, which will help ERAC to provide users with a better user experience and service quality.\",\"Deal27\":\"Your use or continued use of our services means that you agree to our collection, use, storage and sharing of your relevant information in accordance with the EAX \\\"ERAX Privacy Protection Guidelines\\\".\",\"Deal28\":\"Disclaimer\",\"Deal29\":\"1.ERAX cannot guarantee the correctness of the answers or comments posted by users.\",\"Deal30\":\"2.The content posted by users on ERAC only expresses their personal positions and opinions, and does not represent the positions or opinions of ERAC. As the publisher of the content, you are responsible for the content published. All disputes caused by the published content shall be borne by the publisher of the content for all legal and joint liabilities. ERAX does not assume any legal and joint liability.\",\"Deal31\":\"3.ERAX does not guarantee that the network service will definitely meet the user's requirements, nor does it guarantee that the network service will not be interrupted, nor does it guarantee the timeliness, security, and accuracy of the network service.\",\"Deal32\":\"4.For network service interruption or other defects caused by force majeure or reasons beyond EAX's control, ERAC does not assume any responsibility, but will do its best to reduce the loss and impact caused to users.\",\"Deal33\":\"协议修改\",\"Deal34\":\"1.根据互联网的发展和有关法律、法规及规范性文件的变化，或者因业务发展需要，ERAX有权对本协议的条款作出修改或变更，一旦本协议的内容发生变动，ERAX将会直接在ERAX网站上公布修改之后的协议内容，该公布行为视为ERAX已经通知用户修改内容。ERAX也可采用电子邮件或私信的传送方式，提示用户协议条款的修改、服务变更、或其它重要事项。\",\"Deal35\":\"2.如果不同意ERAX对本协议相关条款所做的修改，用户有权并应当停止使用ERAX。如果用户继续使用ERAX，则视为用户接受ERAX对本协议相关条款所做的修改。\",\"Day01\":\"3days\",\"Day02\":\"5days\",\"Day03\":\"1week\",\"Day04\":\"1month\",\"Day05\":\"2months\",\"Day06\":\"3months\",\"Day07\":\"4months\",\"Day08\":\"5months\",\"Day09\":\"6months\",\"Day10\":\"7months\",\"Day11\":\"8months\",\"Day12\":\"9months\",\"Day13\":\"10months\",\"Day14\":\"11months\",\"Day15\":\"1year\",\"picker1\":\"Cancel\",\"picker2\":\"Submit\",\"ERR-800\":\"User does not exist\",\"ERR-801\":\"User registration failed\",\"ERR-802\":\"Invalid phone\",\"ERR-803\":\"Invalid email\",\"ERR-804\":\"Phone registered\",\"ERR-805\":\"Email has been registered\",\"ERR-811\":\"Phone is not registered\",\"ERR-812\":\"Email not registered\",\"ERR-818\":\"Google not verified\",\"ERR-819\":\"Unverified phone\",\"ERR-820\":\"Unverified email\",\"ERR-821\":\"Phone format error\",\"ERR-822\":\"Email format error\",\"ERR-823\":\"Invalid invitation code\",\"ERR-900\":\"Wrong password:1\",\"ERR-901\":\"Wrong passwor: 2\",\"ERR-902\":\"Wrong password: 3\",\"ERR-903\":\"Wrong password: 4\",\"ERR-904\":\"Wrong password: 5\",\"ERR-906\":\"Too many failed attempts; please reset password\",\"ERR-907\":\"Password format is wrong\",\"ERR-908\":\"Non-matching passwords\",\"ERR-920\":\"SMS verification code error\",\"ERR-921\":\"Email verification code error\",\"ERR-922\":\"New SMS verification code error\",\"ERR-923\":\"New email verification code error\",\"ERR-924\":\"SMS verification code is invalid\",\"ERR-925\":\"Invalid email verification code\",\"ERR-926\":\"SMS verification code not sent\",\"ERR-927\":\"Email verification code not sent\",\"ERR-928\":\"SMS verification code expired\",\"ERR-929\":\"Email verification code expired\",\"ERR-930\":\"SMS verification code restrictions\",\"ERR-931\":\"Email verification code restrictions\",\"ERR-932\":\"Failed to send SMS to third-party platform\",\"ERR-933\":\"Failed to send email to third-party platform\",\"ERR-940\":\"Google security key expired\",\"ERR-941\":\"Google verification code error\",\"ERR-942\":\"New Google verification code error\",\"ERR-960\":\"Not allowed to close\",\"ERR-500\":\"The system is busy\",\"ERR-501\":\"Protocol execution failed\",\"ERR-503\":\"Agreement does not exist\",\"ERR-504\":\"Json format error\",\"ERR-505\":\"Kafka call error\",\"ERR-506\":\"API access limit\",\"ERR-507\":\"blacklist\",\"ERR-508\":\"URL is invalid\",\"ERR-509\":\"Token is invalid\",\"ERR-510\":\"The system is busy\",\"ERR-511\":\"Signature error\",\"ERR-520\":\"URL path error\",\"ERR-521\":\"Token has expired\",\"ERR-522\":\"Token not verified\",\"ERR-523\":\"Token creation failed\",\"ERR-601\":\"Redis error\",\"ERR-602\":\"Mysql error\",\"ERR-603\":\"Mysql empty data\",\"ERR-604\":\"Data error in redis\",\"ERR-605\":\"LevelDB empty data\",\"ERR-606\":\"LevelDB error\",\"ERR-701\":\"Parameter error\",\"ERR-702\":\"Parameter format error\",\"ERR-724\":\"Parameter null error\",\"ERR-725\":\"Parameter value error\",\"ERR-726\":\"Parameter type error\",\"ERR-100000\":\"Public chain error\",\"ERR-100001\":\"Invalid currency\",\"ERR-100002\":\"Invalid merchant\",\"ERR-100003\":\"Invalid user account\",\"ERR-100004\":\"Invalid coin account\",\"ERR-100005\":\"Repeated withdrawal request\",\"ERR-100006\":\"Hot wallet does not exist\",\"ERR-100007\":\"Transfer to yourself\",\"ERR-100008\":\"Bill does not exist\",\"ERR-100009\":\"Transaction does not exist\",\"ERR-100010\":\"Wrong public chain\",\"ERR-100011\":\"Address data verification failed\",\"ERR-100012\":\"Address does not exist\",\"ERR-100013\":\"Transaction signature failed\",\"ERR-100014\":\"Transaction broadcast failed\",\"ERR-100015\":\"Failed to retry the deposit process\",\"ERR-100016\":\"Insufficient account balance\",\"ERR-100017\":\"Audit does not exist\",\"ERR-100018\":\"ERC20 address does not exist\",\"ERR-100019\":\"API failed\",\"ERR-100020\":\"Recharge closed\",\"ERR-100021\":\"Withdrawal closed\",\"ERR-100022\":\"Reviewed\",\"ERR-100023\":\"The preliminary review has not been operated\",\"ERR-100024\":\"The preliminary trial has been rejected\",\"ERR-100028\":\"No change address\",\"ERR-100029\":\"Multi-signature\",\"ERR-100030\":\"ETH transaction blocked\",\"ERR-100031\":\"Withdrawal wallet cannot be deleted\",\"ERR-100034\":\"Short wallet name\",\"ERR-100035\":\"Wallet name already exists\",\"ERR-100036\":\"Transaction exists\",\"ERR-1001\":\"hmac summary failed\",\"ERR-1002\":\"User url error\",\"ERR-1003\":\"Failed to verify signature\",\"ERR-1004\":\"url header information error\",\"ERR-1005\":\"Signature expired\",\"ERR-1006\":\"Wrong timestamp\",\"ERR-1007\":\"Time conversion failed\",\"ERR-1009\":\"User access limit reached\",\"ERR-1010\":\"Unable to find the corresponding tars structure\",\"ERR-1011\":\"Cannot find processing module\",\"ERR-1012\":\"API name already exists\",\"ERR-1013\":\"API password is invalid\",\"ERR-1014\":\"No Access\",\"ERR-1016\":\"api restriction\",\"ERR-1017\":\"Address format error\",\"ERR-1018\":\"Remarks are too short\",\"ERR-1019\":\"Password format is wrong\",\"ERR-1020\":\"Environment error\",\"ERR-1021\":\"Upload file format is not supported\",\"ERR-1022\":\"Daily limit for uploading files\",\"ERR-1023\":\"Upload file size limit\",\"ERR-1030\":\"Wallet has not yet opened an account\",\"ERR-1031\":\"Invalid address\",\"ERR-1032\":\"The withdrawal amount exceeds the maximum index\",\"ERR-1033\":\"Withdrawal amount is lower than the minimum limit\",\"ERR-1034\":\"Insufficient withdrawal amount\",\"ERR-1035\":\"The current channel does not support recharge of this currency\",\"ERR-1036\":\"User withdrawal channel closed\",\"ERR-1101\":\"User already exists\",\"ERR-1102\":\"Invalid user withdrawal password\",\"ERR-1103\":\"User account already exists\",\"ERR-1104\":\"The user has been authenticated or is in the process of authentication, do not repeat authentication\",\"ERR-1105\":\"User primary authentication failed\",\"ERR-1106\":\"User does not exist\",\"ERR-1107\":\"User wallet already exists\",\"ERR-1111\":\"Input chinese characters\",\"ERR-1112\":\"ID input is invalid\",\"ERR-1113\":\"Cannot modify nickname\",\"ERR-1114\":\"User authenticated\",\"ERR-1115\":\"The channel parameter entered by the user is wrong\",\"ERR-1116\":\"ID card already exists\",\"ERR-1117\":\"Nickname is too short\",\"ERR-1118\":\"User type error\",\"ERR-1119\":\"User type error\",\"ERR-1120\":\"Password format is wrong\",\"ERR-1121\":\"Password is not set\",\"ERR-1122\":\"Gm recertification\",\"ERR-1123\":\"Have not applied for an advertiser\",\"ERR-1124\":\"Have not applied for a merchant yet\",\"ERR-1125\":\"Permission denied\",\"ERR-1126\":\"Restrictions on sending email messages\",\"ERR-1127\":\"Insufficient balance\",\"ERR-1128\":\"User advanced authentication failed\",\"ERR-1129\":\"Acceptor certification failed\",\"ERR-1130\":\"Merchant verification failed\",\"ERR-1131\":\"The withdrawal password is the same as the login password\",\"ERR-1132\":\"The same request is already being processed\",\"ERR-1133\":\"Online advertisements cannot unfreeze the margin\",\"ERR-4301\":\"Parameter error\",\"ERR-4302\":\"iUserId and wallet address do not match\",\"ERR-4303\":\"Insufficient available balance\",\"ERR-4304\":\"Frozen balance insufficient\",\"ERR-4305\":\"Reward order information table data does not exist\",\"ERR-4306\":\"Reward Order Reply Message Form Data does not exist\",\"ERR-4307\":\"Official account configuration table data does not exist\",\"ERR-4308\":\"User sign-in record table Data does not exist\",\"ERR-4309\":\"The best answer cannot be repeated\",\"ERR-4310\":\"The reward order and the reply do not match\",\"ERR-4311\":\"Balance table data does not exist\",\"ERR-4312\":\"Must be a reward order initiated by the person in order to confirm the reply\",\"ERR-4313\":\"You can only sign in once a day\",\"ERR-4314\":\"User tendency record table Data does not exist\",\"ERR-4315\":\"The reward order has expired\"}");
+module.exports = __webpack_require__.p + "img/4.2613e5a.png";
 
 /***/ }),
 /* 89 */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"Main01\":\"悬赏\",\"Main02\":\"回答\",\"Main03\":\"上传回答\",\"Main04\":\"最大限制100 MB，支持 JPG, PNG, GIF, MP4, WEBM 格式\",\"Main05\":\"请输入作品标题\",\"Main06\":\"创建NFT\",\"Main07\":\"提交\",\"Main08\":\"输入NFT售卖价格1-1000NERA\",\"Main09\":\"悬赏令\",\"Main10\":\"请输入寻找的信息标题\",\"Main11\":\"请输入作品所属的年代\",\"Main12\":\"输入悬赏金额1-10000NERA\",\"Main13\":\"问题描述（选填）\",\"Main14\":\"作品所属城市(选填）\",\"Main15\":\"结束时间\",\"Main16\":\"可用\",\"Main17\":\"下一步\",\"Main18\":\"铸造该回答为NFT以支持交易\",\"Main19\":\"该NFT所有权归ERAX平台，交易收益归个人所有。你可以登入WEB端查看该NFT是否被交易，交易金额将自动转入你的平台账号，交易金额可以被提现到你的ETH钱包\",\"Main20\":\"NFT交易情况请登入web端查看\",\"Main21\":\"请回答我的问题\",\"Main22\":\"欢迎来到ERAX时间交易所可以回到过去，可以到达未来悬赏、铸造、转让任何数字资产所有收益将与你的世界流通\",\"Main23\":\"分享\",\"Main24\":\"加载中\",\"Main25\":\"暂无更多数据\",\"Main26\":\"NFT交易情况请登入web端查看\",\"Main27\":\"合约地址\",\"Main28\":\"Token ID\",\"Main29\":\"区块链\",\"Main30\":\"区块链信息\",\"Main31\":\"验证中...\",\"Main32\":\"余额不足\",\"Main33\":\"完成\",\"Main34\":\"悬赏\",\"Main35\":\"年前\",\"Main36\":\"个月前\",\"Main37\":\"周前\",\"Main38\":\"天前\",\"Main39\":\"小时前\",\"Main40\":\"分钟前\",\"Main41\":\"刚刚\",\"Main42\":\"悬赏NERA范围1-10000\",\"Main43\":\"价格\",\"Main44\":\"完成\",\"Main45\":\"请输入寻找的信息标题\",\"Billboard01\":\"推荐\",\"Billboard02\":\"未确认\",\"Billboard03\":\"已确认\",\"Billboard04\":\"未回复\",\"Billboard05\":\"采纳\",\"Billboard06\":\"回答\",\"Billboard07\":\"结束时间：\",\"Billboard08\":\"详情\",\"Billboard09\":\"区块信息\",\"Billboard10\":\"确认采纳\",\"Billboard11\":\"将支付悬赏费用\",\"Billboard12\":\"创建NFT\",\"Billboard13\":\"输入NFT售卖价格1-1000NERA\",\"Billboard14\":\"确认\",\"Billboard15\":\"已过期\",\"Billboard16\":\"铸造该悬赏为NFT以支持交易\",\"Billboard17\":\"该NFT所有权归ERAX平台，交易收益归个人所有。你可以登入WEB端查看该NFT是否被交易，交易金额将自动转入你的平台账号，交易金额可以被提现到你的ETH钱包\",\"Billboard18\":\"NFT交易情况请登入web端查看\",\"Billboard19\":\"暂无回答\",\"Billboard20\":\"描述\",\"Billboard21\":\"采纳成功\",\"Billboard22\":\"回答\",\"Message01\":\"全部已读\",\"Message02\":\"通知\",\"Message03\":\"资金\",\"Message04\":\"回复了你的时空胶囊，快去查看\",\"Message05\":\"你的时空胶囊已被采纳，快去查看\",\"Message06\":\"暂无消息，\",\"Message07\":\"发布悬赏\",\"Message08\":\"悬赏过期\",\"Message09\":\"悬赏成功\",\"Message10\":\"已被悬赏\",\"Message11\":\"注册奖励\",\"Message12\":\"邀请奖励\",\"Message13\":\"被邀请奖励\",\"Message14\":\"签到奖励\",\"Message15\":\"充值成功\",\"Message16\":\"提现成功\",\"Message17\":\"提问奖励\",\"Message18\":\"NFT售卖成功\",\"Message19\":\"你的NFT已上传，可以在web端查看交易\",\"Message20\":\"快去回答\",\"Message21\":\"暂无消息\",\"Message22\":\"解冻\",\"Message23\":\"冻结\",\"Account01\":\"邮箱账号\",\"Account02\":\"密码\",\"Account03\":\"登录\",\"Account04\":\"忘记密码\",\"Account05\":\"注册\",\"Account06\":\"请输入邮箱验证码\",\"Account07\":\"请输入6-16位密码\",\"Account08\":\"请输入邀请码（选填）\",\"Account09\":\"已有账号\",\"Account10\":\"注册即表示您已阅读并同意\",\"Account11\":\"ERAX用户协议\",\"Account12\":\"获取验证码\",\"Account13\":\"密码找回\",\"Account14\":\"确认\",\"Account15\":\"恭喜您注册成功\",\"Account16\":\"获得 {nera} NERA\",\"Account17\":\"邀请用户获得更多奖励\",\"Account18\":\"邀请码\",\"Account19\":\"登录成功\",\"Account21\":\"立即登录\",\"Account22\":\"完成\",\"Account23\":\"完善个人资料\",\"Account24\":\"请设置用户名2-16字符\",\"Account25\":\"请输入简介100字符\",\"Account26\":\"用户名不能为空\",\"Account27\":\"用户名长度为2-16字符\",\"Account28\":\"修改成功\",\"Account29\":\"请输入密码\",\"Account30\":\"密码错误\",\"Account31\":\"确认密码\",\"Mine01\":\"邀请码\",\"Mine02\":\"冻结中NERA\",\"Mine03\":\"悬赏\",\"Mine04\":\"回答\",\"Mine05\":\"更多\",\"Mine06\":\"提现\",\"Mine07\":\"充值\",\"Mine08\":\"收益明细\",\"Mine09\":\"充提记录\",\"Mine10\":\"钱包地址\",\"Mine11\":\"提现金额\",\"Mine12\":\"请输入钱包地址\",\"Mine13\":\"最少提现{nera}NERA\",\"Mine14\":\"可提现余额\",\"Mine15\":\"手续费\",\"Mine16\":\"注意\",\"Mine17\":\"请仔细确认信息，信息错误资金将无法追回\",\"Mine18\":\"提现成功后，因以太网络可能会出现拥堵，请耐心等待到账\",\"Mine19\":\"复制地址\",\"Mine20\":\"充值所需NERA可在web端获取，URL:\",\"Mine20-1\":\"禁止向该地址充值NERA之外的资产，任何充入该地址的非NERA资产将不可追回。\",\"Mine21\":\"充值需要30个网络才能到账，请耐心等待\",\"Mine22\":\"安全验证\",\"Mine23\":\"获取验证码\",\"Mine24\":\"请输入邮箱验证码\",\"Mine25\":\"签到\",\"Mine26\":\"每日签到送1-10NERA\",\"Mine27\":\"马上签到\",\"Mine28\":\"签到成功\",\"Mine29\":\"恭喜您获得\",\"Mine30\":\"明天继续加油!\",\"Mine31\":\"你已经签到过了~\",\"Mine32\":\"复制成功\",\"Mine33\":\"暂无信息\",\"Mine34\":\"提币审核中\",\"Mine35\":\"提币确认中\",\"Mine36\":\"提币成功\",\"Mine37\":\"拒绝提币\",\"Mine38\":\"提取系统取消\",\"Mine39\":\"提币用户取消\",\"Mine40\":\"提币异常\",\"Mine41\":\"充值中\",\"Mine42\":\"充值取消\",\"Mine43\":\"欢迎来到ERAX星球\",\"Nav01\":\"ERAX星球\",\"Nav02\":\"悬赏令\",\"Nav03\":\"活动\",\"Nav04\":\"消息\",\"Nav05\":\"我的档案\",\"Nav06\":\"登录\",\"Nav07\":\"帮助中心\",\"Nav08\":\"退出\",\"Nav09\":\"市场\",\"Nav10\":\"我的钱包\",\"Nav11\":\"点此分享\",\"Tip01\":\"发布成功\",\"Tip02\":\"回答成功\",\"Tip03\":\"悬赏成功——悬赏页\",\"Tip04\":\"作品最大100M\",\"Tip05\":\"格式不符——回答\",\"Tip06\":\"密码或者邮箱错误——登录页\",\"Tip07\":\"邀请码错误——注册页\",\"Tip08\":\"邮箱不存在——注册页\",\"Tip09\":\"验证码错误——注册页\",\"Tip10\":\"密码限制6-16位——注册页\",\"Tip11\":\"验证码错误——注册页\",\"Tip12\":\"验证码错误——注册页\",\"Tip13\":\"邮箱账号已存在——注册页\",\"Tip14\":\"密码需混合字母和数字\",\"Tip15\":\"头像格式不支持——我的\",\"Tip16\":\"头像限制8M\",\"Tip17\":\"用户名限制2-16字符——我的\",\"Tip18\":\"一句话简介限制100字符——我的\",\"Tip19\":\"邮箱无效\",\"Tip20\":\"用户不存在\",\"Tip21\":\"用户注册失败\",\"Tip22\":\"邮箱已注册\",\"Tip23\":\"邮箱未注册\",\"Tip24\":\"谷歌未验证\",\"Tip25\":\"邮箱未验证\",\"Tip26\":\"邮箱格式错误\",\"Help01\":\"帮助中心\",\"Help02\":\"ERAX介绍\",\"Help03\":\"ERAX是行业领先的加密藏品及非同质化通证(NFT)的交易平台，定位于“将独特的区块链数字化体验带给每一个人”，支持包括ERC721和ERC1155标准的NFT资产的创作、发行及交易流通。ERAX为每个“价值创造者”提供良好的流动性，推动NFT在全球价值的自由流通，打造一个“参与者均获益”的生态系统。\",\"Help04\":\"ERAX移动端是一个基于时间线的悬赏问答平台，用户可以通过发布悬赏寻找到对自己十分有意义的信息，回答者也可以通过提供优质内容获得悬赏金额，与此同时提问与回答还可以选择生成NFT在ERAX web端进行售卖。\",\"Help05\":\"如何获NERA？\",\"Help06\":\"（1）在平台进行一系列操作\",\"Help07\":\"注册：注册赠送100NERA邮箱注册（无论移动端还是Web端均有效），前10000个注册账号有效；\",\"Help08\":\"邀请：注册时填写了有效的邀请码，双方各得50NERA；每个账号的邀请码可重复使用10次；前10000个邀请码注册时有效；\",\"Help09\":\"签到：每天/每用户1次签到有效，每次签到赠1枚；180天有效，签到即赠；所有注册用户数有效。\",\"Help10\":\"ERAX社区每日评选1~10个不等的悬赏令为“优质问题”并奖励一定数量的NERA给问题发布者。\",\"Help11\":\"参与ERAX平台定期的活动或任务，也可获得NERA。\",\"Help12\":\"（2）获得ERAC\",\"Help13\":\"每个ERAC都有平台币NERA挖矿和平台盈利分红的特权，只要持有ERAC，即可享受这两大权益，持币者可随时从NERA挖矿合约和ERAC分红合约中提取这部分收益。\",\"Help14\":\"平台将根据发布悬赏或回复问题的贡献大小，奖励不同等级的ERAC。\",\"Help15\":\"ERAC详细介绍参考官网：\",\"Help16\":\"（3）在WEB网站（erax.io）上售卖自己的NFT\",\"Help17\":\"当您发布的悬赏令或回复的问题被铸造为NFT后，ERAX官方将代为销售该NFT，并将销售扣除平台服务费后的资金转入您的个人账户。\",\"Help18\":\"您也可以直接在ERAX.IO上创建NFT进行销售获得NERA。\",\"Help19\":\"什么是NFT?\",\"Help20\":\"NFT全称为Non-Fungible Token，非同质化代币，是用于表示数字资产的唯一加密货币令牌，具有不可分割、不可代替、独一无二等特点。\",\"Help21\":\"怎么生成NFT? \",\"Help22\":\"用户发起问题完成采纳一个优质回答并且开启创建NFT功能，整个问答将会生成一个NFT\",\"Help23\":\"用户回答问题时，开启创建NFT功能且该回答被采纳，则该回答将会生成一个NFT\",\"Help24\":\"NFT的版权以及收益\",\"Help25\":\"通过问答平台生成的NFT，其版权归属于官方，收益归属于用户（整个问答的NFT收益归于提问者，回答的NFT的收益归于回答者）。官方会帮用户上架销售，一旦售卖成功，平台会收取2.5%的手续费，其余的收益将会打到用户的平台账号。\\n     \",\"Help26\":\"咨询客服\",\"Help27\":\"如有其他任何问题，可以咨询\",\"Deal01\":\"ERAX用户协议\",\"Deal02\":\"欢迎您来到ERAX。\",\"Deal03\":\"请您仔细阅读以下条款，如果您对本协议的任何条款表示异议，您可以选择不进入ERAX。当您注册成功，无论是进入ERAX，还是在ERAX上发布任何内容，均意味着您完全接受本协议项下的全部条款。\",\"Deal04\":\"使用规则\",\"Deal05\":\"1.用户注册成功后，ERAX将给予每个用户一个用户帐号及相应的密码，该用户帐号和密码由用户负责保管；用户应当对以其用户帐号进行的所有活动和事件负法律责任。\",\"Deal06\":\"2.ERAX移动端是一个基于时间线的悬赏问答平台，用户通过ERAX发表的信息为公开的信息，其他第三方均可以通过ERAX获取用户发表的信息，用户对任何信息的发表即认可该信息为公开的信息，并单独对此行为承担法律责任；任何用户不愿被其他第三人获知的信息都不应该在ERAX上进行发表。\",\"Deal07\":\"3.用户承诺不得以任何方式利用ERAX直接或间接从事违反各国法律以及社会公德的行为，ERAX有权对违反上述承诺的内容予以删除。\",\"Deal08\":\"4.用户不得利用ERAX服务制作、上载、复制、发布、传播或者转载如下内容：\",\"Deal09\":\"危害国家安全，泄露国家秘密，颠覆国家政权；\",\"Deal10\":\"煽动民族仇恨、民族歧视，破坏民族团结的；\",\"Deal11\":\"散布谣言，扰乱社会秩序，破坏社会稳定的；\",\"Deal12\":\"散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；\",\"Deal13\":\"侮辱或者诽谤他人，侵害他人合法权益的；\",\"Deal14\":\"含有法律、行政法规禁止的其他内容的信息。\",\"Deal15\":\"5.ERAX有权对用户使用ERAX的情况进行审查和监督，如用户在使用ERAX时违反任何上述规定，ERAX或其授权的人有权要求用户改正或直接采取一切必要的措施（包括但不限于更改或删除用户张贴的内容、暂停或终止用户使用ERAX的权利）以减轻用户不当行为造成的影响。\",\"Deal16\":\"知识产权\",\"Deal17\":\"ERAX移动端是一个基于时间线的悬赏问答平台，我们尊重和鼓励ERAX用户创作的内容，认识到保护知识产权对ERAX生存与发展的重要性，承诺将保护知识产权作为ERAX运营的基本原则之一。\",\"Deal18\":\"1.用户在ERAX上发表的全部原创内容（包括但不仅限于回答、文章和评论），著作权均归用户本人所有。用户可授权第三方以任何方式使用，不需要得到ERAX的同意。\",\"Deal19\":\"2.一旦铸造为NFT后，该NFT所有权归ERAX平台，交易收益归个人所有。你可以登入WEB端查看该NFT是否被交易，交易金额将自动转入你的平台账号，交易金额可以被提现到你的ETH钱包。\",\"Deal20\":\"3.ERAX提供的网络服务中包含的文本、图片、视频等均受著作权、商标权及其它法律保护，未经相关权利人（含ERAX及其他原始权利人）同意，上述内容均不得在任何平台被直接或间接发布、使用、出于发布或使用目的的改写或再发行，或被用于其他任何商业目的。\",\"Deal21\":\"4.为了促进分享和传播，用户将其在ERAX上发表的全部内容，授予ERAX免费的、不可撤销的、非独家使用许可，ERAX有权将该内容用于ERAX各种形态的产品和服务上，包括但不限于网站以及发表的应用或其他互联网产品。\",\"Deal22\":\"5.在ERAX上传或发表的内容，用户应保证其为著作权人或已取得合法授权，并且该内容不会侵犯任何第三方的合法权益。如果第三方提出关于著作权的异议，ERAX有权根据实际情况删除相关的内容，且有权追究用户的法律责任。给ERAX或任何第三方造成损失的，用户应负责全额赔偿。\",\"Deal23\":\"6.如果任何第三方侵犯了ERAX用户相关的权利，用户同意授权ERAX或其指定的代理人代表ERAX自身或用户对该第三方提出警告、投诉、发起行政执法、诉讼、进行上诉，或谈判和解，并且用户同意在ERAX认为必要的情况下参与共同维权。\",\"Deal24\":\"7.ERAX有权但无义务对用户发布的内容进行审核，有权根据相关证据结合法律法规及ERAX社区指导原则对侵权信息进行处理。\",\"Deal25\":\"个人隐私\",\"Deal26\":\"尊重用户个人隐私信息的私有性是ERAX的一贯原则，ERAX将通过技术手段、强化内部管理等办法充分保护用户的个人隐私信息，除法律或有法律赋予权限的政府部门要求或事先得到用户明确授权等原因外，ERAX保证不对外公开或向第三方透露用户个人隐私信息，或用户在使用服务时存储的非公开内容。同时，为了运营和改善ERAX的技术与服务，ERAX将可能会自行收集使用或向第三方提供用户的非个人隐私信息，这将有助于ERAX向用户提供更好的用户体验和服务质量。\",\"Deal27\":\"您使用或继续使用我们的服务，即意味着同意我们按照ERAX《ERAX隐私保护指引》收集、使用、储存和分享您的相关信息。\",\"Deal28\":\"免责声明\",\"Deal29\":\"1.ERAX不能对用户发表的回答或评论的正确性进行保证。\",\"Deal30\":\"2.用户在ERAX发表的内容仅表明其个人的立场和观点，并不代表ERAX的立场或观点。作为内容的发表者，需自行对所发表内容负责，因所发表内容引发的一切纠纷，由该内容的发表者承担全部法律及连带责任。ERAX不承担任何法律及连带责任。\",\"Deal31\":\"3.ERAX不保证网络服务一定能满足用户的要求，也不保证网络服务不会中断，对网络服务的及时性、安全性、准确性也都不作保证。\",\"Deal32\":\"4.对于因不可抗力或ERAX不能控制的原因造成的网络服务中断或其它缺陷，ERAX不承担任何责任，但将尽力减少因此而给用户造成的损失和影响。\",\"Deal33\":\"协议修改\",\"Deal34\":\"1.根据互联网的发展和有关法律、法规及规范性文件的变化，或者因业务发展需要，ERAX有权对本协议的条款作出修改或变更，一旦本协议的内容发生变动，ERAX将会直接在ERAX网站上公布修改之后的协议内容，该公布行为视为ERAX已经通知用户修改内容。ERAX也可采用电子邮件或私信的传送方式，提示用户协议条款的修改、服务变更、或其它重要事项。\",\"Deal35\":\"2.如果不同意ERAX对本协议相关条款所做的修改，用户有权并应当停止使用ERAX。如果用户继续使用ERAX，则视为用户接受ERAX对本协议相关条款所做的修改。\",\"Day01\":\"3天\",\"Day02\":\"5天\",\"Day03\":\"1周\",\"Day04\":\"1月\",\"Day05\":\"2月\",\"Day06\":\"3月\",\"Day07\":\"4月\",\"Day08\":\"5月\",\"Day09\":\"6月\",\"Day10\":\"7月\",\"Day11\":\"8月\",\"Day12\":\"9月\",\"Day13\":\"10月\",\"Day14\":\"11月\",\"Day15\":\"1年\",\"picker1\":\"取消\",\"picker2\":\"确认\",\"ERR-800\":\"用户不存在\",\"ERR-801\":\"用户注册失败\",\"ERR-802\":\"手机无效\",\"ERR-803\":\"邮箱无效\",\"ERR-804\":\"手机已注册\",\"ERR-805\":\"邮箱已注册\",\"ERR-811\":\"手机未注册\",\"ERR-812\":\"邮箱未注册\",\"ERR-818\":\"未验证谷歌\",\"ERR-819\":\"未验证手机\",\"ERR-820\":\"未验证邮箱\",\"ERR-821\":\"手机格式错误\",\"ERR-822\":\"邮箱格式错误\",\"ERR-823\":\"邀请码无效\",\"ERR-900\":\"密码错误一次\",\"ERR-901\":\"密码错误两次\",\"ERR-902\":\"密码错误三次\",\"ERR-903\":\"密码错误四次\",\"ERR-904\":\"密码错误五次\",\"ERR-906\":\"密码错误超过五次 用户冻结 请重置密码\",\"ERR-907\":\"密码格式错误\",\"ERR-908\":\"新旧密码一致错误\",\"ERR-920\":\"短信验证码错误\",\"ERR-921\":\"邮箱验证码错误\",\"ERR-922\":\"新短信验证码错误\",\"ERR-923\":\"新邮箱验证码错误\",\"ERR-924\":\"短信验证码失效\",\"ERR-925\":\"邮箱验证码失效\",\"ERR-926\":\"未发送短信验证码\",\"ERR-927\":\"未发送邮箱验证码\",\"ERR-928\":\"短信验证码过期\",\"ERR-929\":\"邮箱验证码过期\",\"ERR-930\":\"短信验证码限制\",\"ERR-931\":\"邮箱验证码限制\",\"ERR-932\":\"短信第三方平台发送失败\",\"ERR-933\":\"邮箱第三方平台发送失败\",\"ERR-940\":\"Google安全密钥失效\",\"ERR-941\":\"谷歌验证码错误\",\"ERR-942\":\"新谷歌验证码错误\",\"ERR-960\":\"不允许关闭\",\"ERR-500\":\"系统繁忙\",\"ERR-501\":\"协议执行失败\",\"ERR-503\":\"协议不存在\",\"ERR-504\":\"Json格式错误\",\"ERR-505\":\"Kafka 调用错误\",\"ERR-506\":\"API访问次数限制\",\"ERR-507\":\"黑名单\",\"ERR-508\":\"URL无效\",\"ERR-509\":\"Token无效\",\"ERR-510\":\"系统繁忙\",\"ERR-511\":\"签名错误\",\"ERR-520\":\"URL路径错误\",\"ERR-521\":\"Token已过期\",\"ERR-522\":\"Token未验证\",\"ERR-523\":\"Token创建失败\",\"ERR-601\":\"Redis错误\",\"ERR-602\":\"Mysql错误\",\"ERR-603\":\"Mysql空数据\",\"ERR-604\":\"redis中的数据错误\",\"ERR-605\":\"LevelDB空数据\",\"ERR-606\":\"LevelDB错误\",\"ERR-701\":\"参数错误\",\"ERR-702\":\"参数格式错误\",\"ERR-724\":\"参数空错误\",\"ERR-725\":\"参数值错误\",\"ERR-726\":\"参数类型错误\",\"ERR-100000\":\"公链错误\",\"ERR-100001\":\"无效的币种\",\"ERR-100002\":\"无效的商户\",\"ERR-100003\":\"无效的用户账户\",\"ERR-100004\":\"无效的钱币账户\",\"ERR-100005\":\"重复的提币请求\",\"ERR-100006\":\"热钱包不存在\",\"ERR-100007\":\"转账给自己\",\"ERR-100008\":\"票据不存在\",\"ERR-100009\":\"交易不存在\",\"ERR-100010\":\"错误的公链\",\"ERR-100011\":\"地址数据校验失败\",\"ERR-100012\":\"地址不存在\",\"ERR-100013\":\"交易签名失败\",\"ERR-100014\":\"交易广播失败\",\"ERR-100015\":\"充币处理重试失败\",\"ERR-100016\":\"账户余额不足\",\"ERR-100017\":\"审核不存在\",\"ERR-100018\":\"ERC20地址不存在\",\"ERR-100019\":\"API 失败\",\"ERR-100020\":\"充值关闭\",\"ERR-100021\":\"提币关闭\",\"ERR-100022\":\"已审核了\",\"ERR-100023\":\"初审还未操作\",\"ERR-100024\":\"初审已经拒绝\",\"ERR-100028\":\"没有找零地址\",\"ERR-100029\":\"多重签名\",\"ERR-100030\":\"ETH交易阻塞中\",\"ERR-100031\":\"提币钱包不能删除\",\"ERR-100034\":\"钱包名字长度短\",\"ERR-100035\":\"钱包名字已经存在\",\"ERR-100036\":\"交易存在\",\"ERR-1001\":\"hmac 摘要失败\",\"ERR-1002\":\"用户url错误\",\"ERR-1003\":\"验证签名失败\",\"ERR-1004\":\"url 头部信息错误\",\"ERR-1005\":\"签名过期\",\"ERR-1006\":\"错误的时间戳\",\"ERR-1007\":\"时间转换失败\",\"ERR-1009\":\"用户访问达到上限\",\"ERR-1010\":\"无法找到对应的tars结构\",\"ERR-1011\":\"无法找到处理模块\",\"ERR-1012\":\"API名字已存在\",\"ERR-1013\":\"API密码无效\",\"ERR-1014\":\"禁止访问\",\"ERR-1016\":\"api限制\",\"ERR-1017\":\"地址格式错误\",\"ERR-1018\":\"备注太短\",\"ERR-1019\":\"密码格式错误\",\"ERR-1020\":\"环境错误\",\"ERR-1021\":\"上传文件格式不支持\",\"ERR-1022\":\"上传文件每日限制\",\"ERR-1023\":\"上传文件大小限制\",\"ERR-1030\":\"钱包尚未开户\",\"ERR-1031\":\"无效的地址\",\"ERR-1032\":\"提币金额超过最大指\",\"ERR-1033\":\"提币金额低于最小限额\",\"ERR-1034\":\"提币金额不足\",\"ERR-1035\":\"当前渠道不支持充值该币种\",\"ERR-1036\":\"用户提币通道关闭\",\"ERR-1101\":\"用户已存在\",\"ERR-1102\":\"用户冲提币密码无效\",\"ERR-1103\":\"用户账户已存在\",\"ERR-1104\":\"用户已认证或正在认证中，勿重复认证\",\"ERR-1105\":\"用户初级认证未通过\",\"ERR-1106\":\"用户不存在\",\"ERR-1107\":\"用户钱包已经存在\",\"ERR-1111\":\"输入非中文\",\"ERR-1112\":\"身份证输入无效\",\"ERR-1113\":\"不可修改昵称\",\"ERR-1114\":\"用户已认证\",\"ERR-1115\":\"用户输入的渠道参数错误\",\"ERR-1116\":\"身份证已存在\",\"ERR-1117\":\"昵称太短\",\"ERR-1118\":\"用户类型错误\",\"ERR-1119\":\"用户类型错误\",\"ERR-1120\":\"密码格式错误\",\"ERR-1121\":\"密码未设置\",\"ERR-1122\":\"Gm再次认证\",\"ERR-1123\":\"还没有申请广告商\",\"ERR-1124\":\"还没有申请商户\",\"ERR-1125\":\"没有权限\",\"ERR-1126\":\"发送邮件信息限制\",\"ERR-1127\":\"余额不足\",\"ERR-1128\":\"用户高级认证未通过\",\"ERR-1129\":\"承兑商认证未通过\",\"ERR-1130\":\"商户认证未通过\",\"ERR-1131\":\"提币密码与登陆密码相同\",\"ERR-1132\":\"已有同样的请求在处理\",\"ERR-1133\":\"有在线广告不能解冻保证金\",\"ERR-4301\":\"参数错误\",\"ERR-4302\":\"iUserId和钱包地址不匹配\",\"ERR-4303\":\"可用余额不足\",\"ERR-4304\":\"冻结余额不足\",\"ERR-4305\":\"悬赏令信息表 数据不存在\",\"ERR-4306\":\"悬赏令回复信息表 数据不存在\",\"ERR-4307\":\"官方账号配置表 数据不存在\",\"ERR-4308\":\"用户签到记录表 数据不存在\",\"ERR-4309\":\"不能重复采纳最佳答案\",\"ERR-4310\":\"悬赏令和回复不匹配\",\"ERR-4311\":\"Balance表 数据不存在\",\"ERR-4312\":\"必须是本人发起的悬赏令才能确认回复\",\"ERR-4313\":\"每天只能签到一次\",\"ERR-4314\":\"用户倾向记录表 数据不存在\",\"ERR-4315\":\"悬赏令已经过期了\"}");
+module.exports = JSON.parse("{\"Main01\":\"Question\",\"Main02\":\"Answer\",\"Main03\":\"Upload Answer\",\"Main04\":\"Answers are limited up to: 100mb, JPG, PNG, GIF, MP4, & WEBM.\",\"Main05\":\"Please enter a title\",\"Main06\":\"Create NFT work\",\"Main07\":\"Submit\",\"Main08\":\"Selling Price(1-1000 NERA)\",\"Main09\":\"Offer a reward\",\"Main10\":\"What are you looking for? \",\"Main11\":\"Enter date\",\"Main12\":\"Selling Price(1-1000 NERA)\",\"Main13\":\"Further notes. (optional)\",\"Main14\":\"Enter location (optional)\",\"Main15\":\"Question expires on\",\"Main16\":\"Remaining\",\"Main17\":\"NEXT\",\"Main18\":\"Cast the answer into an NFT and sell on ERAX.\",\"Main19\":\"The ownership of this NFT belongs to ERAX while transaction proceeds belong to the user. You can log-in to the web terminal to check the status of your NFT's. Transaction amounts will be automatically transfered to your account.When uploading images,  please be-careful of copyrighted content. We strongly encourage users to cast NFT's from images taken personally.ERAX holds rights to processing all content accordingly. \",\"Main20\":\"Log-in website to view status. (Marketplace — Time Capsule Original NFT)\",\"Main21\":\"Answer for reward\",\"Main22\":\"Welcome to ERAX Time Exchange.You can rewind to the past, or fast-forward to the future.Offering rewards, casting, and transferring digital assets.All proceeds will circulate to the world.\",\"Main23\":\"Share\",\"Main24\":\"Loading\",\"Main25\":\"No more\",\"Main26\":\"Log-in website to view status. (Marketplace — Time Capsule NFT)\",\"Main27\":\"Contract Address\",\"Main28\":\"Token ID\",\"Main29\":\"Blockchain\",\"Main30\":\"Blockchain information：\",\"Main31\":\"Verifying\",\"Main32\":\"Insufficient balance\",\"Main33\":\"PUBLISH\",\"Main34\":\"For reward\",\"Main35\":\" year ago\",\"Main36\":\" months ago\",\"Main37\":\" weeks ago\",\"Main38\":\" days ago\",\"Main39\":\" hours ago\",\"Main40\":\" minutes ago\",\"Main41\":\" just now\",\"Main42\":\"Selling Price(1-1000 NERA)\",\"Main43\":\"Price\",\"Main44\":\"Done\",\"Main45\":\"Ex. A picture of Elon Musk's at Paypal, 2004.\",\"Main46\":\"The ownership of this NFT belongs to ERAX while transaction proceeds belong to the user. You can log-in to the web terminal to check the status of your NFT's. Transaction amounts will be automatically transfered to your account.\",\"Billboard01\":\"Recommend\",\"Billboard02\":\"Unconfirmed\",\"Billboard03\":\"Confirmed\",\"Billboard04\":\"Unanswered\",\"Billboard05\":\"ACCEPT\",\"Billboard06\":\"ANSWER\",\"Billboard07\":\"End time:\",\"Billboard08\":\"View more\",\"Billboard09\":\"Blockchain information：\",\"Billboard10\":\"Confirm\",\"Billboard11\":\"Reward will be paid\",\"Billboard12\":\"Create NFT work\",\"Billboard13\":\"Selling Price(1-1000 NERA)\",\"Billboard14\":\"YES\",\"Billboard15\":\"Expired\",\"Billboard16\":\"Cast the answer into an NFT and sell on ERAX.\",\"Billboard17\":\"The ownership of this NFT belongs to ERAX while transaction proceeds belong to the user. You can log-in to the web terminal to check the status of your NFT's. Transaction amounts will be automatically transfered to your account.\",\"Billboard18\":\"Log-in website to view status.\",\"Billboard19\":\"No answers currently\",\"Billboard20\":\"Description\",\"Billboard21\":\"You have successfully accepted the answer and your reward has been completed.\",\"Billboard22\":\"Answer\",\"Billboard23\":\"Your question title\",\"Billboard24\":\"Your answer title\",\"Billboard25\":\"Your Price\",\"Billboard26\":\"Web side selling display pictures\",\"Billboard27\":\"None\",\"Billboard28\":\"Answer list:\",\"Billboard29\":\"Your answer picture\",\"Billboard30\":\"The picture of the adopted answer\",\"Message01\":\"Mark all as read\",\"Message02\":\"Notice\",\"Message03\":\"Balance\",\"Message04\":\"Someone replied to your space-time capsule\",\"Message05\":\"Your answer has been accepted\",\"Message06\":\"No further news, \",\"Message07\":\"Post a reward\",\"Message08\":\"Reward expired\",\"Message09\":\"Reward Success\",\"Message10\":\"Rewarded\",\"Message11\":\"Registration rewards\",\"Message12\":\"Invitation rewards\",\"Message13\":\"Invitation reward\",\"Message14\":\"Sign-in reward\",\"Message15\":\"Top up successfully\",\"Message16\":\"Withdraw successfully\",\"Message17\":\"Question reward\",\"Message18\":\"NFT sold successfully\",\"Message19\":\"Your NFT has been uploaded, you can view the status on-site.\",\"Message20\":\"go reply posts.\",\"Message21\":\"No news\",\"Message22\":\"Un-freeze\",\"Message23\":\"Freeze\",\"Account01\":\"Email Address\",\"Account02\":\"Password\",\"Account03\":\"Login\",\"Account04\":\"Forgot password\",\"Account05\":\"Sign up\",\"Account06\":\"Verification code\",\"Account07\":\"Enter 6-16 password\",\"Account08\":\"Invitation Code\",\"Account09\":\"Already have an account\",\"Account10\":\"By signing up, you have read and agree to the\",\"Account11\":\"ERAX User Agreement\",\"Account12\":\"Request code\",\"Account13\":\"Reset password \",\"Account14\":\"Confirmed\",\"Account15\":\"SUCCEED\",\"Account16\":\"Get {nera} NERA\",\"Account17\":\"Invite users to get more rewards\",\"Account18\":\"Invitation Code\",\"Account19\":\"Login successful\",\"Account21\":\"Sign up\",\"Account22\":\"Complete\",\"Account23\":\"Edit profile\",\"Account24\":\"Username (2-16 characters)\",\"Account25\":\"Introduce yourself (100 characters)\",\"Account26\":\"Username can not be empty\",\"Account27\":\"User name limit 2-16 characters\",\"Account28\":\"Successfully modified\",\"Account29\":\"Please enter password\",\"Account30\":\"password error\",\"Account31\":\"Confirm password\",\"Mine01\":\"Invitation Code\",\"Mine02\":\"Frozen NERA\",\"Mine03\":\"Question\",\"Mine04\":\"Answer\",\"Mine05\":\"More\",\"Mine06\":\"Withdraw\",\"Mine07\":\"Recharge\",\"Mine08\":\"Income statement\",\"Mine09\":\"Balance\",\"Mine10\":\"Address\",\"Mine11\":\"Amount\",\"Mine12\":\"Wallet address\",\"Mine13\":\"Minimum withdrawal {nera}NERA\",\"Mine14\":\"Available\",\"Mine15\":\"Fee\",\"Mine16\":\"Tips\",\"Mine17\":\"Please confirm the information carefully. Funds will not be recovered if information is incorrect.\",\"Mine18\":\"After the withdrawal is successful, there may be congestion in the Ethernet network, please be patient and wait for the account to arrive\",\"Mine19\":\"Copy\",\"Mine20\":\"The NERA required to recharge can be obtained on the Web side, URL:\",\"Mine20-1\":\"It is prohibited to deposit assets other than NERA to this address, non-NERA assets deposited into this address will not be recovered.\",\"Mine21\":\"Recharge requires 30 networks to arrive, please wait patiently\",\"Mine22\":\"Safety verification\",\"Mine23\":\"Request code\",\"Mine24\":\"Verification code\",\"Mine25\":\"Login\",\"Mine26\":\"Daily check-in, rewards 1-10NERA\",\"Mine27\":\"Login now\",\"Mine28\":\"Login successfully\",\"Mine29\":\"Congratulations on getting\",\"Mine30\":\"Come back tomorrow\",\"Mine31\":\"You've already checked in\",\"Mine32\":\"Copy Success\",\"Mine33\":\"None\",\"Mine34\":\"Action Under Review\",\"Mine35\":\"Confirming request\",\"Mine36\":\"Withdraw successfully\",\"Mine37\":\"Refuse to withdraw\",\"Mine38\":\"System-action denied\",\"Mine39\":\"User-action denied\",\"Mine40\":\"Abnormal withdrawal\",\"Mine41\":\"Recharging\",\"Mine42\":\"Recharge cancel\",\"Mine43\":\"Welcome to the planet ERAX\",\"Nav01\":\"ERAX Planet\",\"Nav02\":\"Billboard\",\"Nav03\":\"Activity\",\"Nav04\":\"Messages\",\"Nav05\":\"My Profile\",\"Nav06\":\"Log in\",\"Nav07\":\"Help Center\",\"Nav08\":\"Log out\",\"Nav09\":\"Marketplace\",\"Nav10\":\"My Wallet\",\"Nav11\":\"Click here to share\",\"Nav12\":\"Task Rewards\",\"Nav13\":\"Price Bid:\",\"Nav14\":\"The start of a new era of the integration of NFT, time, space and memory.\",\"Tip01\":\"Listing Success\",\"Tip02\":\"Reply Success\",\"Tip03\":\"You have successfully accepted the answer and your reward has been sent.\",\"Tip04\":\"Works up to 100M-Answer\",\"Tip05\":\"Format does not match-answer\",\"Tip06\":\"Incorrect password or email-login page\",\"Tip07\":\"Wrong invitation code-registration page\",\"Tip08\":\"Email does not exist-registration page\",\"Tip09\":\"Verification code error-registration page\",\"Tip10\":\"Password limit 6-16 digits-registration page\",\"Tip11\":\"Verification code error-registration page\",\"Tip12\":\"Verification code error-registration page\",\"Tip13\":\"Email account already exists-registration page\",\"Tip14\":\"Mixture of letters and numbers.\",\"Tip15\":\"Avatar format is not supported-mine\",\"Tip16\":\"Avatar limit 8M-mine\",\"Tip17\":\"Username limit (2-16 characters)\",\"Tip18\":\"One-sentence introduction (limit 100 characters)\",\"Tip19\":\"Email address is invalid\",\"Tip20\":\"The user does not exist\",\"Tip21\":\"User registration failed\",\"Tip22\":\"Email Registered\",\"Tip23\":\"Email not registered\",\"Tip24\":\"Google is not validated\",\"Tip25\":\"Email not verified\",\"Tip26\":\"Email format error\",\"Help01\":\"Help Center\",\"Help02\":\"ERAX\",\"Help03\":\"ERAX is an industry-leading trading platform for encrypted collections and non-homogeneous tokens (NFT). It is positioned to bring a unique blockchain digital experience to everyone while supporting NFT assets including ERC721 and ERC1155. Creation, distribution and transaction circulation are all supported. ERAX provides good liquidity for every creator while promoting the free circulation of NFT's global value. An ecosystem where all participants benefit from.\",\"Help04\":\"ERAX-The mobile terminal is a timeline-based reward questionnaire event. Users can find information that is meaningful to them by posting rewards. Respondents can also get rewards by providing high-quality content. These NFT’s will be sold on the ERAX platform.\",\"Help05\":\"How to get NERA？\",\"Help06\":\"（1）Perform the following actions\",\"Help07\":\"First 10,000 users who sign up for an account with e-mail will be rewarded with 100 NERA.\",\"Help08\":\"Invitation code: 50 NERA will be rewarded to both parties when users sign-up for an account through invitation codes. (A maximum of 10 times, event will end after the first 10,000 invites are registered)\",\"Help09\":\"Sign-in reward: Sign in each day for 1NERA. (Limited to 180 days)\",\"Help10\":\"ERAX community selects 1~10 reward orders as \\\"high-quality questions\\\" every day and rewards a certain number of NERA to publishers.\",\"Help11\":\"Participate in activities or tasks on the ERAX platform for additional NERA. \",\"Help12\":\"(2) Obtain ERAC\",\"Help13\":\"ERAC users have privileges of currency mining and platform profit dividends. As long as you hold ERAC, you can enjoy these two rights. Coin holders can withdraw this part of the proceeds from the NERA mining contract and the ERAC dividend contract at any time.\",\"Help14\":\"The platform will reward ERAC of different levels according to the contribution of the release of the reward or the reply to the question.\",\"Help15\":\"For detailed introduction of ERAC, please refer to the official website: \",\"Help16\":\"(3) Sell your own NFT on the WEB website (erax.io)\",\"Help17\":\"When your issued reward order or reply is cast as an NFT, ERAC will sell the NFT on its behalf and transfer the sales deducted from the platform service fee to your personal account.\",\"Help18\":\"You can also create NFT directly on ERAX.IO to sell and get NERA.\",\"Help19\":\"What’s an NFT?\",\"Help20\":\"NFT is called Non-Fungible Token, non-fungible token. It is the only encrypted currency token used to represent digital assets. It has characteristics of indivisible, irreplaceable, and unique properties.\",\"Help21\":\"How to generate an NFT?  \",\"Help22\":\"Users can question & answer on the ERAX platform. The entire process will generate an NFT.\",\"Help23\":\"When the user answers a question, the NFT creation function will auto generate an NFT\",\"Help24\":\"NFT copyright and revenue\",\"Help25\":\"The copyright of the NFT generated through the question and answer platform belongs to ERAX official. Income generated belongs to the user. (NFT income of the entire question & answer belongs to questioner; income of the answered NFT belongs to the replier). ERAX will help users sell on shelf. Once a sale is successful, the platform will charge a 2.5% handling fee. Rest of the proceeds will be credited to the user's platform account.\",\"Help26\":\"Advisory Service\",\"Help27\":\"If you have any questions, please dont hesitate to contact us:\",\"Deal01\":\"ERAX User Agreement\",\"Deal02\":\"Welcome to ERAX.\",\"Deal03\":\"Please read the following terms carefully. If you disagree with any of the terms in this agreement, you can choose to not enter ERAX. When your registration is complete, whether you enter ERAC or publish any content on ERAC, it means that you fully accept all the terms under this agreement.\",\"Deal04\":\"Rules of Use\",\"Deal05\":\"1. After the user has successfully registered, ERAC will give each user a user account and corresponding password. The user account and password shall be kept by the user; the user shall be legally responsible for all activities and events conducted with his user account.\",\"Deal06\":\"2. The ERAX mobile terminal is a timeline-based reward question and answer platform. The information published by users through ERAC is public information. Other third parties can obtain the information published by users through EAX. The publication of any information by the user recognizes that the information is Public information, and solely bear legal responsibility for this behavior; any information that users do not want to be known to other third parties should not be published on ERAC.\",\"Deal07\":\"3. The user promises not to use ERAC in any way to directly or indirectly engage in acts that violate the laws of various countries and social ethics, and ERAC reserves the right to delete the content that violates the above commitments.\",\"Deal08\":\"4. Users are not allowed to use the EAX service to produce, upload, copy, publish, disseminate or reprint the following content:\",\"Deal09\":\"Endanger national security, leak state secrets, and subvert state power;\",\"Deal10\":\"Inciting ethnic hatred, ethnic discrimination, and undermining ethnic unity;\",\"Deal11\":\"Spread rumors, disrupt social order, and undermine social stability;\",\"Deal12\":\"Spreading obscenity, pornography, gambling, violence, murder, terror or instigating crime;\",\"Deal13\":\"Insult or slander others, infringe on the legal rights of others;\",\"Deal14\":\"Information that contains other content prohibited by laws and administrative regulations.\",\"Deal15\":\"5.ERAX has the right to review and supervise the user’s use of ERAC. If the user violates any of the above regulations when using ERAC, ERAC or its authorized person has the right to require the user to correct or directly take all necessary measures (including but not limited to changing or deleting content posted by the user, suspend or terminate the user's right to use ERAX) to reduce the impact of the user's improper behavior.\",\"Deal16\":\"Intellectual Property\",\"Deal17\":\"ERAX mobile terminal is a timeline-based reward question and answer platform. We respect and encourage the content created by ERAX users, recognize the importance of protecting intellectual property rights for the survival and development of EAX, and promise to protect intellectual property rights as one of the basic principles of EAX operation.\",\"Deal18\":\"1.All original content (including but not limited to answers, articles and comments) published by users on ERAX belongs to the users themselves. The user can authorize a third party to use it in any way without the consent of ERAX.\",\"Deal19\":\"2.Once the NFT is minted, the ownership of the NFT belongs to the ERAX platform and transaction proceeds belong to the individual. You can log in to the WEB terminal to check whether the NFT has been traded, the transaction amount will be automatically transferred to your platform account, and the transaction amount can be withdrawn to your ETH wallet.\",\"Deal20\":\"3.Texts, pictures, videos, etc. contained in the network services provided by EAX are protected by copyright, trademark rights and other laws. Without the consent of the relevant right holders (including EAX and other original right holders), the above content shall not be displayed on any platform. Is directly or indirectly released, used, adapted or redistributed for release or use purposes, or used for any other commercial purposes.\",\"Deal21\":\"4.In order to promote sharing and dissemination, users grant all the content published on ERAX free, irrevocable, and non-exclusive use license, and ERAX has the right to use the content on ERAX related products and services in various forms , Including but not limited to websites and published applications or other Internet products.\",\"Deal22\":\"5.For content uploaded or published on ERAC, users should ensure that it is the copyright owner or has obtained legal authorization, and that the content will not infringe the legal rights of any third party. If a third party raises an objection to copyright, ERAX has the right to delete the relevant content according to the actual situation, and has the right to pursue the legal responsibility of the user. If losses are caused to ERAX or any third party, the user shall be responsible for full compensation.\",\"Deal23\":\"6.If any third party infringes on the rights of ERAC users, the user agrees to authorize ERAC or its designated agent to raise warnings, complaints, initiate administrative enforcement, litigation, appeal, or negotiate a settlement on behalf of ERAC itself or the user against the third party. The user agrees to participate in joint rights protection if ERAC deems it necessary.\",\"Deal24\":\"7.ERAX has the right but no obligation to review the content posted by users, and has the right to deal with infringing information based on relevant evidence in combination with laws and regulations from the ERAX community guidelines.\",\"Deal25\":\"Personal Privacy\",\"Deal26\":\"Respecting the privacy of users’ personal privacy information is the consistent principle of ERAC. ERAC will fully protect users’ personal privacy information through technical means and strengthening internal management. Except for the requirements of laws or legal authority with explicit authorization. ERAX guarantees that it will not disclose the user's personal privacy information or the non-public content stored by the user when using the service. At the same time, in order to operate and improve ERAC’s technology and services, ERAC may collect and use or provide users’ non-personal privacy information to third parties, which will help ERAC to provide users with a better user experience and service quality.\",\"Deal27\":\"Your use or continued use of our services means that you agree to our collection, use, storage and sharing of your relevant information in accordance with the EAX \\\"ERAX Privacy Protection Guidelines\\\".\",\"Deal28\":\"Disclaimer\",\"Deal29\":\"1.ERAX cannot guarantee the correctness of the answers or comments posted by users.\",\"Deal30\":\"2.The content posted by users on ERAC only expresses their personal positions and opinions, and does not represent the positions or opinions of ERAC. As the publisher of the content, you are responsible for the content published. All disputes caused by the published content shall be borne by the publisher of the content for all legal and joint liabilities. ERAX does not assume any legal and joint liability.\",\"Deal31\":\"3.ERAX does not guarantee that the network service will definitely meet the user's requirements, nor does it guarantee that the network service will not be interrupted, nor does it guarantee the timeliness, security, and accuracy of the network service.\",\"Deal32\":\"4.For network service interruption or other defects caused by force majeure or reasons beyond ERAX's control, ERAC does not assume any responsibility, but will do its best to reduce the loss and impact caused to users.\",\"Deal33\":\"Agreement Modification\",\"Deal34\":\"1.According to the development of the Internet and the change of the relevant laws, regulations and regulatory documents, or because business grows need, ERAX shall have the right to modify the terms of this agreement or change, if change the contents of this agreement, ERAX will directly after ERAX website to modify the content of the agreement, the release behavior as ERAX has informed the user to change content. ERAX may also notify the user of changes to the terms of the agreement, service changes, or other important matters by E-mail or private mail.\",\"Deal35\":\"2.User has the right and shall discontinue the use of ERAX if it does not agree to any modification made by ERAX to the terms of this Agreement. If User continues to use ERAX, User shall be deemed to have accepted the modification made by ERAX to the relevant terms of this Agreement.\",\"Day01\":\"3days\",\"Day02\":\"5days\",\"Day03\":\"1week\",\"Day04\":\"1month\",\"Day05\":\"2months\",\"Day06\":\"3months\",\"Day07\":\"4months\",\"Day08\":\"5months\",\"Day09\":\"6months\",\"Day10\":\"7months\",\"Day11\":\"8months\",\"Day12\":\"9months\",\"Day13\":\"10months\",\"Day14\":\"11months\",\"Day15\":\"1year\",\"picker1\":\"Cancel\",\"picker2\":\"Submit\",\"lang01\":\"Number of quotes\",\"lang02\":\"Last quote time\",\"lang03\":\"Work description\",\"lang04\":\"Sale ends in：\",\"lang05\":\"The mobile terminal is only for display. If you want to buy works or learn more, please operate on the web terminal erax.io\",\"lang06\":\"Sign in to your wallet \",\"lang07\":\"An Ethereum wallet is needed in order to log in to ERAX\",\"lang08\":\"Download Metamask\",\"lang09\":\"Sign in\",\"lang10\":\"Home\",\"lang11\":\"Search\",\"lang12\":\"Cancel\",\"lang13\":\"assets\",\"lang14\":\"My Profile\",\"lang15\":\"Enter a search phrase\",\"lang16\":\"Pull to refresh...\",\"lang17\":\"Releasing can refresh...\",\"lang18\":\"Loading...\",\"lang19\":\"More\",\"lang20\":\"No more\",\"lang21\":\"It cannot be transferred to itself\",\"lang22\":\"Transfer\",\"lang23\":\"Enter the wallet address\",\"lang24\":\"Transfer failed\",\"lang25\":\"Transfer success\",\"lang26\":\"Withdraw\",\"lang27\":\"Transfer your ERAC\",\"lang28\":\"up\",\"Other1\":\"You liked.\",\"Other2\":\"Unlike\",\"Other3\":\"Time\",\"Other4\":\"Year\",\"Other5\":\"Enter the time capsule and cast your digital life globally.\",\"ERR-800\":\"User does not exist\",\"ERR-801\":\"User registration failed\",\"ERR-802\":\"Invalid phone\",\"ERR-803\":\"Invalid email\",\"ERR-804\":\"Phone registered\",\"ERR-805\":\"Email has been registered\",\"ERR-811\":\"Phone is not registered\",\"ERR-812\":\"Email not registered\",\"ERR-818\":\"Google not verified\",\"ERR-819\":\"Unverified phone\",\"ERR-820\":\"Unverified email\",\"ERR-821\":\"Phone format error\",\"ERR-822\":\"Email format error\",\"ERR-823\":\"Invalid invitation code\",\"ERR-900\":\"Wrong password:1\",\"ERR-901\":\"Wrong password: 2\",\"ERR-902\":\"Wrong password: 3\",\"ERR-903\":\"Wrong password: 4\",\"ERR-904\":\"Wrong password: 5\",\"ERR-906\":\"Too many failed attempts; please reset password\",\"ERR-907\":\"Password format is wrong\",\"ERR-908\":\"Non-matching passwords\",\"ERR-920\":\"SMS verification code error\",\"ERR-921\":\"Email verification code error\",\"ERR-922\":\"New SMS verification code error\",\"ERR-923\":\"New email verification code error\",\"ERR-924\":\"SMS verification code is invalid\",\"ERR-925\":\"Invalid email verification code\",\"ERR-926\":\"SMS verification code not sent\",\"ERR-927\":\"Email verification code not sent\",\"ERR-928\":\"SMS verification code expired\",\"ERR-929\":\"Email verification code expired\",\"ERR-930\":\"SMS verification code restrictions\",\"ERR-931\":\"Email verification code restrictions\",\"ERR-932\":\"Failed to send SMS to third-party platform\",\"ERR-933\":\"Failed to send email to third-party platform\",\"ERR-940\":\"Google security key expired\",\"ERR-941\":\"Google verification code error\",\"ERR-942\":\"New Google verification code error\",\"ERR-960\":\"Not allowed to close\",\"ERR-500\":\"The system is busy\",\"ERR-501\":\"Protocol execution failed\",\"ERR-503\":\"Agreement does not exist\",\"ERR-504\":\"Json format error\",\"ERR-505\":\"Kafka call error\",\"ERR-506\":\"API access limit\",\"ERR-507\":\"blacklist\",\"ERR-508\":\"URL is invalid\",\"ERR-509\":\"Token is invalid\",\"ERR-510\":\"The system is busy\",\"ERR-511\":\"Signature error\",\"ERR-520\":\"URL path error\",\"ERR-521\":\"Token has expired\",\"ERR-522\":\"Token not verified\",\"ERR-523\":\"Token creation failed\",\"ERR-601\":\"Redis error\",\"ERR-602\":\"Mysql error\",\"ERR-603\":\"Mysql empty data\",\"ERR-604\":\"Data error in redis\",\"ERR-605\":\"LevelDB empty data\",\"ERR-606\":\"LevelDB error\",\"ERR-701\":\"Parameter error\",\"ERR-702\":\"Parameter format error\",\"ERR-724\":\"Parameter null error\",\"ERR-725\":\"Parameter value error\",\"ERR-726\":\"Parameter type error\",\"ERR-100000\":\"Public chain error\",\"ERR-100001\":\"Invalid currency\",\"ERR-100002\":\"Invalid merchant\",\"ERR-100003\":\"Invalid user account\",\"ERR-100004\":\"Invalid coin account\",\"ERR-100005\":\"Repeated withdrawal request\",\"ERR-100006\":\"Hot wallet does not exist\",\"ERR-100007\":\"Transfer to yourself\",\"ERR-100008\":\"Bill does not exist\",\"ERR-100009\":\"Transaction does not exist\",\"ERR-100010\":\"Wrong public chain\",\"ERR-100011\":\"Address data verification failed\",\"ERR-100012\":\"Address does not exist\",\"ERR-100013\":\"Transaction signature failed\",\"ERR-100014\":\"Transaction broadcast failed\",\"ERR-100015\":\"Failed to retry the deposit process\",\"ERR-100016\":\"Insufficient account balance\",\"ERR-100017\":\"Audit does not exist\",\"ERR-100018\":\"ERC20 address does not exist\",\"ERR-100019\":\"API failed\",\"ERR-100020\":\"Recharge closed\",\"ERR-100021\":\"Withdrawal closed\",\"ERR-100022\":\"Reviewed\",\"ERR-100023\":\"The preliminary review has not been operated\",\"ERR-100024\":\"The preliminary trial has been rejected\",\"ERR-100028\":\"No change address\",\"ERR-100029\":\"Multi-signature\",\"ERR-100030\":\"ETH transaction blocked\",\"ERR-100031\":\"Withdrawal wallet cannot be deleted\",\"ERR-100034\":\"Short wallet name\",\"ERR-100035\":\"Wallet name already exists\",\"ERR-100036\":\"Transaction exists\",\"ERR-1001\":\"hmac summary failed\",\"ERR-1002\":\"User url error\",\"ERR-1003\":\"Failed to verify signature\",\"ERR-1004\":\"url header information error\",\"ERR-1005\":\"Signature expired\",\"ERR-1006\":\"Wrong timestamp\",\"ERR-1007\":\"Time conversion failed\",\"ERR-1009\":\"User access limit reached\",\"ERR-1010\":\"Unable to find the corresponding tars structure\",\"ERR-1011\":\"Cannot find processing module\",\"ERR-1012\":\"API name already exists\",\"ERR-1013\":\"API password is invalid\",\"ERR-1014\":\"No Access\",\"ERR-1016\":\"api restriction\",\"ERR-1017\":\"Address format error\",\"ERR-1018\":\"Remarks are too short\",\"ERR-1019\":\"Password format is wrong\",\"ERR-1020\":\"Environment error\",\"ERR-1021\":\"Upload file format is not supported\",\"ERR-1022\":\"Daily limit for uploading files\",\"ERR-1023\":\"Upload file size limit\",\"ERR-1030\":\"Wallet has not yet opened an account\",\"ERR-1031\":\"Invalid address\",\"ERR-1032\":\"The withdrawal amount exceeds the maximum index\",\"ERR-1033\":\"Withdrawal amount is lower than the minimum limit\",\"ERR-1034\":\"Insufficient withdrawal amount\",\"ERR-1035\":\"The current channel does not support recharge of this currency\",\"ERR-1036\":\"User withdrawal channel closed\",\"ERR-1101\":\"User already exists\",\"ERR-1102\":\"Invalid user withdrawal password\",\"ERR-1103\":\"User account already exists\",\"ERR-1104\":\"The user has been authenticated or is in the process of authentication, do not repeat authentication\",\"ERR-1105\":\"User primary authentication failed\",\"ERR-1106\":\"User does not exist\",\"ERR-1107\":\"User wallet already exists\",\"ERR-1111\":\"Input chinese characters\",\"ERR-1112\":\"ID input is invalid\",\"ERR-1113\":\"Cannot modify nickname\",\"ERR-1114\":\"User authenticated\",\"ERR-1115\":\"The channel parameter entered by the user is wrong\",\"ERR-1116\":\"ID card already exists\",\"ERR-1117\":\"Nickname is too short\",\"ERR-1118\":\"User type error\",\"ERR-1119\":\"User type error\",\"ERR-1120\":\"Password format is wrong\",\"ERR-1121\":\"Password is not set\",\"ERR-1122\":\"Gm recertification\",\"ERR-1123\":\"Have not applied for an advertiser\",\"ERR-1124\":\"Have not applied for a merchant yet\",\"ERR-1125\":\"Permission denied\",\"ERR-1126\":\"Restrictions on sending email messages\",\"ERR-1127\":\"Insufficient balance\",\"ERR-1128\":\"User advanced authentication failed\",\"ERR-1129\":\"Acceptor certification failed\",\"ERR-1130\":\"Merchant verification failed\",\"ERR-1131\":\"The withdrawal password is the same as the login password\",\"ERR-1132\":\"The same request is already being processed\",\"ERR-1133\":\"Online advertisements cannot unfreeze the margin\",\"ERR-4301\":\"Parameter error\",\"ERR-4302\":\"iUserId and wallet address do not match\",\"ERR-4303\":\"Insufficient available balance\",\"ERR-4304\":\"Frozen balance insufficient\",\"ERR-4305\":\"Reward order information table data does not exist\",\"ERR-4306\":\"Reward Order Reply Message Form Data does not exist\",\"ERR-4307\":\"Official account configuration table data does not exist\",\"ERR-4308\":\"User sign-in record table Data does not exist\",\"ERR-4309\":\"The best answer cannot be repeated\",\"ERR-4310\":\"The reward order and the reply do not match\",\"ERR-4311\":\"Balance table data does not exist\",\"ERR-4312\":\"Must be a reward order initiated by the person in order to confirm the reply\",\"ERR-4313\":\"You can only sign in once a day\",\"ERR-4314\":\"User tendency record table Data does not exist\",\"ERR-4315\":\"The reward order has expired\"}");
 
 /***/ }),
 /* 90 */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"Main01\":\"悬赏\",\"Main02\":\"回答\",\"Main03\":\"上传回答\",\"Main04\":\"最大限制100 MB，支持 JPG, PNG, GIF, MP4, WEBM 格式\",\"Main05\":\"请输入作品标题\",\"Main06\":\"创建NFT\",\"Main07\":\"提交\",\"Main08\":\"输入NFT售卖价格1-1000NERA\",\"Main09\":\"悬赏令\",\"Main10\":\"请输入寻找的信息标题\",\"Main11\":\"请输入作品所属的年代\",\"Main12\":\"输入悬赏金额1-10000NERA\",\"Main13\":\"问题描述（选填）\",\"Main14\":\"作品所属城市(选填）\",\"Main15\":\"结束时间\",\"Main16\":\"可用\",\"Main17\":\"下一步\",\"Main18\":\"铸造该回答为NFT以支持交易\",\"Main19\":\"该NFT所有权归ERAX平台，交易收益归个人所有。你可以登入WEB端查看该NFT是否被交易，交易金额将自动转入你的平台账号，交易金额可以被提现到你的ETH钱包。如果你是在网站上搜索下载的图片，建议不要铸造NFT。ERAX平台有处理您的数据的权利\",\"Main20\":\"NFT交易情况请登入web端查看 (市场 — 时间胶囊原版)\",\"Main21\":\"请回答我的问题\",\"Main22\":\"欢迎来到ERAX时间交易所可以回到过去，可以到达未来悬赏、铸造、转让任何数字资产所有收益将与你的世界流通\",\"Main23\":\"分享\",\"Main24\":\"加载中\",\"Main25\":\"暂无更多数据\",\"Main26\":\"NFT交易情况请登入web端查看 (市场 — 时间胶囊NFT)\",\"Main27\":\"合约地址\",\"Main28\":\"Token ID\",\"Main29\":\"区块链\",\"Main30\":\"区块链信息\",\"Main31\":\"验证中...\",\"Main32\":\"余额不足\",\"Main33\":\"完成\",\"Main34\":\"悬赏\",\"Main35\":\"年前\",\"Main36\":\"个月前\",\"Main37\":\"周前\",\"Main38\":\"天前\",\"Main39\":\"小时前\",\"Main40\":\"分钟前\",\"Main41\":\"刚刚\",\"Main42\":\"悬赏NERA范围1-10000\",\"Main43\":\"价格\",\"Main44\":\"完成\",\"Main45\":\"请输入寻找的信息标题\",\"Main46\":\"该NFT所有权归ERAX平台，交易收益归个人所有。你可以登入WEB端查看该NFT是否被交易，交易金额将自动转入你的平台账号，交易金额可以被提现到你的ETH钱包\",\"Billboard01\":\"推荐\",\"Billboard02\":\"未确认\",\"Billboard03\":\"已确认\",\"Billboard04\":\"未回复\",\"Billboard05\":\"采纳\",\"Billboard06\":\"回答\",\"Billboard07\":\"结束时间：\",\"Billboard08\":\"详情\",\"Billboard09\":\"区块信息\",\"Billboard10\":\"确认采纳\",\"Billboard11\":\"将支付悬赏费用\",\"Billboard12\":\"创建NFT\",\"Billboard13\":\"输入NFT售卖价格1-1000NERA\",\"Billboard14\":\"确认\",\"Billboard15\":\"已过期\",\"Billboard16\":\"铸造该悬赏为NFT以支持交易\",\"Billboard17\":\"该NFT所有权归ERAX平台，交易收益归个人所有。你可以登入WEB端查看该NFT是否被交易，交易金额将自动转入你的平台账号，交易金额可以被提现到你的ETH钱包\",\"Billboard18\":\"NFT交易情况请登入web端查看\",\"Billboard19\":\"暂无回答\",\"Billboard20\":\"描述\",\"Billboard21\":\"采纳成功\",\"Billboard22\":\"回答\",\"Billboard23\":\"你的提问标题\",\"Billboard24\":\"你的回答标题\",\"Billboard25\":\"售卖价格\",\"Billboard26\":\"web端售卖展示图\",\"Billboard27\":\"暂无悬赏令\",\"Billboard28\":\"回答列表:\",\"Billboard29\":\"你的回答图片\",\"Billboard30\":\"你采纳的回答图片\",\"Message01\":\"全部已读\",\"Message02\":\"通知\",\"Message03\":\"资金\",\"Message04\":\"回复了你的时空胶囊，快去查看\",\"Message05\":\"你的时空胶囊已被采纳，快去查看\",\"Message06\":\"暂无消息，\",\"Message07\":\"发布悬赏\",\"Message08\":\"悬赏过期\",\"Message09\":\"悬赏成功\",\"Message10\":\"已被悬赏\",\"Message11\":\"注册奖励\",\"Message12\":\"邀请奖励\",\"Message13\":\"被邀请奖励\",\"Message14\":\"签到奖励\",\"Message15\":\"充值成功\",\"Message16\":\"提现成功\",\"Message17\":\"提问奖励\",\"Message18\":\"NFT售卖成功\",\"Message19\":\"你的NFT已上传，可以在web端查看交易\",\"Message20\":\"快去回答\",\"Message21\":\"暂无消息\",\"Message22\":\"解冻\",\"Message23\":\"冻结\",\"Account01\":\"邮箱账号\",\"Account02\":\"密码\",\"Account03\":\"登录\",\"Account04\":\"忘记密码\",\"Account05\":\"注册\",\"Account06\":\"请输入邮箱验证码\",\"Account07\":\"请输入6-16位密码\",\"Account08\":\"请输入邀请码（选填）\",\"Account09\":\"已有账号\",\"Account10\":\"注册即表示您已阅读并同意\",\"Account11\":\"ERAX用户协议\",\"Account12\":\"获取验证码\",\"Account13\":\"密码找回\",\"Account14\":\"确认\",\"Account15\":\"恭喜您注册成功\",\"Account16\":\"获得 {nera} NERA\",\"Account17\":\"邀请用户获得更多奖励\",\"Account18\":\"邀请码\",\"Account19\":\"登录成功\",\"Account21\":\"立即登录\",\"Account22\":\"完成\",\"Account23\":\"完善个人资料\",\"Account24\":\"请设置用户名2-16字符\",\"Account25\":\"请输入简介100字符\",\"Account26\":\"用户名不能为空\",\"Account27\":\"用户名长度为2-16字符\",\"Account28\":\"修改成功\",\"Account29\":\"请输入密码\",\"Account30\":\"密码错误\",\"Account31\":\"确认密码\",\"Mine01\":\"邀请码\",\"Mine02\":\"冻结中NERA\",\"Mine03\":\"悬赏\",\"Mine04\":\"回答\",\"Mine05\":\"更多\",\"Mine06\":\"提现\",\"Mine07\":\"充值\",\"Mine08\":\"收益明细\",\"Mine09\":\"充提记录\",\"Mine10\":\"钱包地址\",\"Mine11\":\"提现金额\",\"Mine12\":\"请输入钱包地址\",\"Mine13\":\"最少提现{nera}NERA\",\"Mine14\":\"可提现余额\",\"Mine15\":\"手续费\",\"Mine16\":\"注意\",\"Mine17\":\"请仔细确认信息，信息错误资金将无法追回\",\"Mine18\":\"提现成功后，因以太网络可能会出现拥堵，请耐心等待到账\",\"Mine19\":\"复制地址\",\"Mine20\":\"充值所需NERA可在web端获取，URL:\",\"Mine20-1\":\"禁止向该地址充值NERA之外的资产，任何充入该地址的非NERA资产将不可追回。\",\"Mine21\":\"充值需要30个网络才能到账，请耐心等待\",\"Mine22\":\"安全验证\",\"Mine23\":\"获取验证码\",\"Mine24\":\"请输入邮箱验证码\",\"Mine25\":\"签到\",\"Mine26\":\"每日签到送1-10NERA\",\"Mine27\":\"马上签到\",\"Mine28\":\"签到成功\",\"Mine29\":\"恭喜您获得\",\"Mine30\":\"明天继续加油!\",\"Mine31\":\"你已经签到过了~\",\"Mine32\":\"复制成功\",\"Mine33\":\"暂无信息\",\"Mine34\":\"提币审核中\",\"Mine35\":\"提币确认中\",\"Mine36\":\"提币成功\",\"Mine37\":\"拒绝提币\",\"Mine38\":\"提取系统取消\",\"Mine39\":\"提币用户取消\",\"Mine40\":\"提币异常\",\"Mine41\":\"充值中\",\"Mine42\":\"充值取消\",\"Mine43\":\"欢迎来到ERAX星球\",\"Nav01\":\"ERAX星球\",\"Nav02\":\"悬赏令\",\"Nav03\":\"活动\",\"Nav04\":\"消息\",\"Nav05\":\"我的档案\",\"Nav06\":\"登录\",\"Nav07\":\"帮助中心\",\"Nav08\":\"退出\",\"Nav09\":\"市场\",\"Nav10\":\"我的钱包\",\"Nav11\":\"点此分享\",\"Nav12\":\"任务奖励\",\"Nav13\":\"价格:\",\"Nav14\":\"进入时间胶囊，与全球潮人一起铸造你的数字人生\",\"Tip01\":\"发布成功\",\"Tip02\":\"回答成功\",\"Tip03\":\"悬赏成功——悬赏页\",\"Tip04\":\"作品最大100M\",\"Tip05\":\"格式不符——回答\",\"Tip06\":\"密码或者邮箱错误——登录页\",\"Tip07\":\"邀请码错误——注册页\",\"Tip08\":\"邮箱不存在——注册页\",\"Tip09\":\"验证码错误——注册页\",\"Tip10\":\"密码限制6-16位——注册页\",\"Tip11\":\"验证码错误——注册页\",\"Tip12\":\"验证码错误——注册页\",\"Tip13\":\"邮箱账号已存在——注册页\",\"Tip14\":\"密码需混合字母和数字\",\"Tip15\":\"头像格式不支持——我的\",\"Tip16\":\"头像限制8M\",\"Tip17\":\"用户名限制2-16字符——我的\",\"Tip18\":\"一句话简介限制100字符——我的\",\"Tip19\":\"邮箱无效\",\"Tip20\":\"用户不存在\",\"Tip21\":\"用户注册失败\",\"Tip22\":\"邮箱已注册\",\"Tip23\":\"邮箱未注册\",\"Tip24\":\"谷歌未验证\",\"Tip25\":\"邮箱未验证\",\"Tip26\":\"邮箱格式错误\",\"Help01\":\"帮助中心\",\"Help02\":\"ERAX介绍\",\"Help03\":\"ERAX是行业领先的加密藏品及非同质化通证(NFT)的交易平台，定位于“将独特的区块链数字化体验带给每一个人”，支持包括ERC721和ERC1155标准的NFT资产的创作、发行及交易流通。ERAX为每个“价值创造者”提供良好的流动性，推动NFT在全球价值的自由流通，打造一个“参与者均获益”的生态系统。\",\"Help04\":\"ERAX移动端是一个基于时间线的悬赏问答平台，用户可以通过发布悬赏寻找到对自己十分有意义的信息，回答者也可以通过提供优质内容获得悬赏金额，与此同时提问与回答还可以选择生成NFT在ERAX web端进行售卖。\",\"Help05\":\"如何获NERA？\",\"Help06\":\"（1）在平台进行一系列操作\",\"Help07\":\"注册：注册赠送100NERA邮箱注册（无论移动端还是Web端均有效），前10000个注册账号有效；\",\"Help08\":\"邀请：注册时填写了有效的邀请码，双方各得50NERA；每个账号的邀请码可重复使用10次；前10000个邀请码注册时有效；\",\"Help09\":\"签到：每天/每用户1次签到有效，每次签到赠1枚；180天有效，签到即赠；所有注册用户数有效。\",\"Help10\":\"ERAX社区每日评选1~10个不等的悬赏令为“优质问题”并奖励一定数量的NERA给问题发布者。\",\"Help11\":\"参与ERAX平台定期的活动或任务，也可获得NERA。\",\"Help12\":\"（2）获得ERAC\",\"Help13\":\"每个ERAC都有平台币NERA挖矿和平台盈利分红的特权，只要持有ERAC，即可享受这两大权益，持币者可随时从NERA挖矿合约和ERAC分红合约中提取这部分收益。\",\"Help14\":\"平台将根据发布悬赏或回复问题的贡献大小，奖励不同等级的ERAC。\",\"Help15\":\"ERAC详细介绍参考官网：\",\"Help16\":\"（3）在WEB网站（erax.io）上售卖自己的NFT\",\"Help17\":\"当您发布的悬赏令或回复的问题被铸造为NFT后，ERAX官方将代为销售该NFT，并将销售扣除平台服务费后的资金转入您的个人账户。\",\"Help18\":\"您也可以直接在ERAX.IO上创建NFT进行销售获得NERA。\",\"Help19\":\"什么是NFT?\",\"Help20\":\"NFT全称为Non-Fungible Token，非同质化代币，是用于表示数字资产的唯一加密货币令牌，具有不可分割、不可代替、独一无二等特点。\",\"Help21\":\"怎么生成NFT? \",\"Help22\":\"用户发起问题完成采纳一个优质回答并且开启创建NFT功能，整个问答将会生成一个NFT\",\"Help23\":\"用户回答问题时，开启创建NFT功能且该回答被采纳，则该回答将会生成一个NFT\",\"Help24\":\"NFT的版权以及收益\",\"Help25\":\"通过问答平台生成的NFT，其版权归属于官方，收益归属于用户（整个问答的NFT收益归于提问者，回答的NFT的收益归于回答者）。官方会帮用户上架销售，一旦售卖成功，平台会收取2.5%的手续费，其余的收益将会打到用户的平台账号。\\n     \",\"Help26\":\"咨询客服\",\"Help27\":\"如有其他任何问题，可以咨询\",\"Deal01\":\"ERAX用户协议\",\"Deal02\":\"欢迎您来到ERAX。\",\"Deal03\":\"请您仔细阅读以下条款，如果您对本协议的任何条款表示异议，您可以选择不进入ERAX。当您注册成功，无论是进入ERAX，还是在ERAX上发布任何内容，均意味着您完全接受本协议项下的全部条款。\",\"Deal04\":\"使用规则\",\"Deal05\":\"1.用户注册成功后，ERAX将给予每个用户一个用户帐号及相应的密码，该用户帐号和密码由用户负责保管；用户应当对以其用户帐号进行的所有活动和事件负法律责任。\",\"Deal06\":\"2.ERAX移动端是一个基于时间线的悬赏问答平台，用户通过ERAX发表的信息为公开的信息，其他第三方均可以通过ERAX获取用户发表的信息，用户对任何信息的发表即认可该信息为公开的信息，并单独对此行为承担法律责任；任何用户不愿被其他第三人获知的信息都不应该在ERAX上进行发表。\",\"Deal07\":\"3.用户承诺不得以任何方式利用ERAX直接或间接从事违反各国法律以及社会公德的行为，ERAX有权对违反上述承诺的内容予以删除。\",\"Deal08\":\"4.用户不得利用ERAX服务制作、上载、复制、发布、传播或者转载如下内容：\",\"Deal09\":\"危害国家安全，泄露国家秘密，颠覆国家政权；\",\"Deal10\":\"煽动民族仇恨、民族歧视，破坏民族团结的；\",\"Deal11\":\"散布谣言，扰乱社会秩序，破坏社会稳定的；\",\"Deal12\":\"散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；\",\"Deal13\":\"侮辱或者诽谤他人，侵害他人合法权益的；\",\"Deal14\":\"含有法律、行政法规禁止的其他内容的信息。\",\"Deal15\":\"5.ERAX有权对用户使用ERAX的情况进行审查和监督，如用户在使用ERAX时违反任何上述规定，ERAX或其授权的人有权要求用户改正或直接采取一切必要的措施（包括但不限于更改或删除用户张贴的内容、暂停或终止用户使用ERAX的权利）以减轻用户不当行为造成的影响。\",\"Deal16\":\"知识产权\",\"Deal17\":\"ERAX移动端是一个基于时间线的悬赏问答平台，我们尊重和鼓励ERAX用户创作的内容，认识到保护知识产权对ERAX生存与发展的重要性，承诺将保护知识产权作为ERAX运营的基本原则之一。\",\"Deal18\":\"1.用户在ERAX上发表的全部原创内容（包括但不仅限于回答、文章和评论），著作权均归用户本人所有。用户可授权第三方以任何方式使用，不需要得到ERAX的同意。\",\"Deal19\":\"2.一旦铸造为NFT后，该NFT所有权归ERAX平台，交易收益归个人所有。你可以登入WEB端查看该NFT是否被交易，交易金额将自动转入你的平台账号，交易金额可以被提现到你的ETH钱包。\",\"Deal20\":\"3.ERAX提供的网络服务中包含的文本、图片、视频等均受著作权、商标权及其它法律保护，未经相关权利人（含ERAX及其他原始权利人）同意，上述内容均不得在任何平台被直接或间接发布、使用、出于发布或使用目的的改写或再发行，或被用于其他任何商业目的。\",\"Deal21\":\"4.为了促进分享和传播，用户将其在ERAX上发表的全部内容，授予ERAX免费的、不可撤销的、非独家使用许可，ERAX有权将该内容用于ERAX各种形态的产品和服务上，包括但不限于网站以及发表的应用或其他互联网产品。\",\"Deal22\":\"5.在ERAX上传或发表的内容，用户应保证其为著作权人或已取得合法授权，并且该内容不会侵犯任何第三方的合法权益。如果第三方提出关于著作权的异议，ERAX有权根据实际情况删除相关的内容，且有权追究用户的法律责任。给ERAX或任何第三方造成损失的，用户应负责全额赔偿。\",\"Deal23\":\"6.如果任何第三方侵犯了ERAX用户相关的权利，用户同意授权ERAX或其指定的代理人代表ERAX自身或用户对该第三方提出警告、投诉、发起行政执法、诉讼、进行上诉，或谈判和解，并且用户同意在ERAX认为必要的情况下参与共同维权。\",\"Deal24\":\"7.ERAX有权但无义务对用户发布的内容进行审核，有权根据相关证据结合法律法规及ERAX社区指导原则对侵权信息进行处理。\",\"Deal25\":\"个人隐私\",\"Deal26\":\"尊重用户个人隐私信息的私有性是ERAX的一贯原则，ERAX将通过技术手段、强化内部管理等办法充分保护用户的个人隐私信息，除法律或有法律赋予权限的政府部门要求或事先得到用户明确授权等原因外，ERAX保证不对外公开或向第三方透露用户个人隐私信息，或用户在使用服务时存储的非公开内容。同时，为了运营和改善ERAX的技术与服务，ERAX将可能会自行收集使用或向第三方提供用户的非个人隐私信息，这将有助于ERAX向用户提供更好的用户体验和服务质量。\",\"Deal27\":\"您使用或继续使用我们的服务，即意味着同意我们按照ERAX《ERAX隐私保护指引》收集、使用、储存和分享您的相关信息。\",\"Deal28\":\"免责声明\",\"Deal29\":\"1.ERAX不能对用户发表的回答或评论的正确性进行保证。\",\"Deal30\":\"2.用户在ERAX发表的内容仅表明其个人的立场和观点，并不代表ERAX的立场或观点。作为内容的发表者，需自行对所发表内容负责，因所发表内容引发的一切纠纷，由该内容的发表者承担全部法律及连带责任。ERAX不承担任何法律及连带责任。\",\"Deal31\":\"3.ERAX不保证网络服务一定能满足用户的要求，也不保证网络服务不会中断，对网络服务的及时性、安全性、准确性也都不作保证。\",\"Deal32\":\"4.对于因不可抗力或ERAX不能控制的原因造成的网络服务中断或其它缺陷，ERAX不承担任何责任，但将尽力减少因此而给用户造成的损失和影响。\",\"Deal33\":\"协议修改\",\"Deal34\":\"1.根据互联网的发展和有关法律、法规及规范性文件的变化，或者因业务发展需要，ERAX有权对本协议的条款作出修改或变更，一旦本协议的内容发生变动，ERAX将会直接在ERAX网站上公布修改之后的协议内容，该公布行为视为ERAX已经通知用户修改内容。ERAX也可采用电子邮件或私信的传送方式，提示用户协议条款的修改、服务变更、或其它重要事项。\",\"Deal35\":\"2.如果不同意ERAX对本协议相关条款所做的修改，用户有权并应当停止使用ERAX。如果用户继续使用ERAX，则视为用户接受ERAX对本协议相关条款所做的修改。\",\"Day01\":\"3天\",\"Day02\":\"5天\",\"Day03\":\"1周\",\"Day04\":\"1月\",\"Day05\":\"2月\",\"Day06\":\"3月\",\"Day07\":\"4月\",\"Day08\":\"5月\",\"Day09\":\"6月\",\"Day10\":\"7月\",\"Day11\":\"8月\",\"Day12\":\"9月\",\"Day13\":\"10月\",\"Day14\":\"11月\",\"Day15\":\"1年\",\"lang01\":\"报价次数\",\"lang02\":\"最后报价时间\",\"lang03\":\"作品描述\",\"lang04\":\"倒计时：\",\"lang05\":\"移动端仅作展示，如想购买作品或者了解更多信息，请在网页端erax.io操作\",\"lang06\":\"登录你的钱包\",\"lang07\":\"需要一个以太坊钱包登录ERAX\",\"lang08\":\"下载MetaMask\",\"lang09\":\"登录\",\"lang10\":\"首页\",\"lang11\":\"搜索\",\"lang12\":\"取消\",\"lang13\":\"资产\",\"lang14\":\"个人中心\",\"lang15\":\"请输入关键字\",\"lang16\":\"下拉即可刷新...\",\"lang17\":\"释放即可刷新...\",\"lang18\":\"加载中...\",\"lang19\":\"更多\",\"lang20\":\"没有更多了\",\"lang21\":\"不能转让给自己\",\"lang22\":\"转让\",\"lang23\":\"请输入钱包地址\",\"lang24\":\"转让失败\",\"lang25\":\"转让成功\",\"lang26\":\"提取\",\"lang27\":\"转让ERAC\",\"lang28\":\"收起\",\"Other1\":\"点赞成功\",\"Other2\":\"取消成功\",\"Other3\":\"创建时间\",\"Other4\":\"所属年代\",\"Other5\":\"进入时间胶囊，与全球潮人一起铸造你的数字人生\",\"picker1\":\"取消\",\"picker2\":\"确认\",\"ERR-800\":\"用户不存在\",\"ERR-801\":\"用户注册失败\",\"ERR-802\":\"手机无效\",\"ERR-803\":\"邮箱无效\",\"ERR-804\":\"手机已注册\",\"ERR-805\":\"邮箱已注册\",\"ERR-811\":\"手机未注册\",\"ERR-812\":\"邮箱未注册\",\"ERR-818\":\"未验证谷歌\",\"ERR-819\":\"未验证手机\",\"ERR-820\":\"未验证邮箱\",\"ERR-821\":\"手机格式错误\",\"ERR-822\":\"邮箱格式错误\",\"ERR-823\":\"邀请码无效\",\"ERR-900\":\"密码错误一次\",\"ERR-901\":\"密码错误两次\",\"ERR-902\":\"密码错误三次\",\"ERR-903\":\"密码错误四次\",\"ERR-904\":\"密码错误五次\",\"ERR-906\":\"密码错误超过五次 用户冻结 请重置密码\",\"ERR-907\":\"密码格式错误\",\"ERR-908\":\"新旧密码一致错误\",\"ERR-920\":\"短信验证码错误\",\"ERR-921\":\"邮箱验证码错误\",\"ERR-922\":\"新短信验证码错误\",\"ERR-923\":\"新邮箱验证码错误\",\"ERR-924\":\"短信验证码失效\",\"ERR-925\":\"邮箱验证码失效\",\"ERR-926\":\"未发送短信验证码\",\"ERR-927\":\"未发送邮箱验证码\",\"ERR-928\":\"短信验证码过期\",\"ERR-929\":\"邮箱验证码过期\",\"ERR-930\":\"短信验证码限制\",\"ERR-931\":\"邮箱验证码限制\",\"ERR-932\":\"短信第三方平台发送失败\",\"ERR-933\":\"邮箱第三方平台发送失败\",\"ERR-940\":\"Google安全密钥失效\",\"ERR-941\":\"谷歌验证码错误\",\"ERR-942\":\"新谷歌验证码错误\",\"ERR-960\":\"不允许关闭\",\"ERR-500\":\"系统繁忙\",\"ERR-501\":\"协议执行失败\",\"ERR-503\":\"协议不存在\",\"ERR-504\":\"Json格式错误\",\"ERR-505\":\"Kafka 调用错误\",\"ERR-506\":\"API访问次数限制\",\"ERR-507\":\"黑名单\",\"ERR-508\":\"URL无效\",\"ERR-509\":\"请重新登录\",\"ERR-510\":\"系统繁忙\",\"ERR-511\":\"签名错误\",\"ERR-520\":\"URL路径错误\",\"ERR-521\":\"Token已过期\",\"ERR-522\":\"Token未验证\",\"ERR-523\":\"Token创建失败\",\"ERR-601\":\"Redis错误\",\"ERR-602\":\"Mysql错误\",\"ERR-603\":\"Mysql空数据\",\"ERR-604\":\"redis中的数据错误\",\"ERR-605\":\"LevelDB空数据\",\"ERR-606\":\"LevelDB错误\",\"ERR-701\":\"参数错误\",\"ERR-702\":\"参数格式错误\",\"ERR-724\":\"参数空错误\",\"ERR-725\":\"参数值错误\",\"ERR-726\":\"参数类型错误\",\"ERR-100000\":\"公链错误\",\"ERR-100001\":\"无效的币种\",\"ERR-100002\":\"无效的商户\",\"ERR-100003\":\"无效的用户账户\",\"ERR-100004\":\"无效的钱币账户\",\"ERR-100005\":\"重复的提币请求\",\"ERR-100006\":\"热钱包不存在\",\"ERR-100007\":\"转账给自己\",\"ERR-100008\":\"票据不存在\",\"ERR-100009\":\"交易不存在\",\"ERR-100010\":\"错误的公链\",\"ERR-100011\":\"地址数据校验失败\",\"ERR-100012\":\"地址不存在\",\"ERR-100013\":\"交易签名失败\",\"ERR-100014\":\"交易广播失败\",\"ERR-100015\":\"充币处理重试失败\",\"ERR-100016\":\"账户余额不足\",\"ERR-100017\":\"审核不存在\",\"ERR-100018\":\"ERC20地址不存在\",\"ERR-100019\":\"API 失败\",\"ERR-100020\":\"充值关闭\",\"ERR-100021\":\"提币关闭\",\"ERR-100022\":\"已审核了\",\"ERR-100023\":\"初审还未操作\",\"ERR-100024\":\"初审已经拒绝\",\"ERR-100028\":\"没有找零地址\",\"ERR-100029\":\"多重签名\",\"ERR-100030\":\"ETH交易阻塞中\",\"ERR-100031\":\"提币钱包不能删除\",\"ERR-100034\":\"钱包名字长度短\",\"ERR-100035\":\"钱包名字已经存在\",\"ERR-100036\":\"交易存在\",\"ERR-1001\":\"hmac 摘要失败\",\"ERR-1002\":\"用户url错误\",\"ERR-1003\":\"验证签名失败\",\"ERR-1004\":\"url 头部信息错误\",\"ERR-1005\":\"签名过期\",\"ERR-1006\":\"错误的时间戳\",\"ERR-1007\":\"时间转换失败\",\"ERR-1009\":\"用户访问达到上限\",\"ERR-1010\":\"无法找到对应的tars结构\",\"ERR-1011\":\"无法找到处理模块\",\"ERR-1012\":\"API名字已存在\",\"ERR-1013\":\"API密码无效\",\"ERR-1014\":\"禁止访问\",\"ERR-1016\":\"api限制\",\"ERR-1017\":\"地址格式错误\",\"ERR-1018\":\"备注太短\",\"ERR-1019\":\"密码格式错误\",\"ERR-1020\":\"环境错误\",\"ERR-1021\":\"上传文件格式不支持\",\"ERR-1022\":\"上传文件每日限制\",\"ERR-1023\":\"上传文件大小限制\",\"ERR-1030\":\"钱包尚未开户\",\"ERR-1031\":\"无效的地址\",\"ERR-1032\":\"提币金额超过最大指\",\"ERR-1033\":\"提币金额低于最小限额\",\"ERR-1034\":\"提币金额不足\",\"ERR-1035\":\"当前渠道不支持充值该币种\",\"ERR-1036\":\"用户提币通道关闭\",\"ERR-1101\":\"用户已存在\",\"ERR-1102\":\"用户冲提币密码无效\",\"ERR-1103\":\"用户账户已存在\",\"ERR-1104\":\"用户已认证或正在认证中，勿重复认证\",\"ERR-1105\":\"用户初级认证未通过\",\"ERR-1106\":\"用户不存在\",\"ERR-1107\":\"用户钱包已经存在\",\"ERR-1111\":\"输入非中文\",\"ERR-1112\":\"身份证输入无效\",\"ERR-1113\":\"不可修改昵称\",\"ERR-1114\":\"用户已认证\",\"ERR-1115\":\"用户输入的渠道参数错误\",\"ERR-1116\":\"身份证已存在\",\"ERR-1117\":\"昵称太短\",\"ERR-1118\":\"用户类型错误\",\"ERR-1119\":\"用户类型错误\",\"ERR-1120\":\"密码格式错误\",\"ERR-1121\":\"密码未设置\",\"ERR-1122\":\"Gm再次认证\",\"ERR-1123\":\"还没有申请广告商\",\"ERR-1124\":\"还没有申请商户\",\"ERR-1125\":\"没有权限\",\"ERR-1126\":\"发送邮件信息限制\",\"ERR-1127\":\"余额不足\",\"ERR-1128\":\"用户高级认证未通过\",\"ERR-1129\":\"承兑商认证未通过\",\"ERR-1130\":\"商户认证未通过\",\"ERR-1131\":\"提币密码与登陆密码相同\",\"ERR-1132\":\"已有同样的请求在处理\",\"ERR-1133\":\"有在线广告不能解冻保证金\",\"ERR-4301\":\"参数错误\",\"ERR-4302\":\"iUserId和钱包地址不匹配\",\"ERR-4303\":\"可用余额不足\",\"ERR-4304\":\"冻结余额不足\",\"ERR-4305\":\"悬赏令信息表 数据不存在\",\"ERR-4306\":\"悬赏令回复信息表 数据不存在\",\"ERR-4307\":\"官方账号配置表 数据不存在\",\"ERR-4308\":\"用户签到记录表 数据不存在\",\"ERR-4309\":\"不能重复采纳最佳答案\",\"ERR-4310\":\"悬赏令和回复不匹配\",\"ERR-4311\":\"Balance表 数据不存在\",\"ERR-4312\":\"必须是本人发起的悬赏令才能确认回复\",\"ERR-4313\":\"每天只能签到一次\",\"ERR-4314\":\"用户倾向记录表 数据不存在\",\"ERR-4315\":\"悬赏令已经过期了\"}");
+
+/***/ }),
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3181,15 +3419,15 @@ var external_vue_meta_ = __webpack_require__(29);
 var external_vue_meta_default = /*#__PURE__*/__webpack_require__.n(external_vue_meta_);
 
 // EXTERNAL MODULE: external "vue-client-only"
-var external_vue_client_only_ = __webpack_require__(13);
+var external_vue_client_only_ = __webpack_require__(14);
 var external_vue_client_only_default = /*#__PURE__*/__webpack_require__.n(external_vue_client_only_);
 
 // EXTERNAL MODULE: external "vue-no-ssr"
-var external_vue_no_ssr_ = __webpack_require__(9);
+var external_vue_no_ssr_ = __webpack_require__(11);
 var external_vue_no_ssr_default = /*#__PURE__*/__webpack_require__.n(external_vue_no_ssr_);
 
 // EXTERNAL MODULE: external "vue-router"
-var external_vue_router_ = __webpack_require__(14);
+var external_vue_router_ = __webpack_require__(15);
 var external_vue_router_default = /*#__PURE__*/__webpack_require__.n(external_vue_router_);
 
 // CONCATENATED MODULE: ./.nuxt/router.scrollBehavior.js
@@ -3269,49 +3507,51 @@ function shouldScrollToTop(route) {
 
 
 
-const _5f48a836 = () => interopDefault(__webpack_require__.e(/* import() */ 17).then(__webpack_require__.bind(null, 237)));
+const _504f1b98 = () => interopDefault(__webpack_require__.e(/* import() */ 18).then(__webpack_require__.bind(null, 251)));
 
-const _da066bd6 = () => interopDefault(__webpack_require__.e(/* import() */ 8).then(__webpack_require__.bind(null, 238)));
+const _98ed3b1a = () => interopDefault(__webpack_require__.e(/* import() */ 11).then(__webpack_require__.bind(null, 252)));
 
-const _a9b40e64 = () => interopDefault(__webpack_require__.e(/* import() */ 25).then(__webpack_require__.bind(null, 239)));
+const _93882ba0 = () => interopDefault(__webpack_require__.e(/* import() */ 27).then(__webpack_require__.bind(null, 253)));
 
-const _05f30e03 = () => interopDefault(__webpack_require__.e(/* import() */ 19).then(__webpack_require__.bind(null, 240)));
+const _5d9b48e1 = () => interopDefault(__webpack_require__.e(/* import() */ 20).then(__webpack_require__.bind(null, 254)));
 
-const _122f828e = () => interopDefault(__webpack_require__.e(/* import() */ 24).then(__webpack_require__.bind(null, 241)));
+const _69d7bd6c = () => interopDefault(__webpack_require__.e(/* import() */ 26).then(__webpack_require__.bind(null, 255)));
 
-const _5bcc7352 = () => interopDefault(__webpack_require__.e(/* import() */ 27).then(__webpack_require__.bind(null, 242)));
+const _6a516eb0 = () => interopDefault(__webpack_require__.e(/* import() */ 29).then(__webpack_require__.bind(null, 256)));
 
-const _3d1c1635 = () => interopDefault(__webpack_require__.e(/* import() */ 28).then(__webpack_require__.bind(null, 243)));
+const _4ba11193 = () => interopDefault(__webpack_require__.e(/* import() */ 30).then(__webpack_require__.bind(null, 257)));
 
-const _34edba7a = () => interopDefault(__webpack_require__.e(/* import() */ 26).then(__webpack_require__.bind(null, 244)));
+const _17e3c3be = () => interopDefault(__webpack_require__.e(/* import() */ 28).then(__webpack_require__.bind(null, 258)));
 
-const _3615eb2c = () => interopDefault(__webpack_require__.e(/* import() */ 10).then(__webpack_require__.bind(null, 234)));
+const _5915e7e4 = () => interopDefault(__webpack_require__.e(/* import() */ 13).then(__webpack_require__.bind(null, 248)));
 
-const _ded1f69e = () => interopDefault(__webpack_require__.e(/* import() */ 11).then(__webpack_require__.bind(null, 235)));
+const _782c5f0f = () => interopDefault(__webpack_require__.e(/* import() */ 14).then(__webpack_require__.bind(null, 249)));
 
-const _2613e07f = () => interopDefault(__webpack_require__.e(/* import() */ 23).then(__webpack_require__.bind(null, 245)));
+const _3129d1e1 = () => interopDefault(__webpack_require__.e(/* import() */ 25).then(__webpack_require__.bind(null, 259)));
 
-const _e6124fc4 = () => interopDefault(__webpack_require__.e(/* import() */ 29).then(__webpack_require__.bind(null, 246)));
+const _36c1da08 = () => interopDefault(__webpack_require__.e(/* import() */ 32).then(__webpack_require__.bind(null, 260)));
 
-const _a1c190dc = () => interopDefault(__webpack_require__.e(/* import() */ 9).then(__webpack_require__.bind(null, 247)));
+const _8b95ae18 = () => interopDefault(__webpack_require__.e(/* import() */ 10).then(__webpack_require__.bind(null, 261)));
 
-const _4908556e = () => interopDefault(__webpack_require__.e(/* import() */ 21).then(__webpack_require__.bind(null, 248)));
+const _78daf62b = () => interopDefault(__webpack_require__.e(/* import() */ 23).then(__webpack_require__.bind(null, 262)));
 
-const _59011758 = () => interopDefault(__webpack_require__.e(/* import() */ 15).then(__webpack_require__.bind(null, 249)));
+const _14289336 = () => interopDefault(__webpack_require__.e(/* import() */ 17).then(__webpack_require__.bind(null, 263)));
 
-const _1a45e630 = () => interopDefault(__webpack_require__.e(/* import() */ 12).then(__webpack_require__.bind(null, 236)));
+const _723fd892 = () => interopDefault(__webpack_require__.e(/* import() */ 12).then(__webpack_require__.bind(null, 250)));
 
-const _7900e638 = () => interopDefault(__webpack_require__.e(/* import() */ 18).then(__webpack_require__.bind(null, 250)));
+const _5bf6ef7c = () => interopDefault(__webpack_require__.e(/* import() */ 19).then(__webpack_require__.bind(null, 264)));
 
-const _71e7c024 = () => interopDefault(__webpack_require__.e(/* import() */ 14).then(__webpack_require__.bind(null, 251)));
+const _ff2688fc = () => interopDefault(__webpack_require__.e(/* import() */ 16).then(__webpack_require__.bind(null, 265)));
 
-const _e1cab3a0 = () => interopDefault(__webpack_require__.e(/* import() */ 16).then(__webpack_require__.bind(null, 252)));
+const _51351692 = () => interopDefault(__webpack_require__.e(/* import() */ 22).then(__webpack_require__.bind(null, 266)));
 
-const _7144f7be = () => interopDefault(__webpack_require__.e(/* import() */ 20).then(__webpack_require__.bind(null, 253)));
+const _45bfb51c = () => interopDefault(__webpack_require__.e(/* import() */ 21).then(__webpack_require__.bind(null, 267)));
 
-const _b9931ae0 = () => interopDefault(__webpack_require__.e(/* import() */ 22).then(__webpack_require__.bind(null, 254)));
+const _10043c1c = () => interopDefault(__webpack_require__.e(/* import() */ 24).then(__webpack_require__.bind(null, 268)));
 
-const _14ba00e4 = () => interopDefault(__webpack_require__.e(/* import() */ 13).then(__webpack_require__.bind(null, 255)));
+const _4d4b3a6c = () => interopDefault(__webpack_require__.e(/* import() */ 15).then(__webpack_require__.bind(null, 269)));
+
+const _7940c70a = () => interopDefault(__webpack_require__.e(/* import() */ 31).then(__webpack_require__.bind(null, 270)));
 
 const emptyFn = () => {};
 
@@ -3324,7 +3564,7 @@ const routerOptions = {
   scrollBehavior: router_scrollBehavior,
   routes: [{
     path: "/",
-    component: _5f48a836,
+    component: _504f1b98,
     meta: {
       "showHeader": false,
       "showFooter": false
@@ -3332,7 +3572,7 @@ const routerOptions = {
     name: "Start"
   }, {
     path: "/main",
-    component: _da066bd6,
+    component: _98ed3b1a,
     meta: {
       "showHeader": true,
       "keepAlive": true
@@ -3340,53 +3580,53 @@ const routerOptions = {
     name: "Main"
   }, {
     path: "/account/login",
-    component: _a9b40e64,
+    component: _93882ba0,
     name: "Login"
   }, {
     path: "/account/signup",
-    component: _05f30e03,
+    component: _5d9b48e1,
     name: "Signup"
   }, {
     path: "/account/forgot",
-    component: _122f828e,
+    component: _69d7bd6c,
     name: "Forgot"
   }, {
     path: "/account/recharge",
-    component: _5bcc7352,
+    component: _6a516eb0,
     name: "recharge"
   }, {
     path: "/account/withdraw",
-    component: _3d1c1635,
+    component: _4ba11193,
     name: "withdraw"
   }, {
     path: "/account/protocol",
-    component: _34edba7a,
+    component: _17e3c3be,
     name: "protocol"
   }, {
     path: "/account/message",
-    component: _3615eb2c,
+    component: _5915e7e4,
     name: "message"
   }, {
     path: "/account/nera",
-    component: _ded1f69e,
+    component: _782c5f0f,
     name: "nera"
   }, {
     path: "/answer",
-    component: _2613e07f,
+    component: _3129d1e1,
     meta: {
       "showFooter": false
     },
     name: "Answer"
   }, {
     path: "/reward/publish",
-    component: _e6124fc4,
+    component: _36c1da08,
     meta: {
       "showFooter": false
     },
     name: "Publish"
   }, {
     path: "/reward/detail/:iRewardId",
-    component: _a1c190dc,
+    component: _8b95ae18,
     meta: {
       "showFooter": false
     },
@@ -3394,14 +3634,14 @@ const routerOptions = {
     name: "Detail"
   }, {
     path: "/billboard",
-    component: _4908556e,
+    component: _78daf62b,
     redirect: to => {
       return '/billboard/recommend';
     },
     name: "Billboard",
     children: [{
       path: "/billboard/:type",
-      component: _59011758,
+      component: _14289336,
       meta: {
         "showFooter": false
       },
@@ -3410,14 +3650,14 @@ const routerOptions = {
     }]
   }, {
     path: "/user",
-    component: _1a45e630,
+    component: _723fd892,
     meta: {
       "showFooter": false
     },
     name: "User"
   }, {
     path: "/account/complete",
-    component: _7900e638,
+    component: _5bf6ef7c,
     meta: {
       "shouHeader": false,
       "showFooter": false
@@ -3425,40 +3665,48 @@ const routerOptions = {
     name: "Complete"
   }, {
     path: "/nft",
-    component: _71e7c024,
+    component: _ff2688fc,
     meta: {
       "showFooter": false
     },
     name: "Nfts"
   }, {
     path: "/activity",
-    component: _e1cab3a0,
+    component: _51351692,
     meta: {
       "showFooter": false
     },
     name: "Activity"
   }, {
     path: "/activity-detail",
-    component: _7144f7be,
+    component: _45bfb51c,
     meta: {
       "showFooter": false
     },
     name: "Activity-detail"
   }, {
     path: "/help-center",
-    component: _b9931ae0,
+    component: _10043c1c,
     meta: {
       "showFooter": false
     },
     name: "HelpCenter"
   }, {
     path: "/share",
-    component: _14ba00e4,
+    component: _4d4b3a6c,
     meta: {
       "showHeader": false,
       "showFooter": false
     },
     name: "Share"
+  }, {
+    path: "/assets-share/:sContractAddress/:sTokenId",
+    component: _7940c70a,
+    meta: {
+      "showHeader": false,
+      "showFooter": false
+    },
+    name: "AssetsShare"
   }],
   fallback: false
 };
@@ -3572,14 +3820,14 @@ function createRouter(ssrContext, config) {
 });
 const transitionsKeys = ['name', 'mode', 'appear', 'css', 'type', 'duration', 'enterClass', 'leaveClass', 'appearClass', 'enterActiveClass', 'enterActiveClass', 'leaveActiveClass', 'appearActiveClass', 'enterToClass', 'leaveToClass', 'appearToClass'];
 const listenersKeys = ['beforeEnter', 'enter', 'afterEnter', 'enterCancelled', 'beforeLeave', 'leave', 'afterLeave', 'leaveCancelled', 'beforeAppear', 'appear', 'afterAppear', 'appearCancelled'];
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./.nuxt/components/nuxt-error.vue?vue&type=template&id=5eb69f1c&
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./.nuxt/components/nuxt-error.vue?vue&type=template&id=5eb69f1c&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"__nuxt-error-page"},[_vm._ssrNode("<div class=\"error\">","</div>",[_vm._ssrNode("<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"90\" height=\"90\" fill=\"#DBE1EC\" viewBox=\"0 0 48 48\"><path d=\"M22 30h4v4h-4zm0-16h4v12h-4zm1.99-10C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z\"></path></svg> <div class=\"title\">"+_vm._ssrEscape(_vm._s(_vm.message))+"</div> "),(_vm.statusCode === 404)?_vm._ssrNode("<p class=\"description\">","</p>",[(typeof _vm.$route === 'undefined')?_vm._ssrNode("<a href=\"/\" class=\"error-link\">","</a>"):_c('NuxtLink',{staticClass:"error-link",attrs:{"to":"/"}},[_vm._v("Back to the home page")])],1):_vm._e(),_vm._ssrNode(" <div class=\"logo\"><a href=\"https://nuxtjs.org\" target=\"_blank\" rel=\"noopener\">Nuxt</a></div>")],2)])}
 var staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./.nuxt/components/nuxt-error.vue?vue&type=template&id=5eb69f1c&
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./.nuxt/components/nuxt-error.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/_babel-loader@8.2.2@babel-loader/lib??ref--2-0!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./.nuxt/components/nuxt-error.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -3632,7 +3880,7 @@ var staticRenderFns = []
 });
 // CONCATENATED MODULE: ./.nuxt/components/nuxt-error.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_nuxt_errorvue_type_script_lang_js_ = (nuxt_errorvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+// EXTERNAL MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./.nuxt/components/nuxt-error.vue
@@ -3655,7 +3903,7 @@ var nuxt_error_component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "7b677db3"
+  "34d3d9b8"
   
 )
 
@@ -3764,7 +4012,7 @@ var nuxt_error_component = Object(componentNormalizer["a" /* default */])(
   }
 
 });
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./.nuxt/components/nuxt-loading.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/_babel-loader@8.2.2@babel-loader/lib??ref--2-0!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./.nuxt/components/nuxt-loading.vue?vue&type=script&lang=js&
 /* harmony default export */ var nuxt_loadingvue_type_script_lang_js_ = ({
   name: 'NuxtLoading',
 
@@ -3959,27 +4207,27 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
   false,
   nuxt_loading_injectStyles,
   null,
-  "94544bb2"
+  "4eb4d758"
   
 )
 
 /* harmony default export */ var nuxt_loading = (nuxt_loading_component.exports);
-// EXTERNAL MODULE: ./node_modules/vant/lib/index.css
+// EXTERNAL MODULE: ./node_modules/_vant@2.12.22@vant/lib/index.css
 var lib = __webpack_require__(43);
 
 // EXTERNAL MODULE: ./assets/css/base.less
 var css_base = __webpack_require__(45);
 
 // EXTERNAL MODULE: ./assets/css/common.less
-var common = __webpack_require__(47);
+var common = __webpack_require__(48);
 
-// EXTERNAL MODULE: ./node_modules/@fortawesome/fontawesome-free/css/all.min.css
-var all_min = __webpack_require__(49);
+// EXTERNAL MODULE: ./node_modules/_@fortawesome_fontawesome-free@5.15.3@@fortawesome/fontawesome-free/css/all.min.css
+var all_min = __webpack_require__(50);
 
 // EXTERNAL MODULE: ./assets/css/iconfont.css
-var iconfont = __webpack_require__(66);
+var iconfont = __webpack_require__(67);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=5f447cec&
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=5f447cec&
 var defaultvue_type_template_id_5f447cec_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"app"}},[(_vm.pageSetting.showHeader)?_c('i-header',{attrs:{"id":"i-header"}}):_vm._e(),_vm._ssrNode(" "),_vm._ssrNode("<div id=\"i-container\""+(_vm._ssrClass(null,{padding: _vm.pageSetting.showHeader}))+">","</div>",[_c('Nuxt',{attrs:{"keep-alive":"","keep-alive-props":{ include: _vm.keepAliveList }}})],1),_vm._ssrNode(" "),(_vm.pageSetting.showFooter)?_c('i-footer',{attrs:{"id":"i-footer"}}):_vm._e()],2)}
 var defaultvue_type_template_id_5f447cec_staticRenderFns = []
 
@@ -3987,12 +4235,12 @@ var defaultvue_type_template_id_5f447cec_staticRenderFns = []
 // CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=5f447cec&
 
 // EXTERNAL MODULE: ./components/common/iHeader.vue + 4 modules
-var iHeader = __webpack_require__(8);
+var iHeader = __webpack_require__(10);
 
 // EXTERNAL MODULE: ./components/common/iFooter.vue + 4 modules
 var iFooter = __webpack_require__(32);
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/_babel-loader@8.2.2@babel-loader/lib??ref--2-0!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -4036,7 +4284,7 @@ var iFooter = __webpack_require__(32);
 
 function default_injectStyles (context) {
   
-  var style0 = __webpack_require__(75)
+  var style0 = __webpack_require__(76)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -4050,19 +4298,19 @@ var default_component = Object(componentNormalizer["a" /* default */])(
   false,
   default_injectStyles,
   null,
-  "0891b048"
+  "15682739"
   
 )
 
 /* harmony default export */ var layouts_default = (default_component.exports);
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/single-container.vue?vue&type=template&id=ae8bbcc0&
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./layouts/single-container.vue?vue&type=template&id=ae8bbcc0&
 var single_containervue_type_template_id_ae8bbcc0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"single"}},[_vm._ssrNode("<div id=\"i-container\">","</div>",[_c('Nuxt')],1)])}
 var single_containervue_type_template_id_ae8bbcc0_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./layouts/single-container.vue?vue&type=template&id=ae8bbcc0&
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/single-container.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/_babel-loader@8.2.2@babel-loader/lib??ref--2-0!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./layouts/single-container.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -4081,7 +4329,7 @@ var single_containervue_type_template_id_ae8bbcc0_staticRenderFns = []
 
 function single_container_injectStyles (context) {
   
-  var style0 = __webpack_require__(77)
+  var style0 = __webpack_require__(78)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -4095,19 +4343,19 @@ var single_container_component = Object(componentNormalizer["a" /* default */])(
   false,
   single_container_injectStyles,
   null,
-  "b1720a76"
+  "7e78c2f4"
   
 )
 
 /* harmony default export */ var single_container = (single_container_component.exports);
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/with-head.vue?vue&type=template&id=86aeae50&
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.9.7@vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./layouts/with-head.vue?vue&type=template&id=86aeae50&
 var with_headvue_type_template_id_86aeae50_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"app"}},[(_vm.pageDisplay.showHeader)?_c('i-header',{attrs:{"id":"i-header"}}):_vm._e(),_vm._ssrNode(" "),_vm._ssrNode("<div id=\"i-container\""+(_vm._ssrClass(null,{padding: _vm.pageDisplay.showHeader}))+">","</div>",[_c('Nuxt')],1)],2)}
 var with_headvue_type_template_id_86aeae50_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./layouts/with-head.vue?vue&type=template&id=86aeae50&
 
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/with-head.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/_babel-loader@8.2.2@babel-loader/lib??ref--2-0!./node_modules/_@nuxt_components@2.1.8@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.7@vue-loader/lib??vue-loader-options!./layouts/with-head.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -4139,7 +4387,7 @@ var with_headvue_type_template_id_86aeae50_staticRenderFns = []
 
 function with_head_injectStyles (context) {
   
-  var style0 = __webpack_require__(79)
+  var style0 = __webpack_require__(80)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -4153,7 +4401,7 @@ var with_head_component = Object(componentNormalizer["a" /* default */])(
   false,
   with_head_injectStyles,
   null,
-  "8cda5c64"
+  "2ab15f02"
   
 )
 
@@ -4355,11 +4603,11 @@ const VUEX_PROPERTIES = ['state', 'getters', 'actions', 'mutations'];
 let store_store = {};
 
 (function updateModules() {
-  store_store = normalizeRoot(__webpack_require__(81), 'store/index.js'); // If store is an exported method = classic mode (deprecated)
+  store_store = normalizeRoot(__webpack_require__(82), 'store/index.js'); // If store is an exported method = classic mode (deprecated)
   // Enforce store modules
 
   store_store.modules = store_store.modules || {};
-  resolveStoreModules(__webpack_require__(82), 'reward.js'); // If the environment supports hot reloading...
+  resolveStoreModules(__webpack_require__(83), 'reward.js'); // If the environment supports hot reloading...
 })(); // createStore
 
 
@@ -4508,17 +4756,19 @@ function wrapFunctional(options) {
 
 
 const components = {
-  Logo: () => __webpack_require__.e(/* import() | components/logo */ 7).then(__webpack_require__.bind(null, 256)).then(c => wrapFunctional(c.default || c)),
-  CellElShare: () => __webpack_require__.e(/* import() | components/cell-el-share */ 1).then(__webpack_require__.bind(null, 110)).then(c => wrapFunctional(c.default || c)),
-  CellEraxNFT: () => __webpack_require__.e(/* import() | components/cell-erax-n-f-t */ 2).then(__webpack_require__.bind(null, 127)).then(c => wrapFunctional(c.default || c)),
-  CellIMedia2: () => __webpack_require__.e(/* import() | components/cell-i-media2 */ 3).then(__webpack_require__.bind(null, 102)).then(c => wrapFunctional(c.default || c)),
-  CellOAnswer: () => __webpack_require__.e(/* import() | components/cell-o-answer */ 4).then(__webpack_require__.bind(null, 170)).then(c => wrapFunctional(c.default || c)),
-  CellOHead: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 27)).then(c => wrapFunctional(c.default || c)),
-  CellONeraKeyboard: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 33)).then(c => wrapFunctional(c.default || c)),
-  CellOReward: () => __webpack_require__.e(/* import() | components/cell-o-reward */ 5).then(__webpack_require__.bind(null, 169)).then(c => wrapFunctional(c.default || c)),
-  CellOSharePic: () => __webpack_require__.e(/* import() | components/cell-o-share-pic */ 6).then(__webpack_require__.bind(null, 121)).then(c => wrapFunctional(c.default || c)),
+  Logo: () => __webpack_require__.e(/* import() | components/logo */ 9).then(__webpack_require__.bind(null, 271)).then(c => wrapFunctional(c.default || c)),
   CommonIFooter: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 32)).then(c => wrapFunctional(c.default || c)),
-  CommonIHeader: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 8)).then(c => wrapFunctional(c.default || c))
+  CommonIHeader: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 10)).then(c => wrapFunctional(c.default || c)),
+  CellElShare: () => __webpack_require__.e(/* import() | components/cell-el-share */ 1).then(__webpack_require__.bind(null, 116)).then(c => wrapFunctional(c.default || c)),
+  CellEraxNFT: () => __webpack_require__.e(/* import() | components/cell-erax-n-f-t */ 2).then(__webpack_require__.bind(null, 131)).then(c => wrapFunctional(c.default || c)),
+  CellIMedia2: () => __webpack_require__.e(/* import() | components/cell-i-media2 */ 3).then(__webpack_require__.bind(null, 105)).then(c => wrapFunctional(c.default || c)),
+  CellMakePicForAccept: () => __webpack_require__.e(/* import() | components/cell-make-pic-for-accept */ 4).then(__webpack_require__.bind(null, 185)).then(c => wrapFunctional(c.default || c)),
+  CellOAnswer: () => __webpack_require__.e(/* import() | components/cell-o-answer */ 5).then(__webpack_require__.bind(null, 184)).then(c => wrapFunctional(c.default || c)),
+  CellOHead: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 26)).then(c => wrapFunctional(c.default || c)),
+  CellONeraKeyboard: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 27)).then(c => wrapFunctional(c.default || c)),
+  CellOReward: () => __webpack_require__.e(/* import() | components/cell-o-reward */ 6).then(__webpack_require__.bind(null, 183)).then(c => wrapFunctional(c.default || c)),
+  CellOSharePic: () => __webpack_require__.e(/* import() | components/cell-o-share-pic */ 7).then(__webpack_require__.bind(null, 122)).then(c => wrapFunctional(c.default || c)),
+  CellOSignIn: () => __webpack_require__.e(/* import() | components/cell-o-sign-in */ 8).then(__webpack_require__.bind(null, 130)).then(c => wrapFunctional(c.default || c))
 };
 
 for (const name in components) {
@@ -4762,17 +5012,17 @@ const setupProgress = axios => {
   inject('axios', axios);
 });
 // EXTERNAL MODULE: external "vant"
-var external_vant_ = __webpack_require__(18);
+var external_vant_ = __webpack_require__(8);
 var external_vant_default = /*#__PURE__*/__webpack_require__.n(external_vant_);
 
 // EXTERNAL MODULE: ./components/cell/OHead.vue + 4 modules
-var OHead = __webpack_require__(27);
+var OHead = __webpack_require__(26);
 
 // EXTERNAL MODULE: ./components/cell/ONeraKeyboard.vue + 4 modules
-var ONeraKeyboard = __webpack_require__(33);
+var ONeraKeyboard = __webpack_require__(27);
 
-// EXTERNAL MODULE: ./plugins/utils.js
-var utils = __webpack_require__(11);
+// EXTERNAL MODULE: ./plugins/utils.js + 2 modules
+var utils = __webpack_require__(9);
 
 // CONCATENATED MODULE: ./plugins/filters.js
 
@@ -4803,7 +5053,7 @@ Date.prototype.Format = function (fmt) {
 };
 
 external_vue_default.a.filter('formatNera', function (value, size = 2) {
-  return Object(utils["b" /* formatNera */])(value, size);
+  return Object(utils["c" /* formatNera */])(value, size);
 });
 external_vue_default.a.filter('formatDate', function (times, pattern = 'yyyy-MM-dd') {
   let d = '';
@@ -4818,7 +5068,7 @@ external_vue_default.a.filter('filterHideMid', function (str, cutNum = 8) {
   if (!str) return '';
 
   if (str.length > cutNum) {
-    return Object(utils["d" /* hideStrMid */])(str, cutNum);
+    return Object(utils["e" /* hideStrMid */])(str, cutNum);
   }
 
   return str;
@@ -4864,10 +5114,11 @@ external_vue_default.a.component('o-head', OHead["default"]);
 external_vue_default.a.component('o-nera-keyboard', ONeraKeyboard["default"]);
 
 // EXTERNAL MODULE: external "vue-i18n"
-var external_vue_i18n_ = __webpack_require__(15);
+var external_vue_i18n_ = __webpack_require__(16);
 var external_vue_i18n_default = /*#__PURE__*/__webpack_require__.n(external_vue_i18n_);
 
 // CONCATENATED MODULE: ./plugins/i18n.js
+
 
 
 external_vue_default.a.use(external_vue_i18n_default.a);
@@ -4876,15 +5127,15 @@ external_vue_default.a.use(external_vue_i18n_default.a);
   store,
   $cookies
 }) => {
-  // Set i18n instance on app
-  // This way we can use it in middleware and pages asyncData/fetch
-  // console.log(localStorage.getItem('Reward_locale'));
+  let locale = $cookies.get('Reward_locale') || store.state.locale; // console.log(locale);
+
+  Object(utils["a" /* changeLang */])(locale);
   app.i18n = new external_vue_i18n_default.a({
-    locale: $cookies.get('Reward_locale') || store.state.locale,
+    locale: locale,
     fallbackLocale: 'en-US',
     messages: {
-      'en-US': __webpack_require__(88),
-      'zh-CN': __webpack_require__(89)
+      'en-US': __webpack_require__(89),
+      'zh-CN': __webpack_require__(90)
     }
   }); // app.i18n.path = (link) => {
   //   if (app.i18n.locale === app.i18n.fallbackLocale) {
@@ -4925,8 +5176,9 @@ external_vue_default.a.use(external_vue_i18n_default.a);
 
       case -509:
         // console.log(app);
-        console.log(data.iRspCode);
-        external_vue_default.a.prototype.$toast('登录超时');
+        console.log(data.iRspCode); // Vue.prototype.$toast('登录超时');
+
+        external_vue_default.a.prototype.$toast(i18n.t(`ERR${data.iRspCode}`));
         app.redirect({
           name: 'Login'
         });
@@ -5624,25 +5876,25 @@ const createNext = ssrContext => opts => {
 });
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/modules/esnext.string.code-points.js");
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports) {
 
 module.exports = require("clipboard");
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports) {
 
 module.exports = require("html2canvas");
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports) {
 
 module.exports = require("vue-qr");
