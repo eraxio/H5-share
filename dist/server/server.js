@@ -104,7 +104,7 @@ module.exports =
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "https://cdn.jsdelivr.net/gh/eraxio/H5-share@0.0.2/dist/";
+/******/ 	__webpack_require__.p = "https://cdn.jsdelivr.net/gh/eraxio/H5-share@0.0.3/dist/";
 /******/
 /******/ 	// uncaught error handler for webpack runtime
 /******/ 	__webpack_require__.oe = function(err) {
@@ -4757,8 +4757,6 @@ function wrapFunctional(options) {
 
 const components = {
   Logo: () => __webpack_require__.e(/* import() | components/logo */ 9).then(__webpack_require__.bind(null, 271)).then(c => wrapFunctional(c.default || c)),
-  CommonIFooter: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 32)).then(c => wrapFunctional(c.default || c)),
-  CommonIHeader: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 10)).then(c => wrapFunctional(c.default || c)),
   CellElShare: () => __webpack_require__.e(/* import() | components/cell-el-share */ 1).then(__webpack_require__.bind(null, 116)).then(c => wrapFunctional(c.default || c)),
   CellEraxNFT: () => __webpack_require__.e(/* import() | components/cell-erax-n-f-t */ 2).then(__webpack_require__.bind(null, 131)).then(c => wrapFunctional(c.default || c)),
   CellIMedia2: () => __webpack_require__.e(/* import() | components/cell-i-media2 */ 3).then(__webpack_require__.bind(null, 105)).then(c => wrapFunctional(c.default || c)),
@@ -4768,7 +4766,9 @@ const components = {
   CellONeraKeyboard: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 27)).then(c => wrapFunctional(c.default || c)),
   CellOReward: () => __webpack_require__.e(/* import() | components/cell-o-reward */ 6).then(__webpack_require__.bind(null, 183)).then(c => wrapFunctional(c.default || c)),
   CellOSharePic: () => __webpack_require__.e(/* import() | components/cell-o-share-pic */ 7).then(__webpack_require__.bind(null, 122)).then(c => wrapFunctional(c.default || c)),
-  CellOSignIn: () => __webpack_require__.e(/* import() | components/cell-o-sign-in */ 8).then(__webpack_require__.bind(null, 130)).then(c => wrapFunctional(c.default || c))
+  CellOSignIn: () => __webpack_require__.e(/* import() | components/cell-o-sign-in */ 8).then(__webpack_require__.bind(null, 130)).then(c => wrapFunctional(c.default || c)),
+  CommonIFooter: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 32)).then(c => wrapFunctional(c.default || c)),
+  CommonIHeader: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 10)).then(c => wrapFunctional(c.default || c))
 };
 
 for (const name in components) {
