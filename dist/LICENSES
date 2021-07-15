@@ -59,13 +59,6 @@
 
 
 /*!
- * Vue-Lazyload.js v1.2.3
- * (c) 2018 Awe <hilongjw@gmail.com>
- * Released under the MIT License.
- */
-
-
-/*!
  * html2canvas 1.0.0 <https://html2canvas.hertzen.com>
  * Copyright (c) 2021 Niklas von Hertzen <https://hertzen.com>
  * Released under MIT License
@@ -84,6 +77,13 @@
   and limitations under the License.
   ***************************************************************************** */
 
+
+/*!
+ * Vue-Lazyload.js v1.2.3
+ * (c) 2018 Awe <hilongjw@gmail.com>
+ * Released under the MIT License.
+ */
+
 /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
     Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -98,14 +98,6 @@
     See the Apache Version 2.0 License for specific language governing permissions
     and limitations under the License.
     ***************************************************************************** */
-
-
-/*!
- * clipboard.js v2.0.8
- * https://clipboardjs.com/
- *
- * Licensed MIT © Zeno Rocha
- */
 
 
 /*!
